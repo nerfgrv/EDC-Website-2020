@@ -6,3 +6,6 @@ def NavBar(request):
 
 def home(request):
 	return render(request,'home/index.html')
+
+def aboutus(request):
+	return render(request,'home/aboutUs.html')
