@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import NavBar
+from . import views
 
 urlpatterns = [
-    path('navbar/', NavBar),
+    path('navbar/',views.NavBar),
+    path('',views.home,name='home-page'),
 ]
