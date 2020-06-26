@@ -3,7 +3,7 @@
 {% block head %}
 
 <link rel="pingback" href="{% static 'home/xmlrpc.php'%}" />
-<link rel='stylesheet' id='ult-stats-counter-style-css' href="{%static 'home/css/stats-counter.min.css'%}" type='text/css' media='all' />
+<link rel='stylesheet' id='ult-stats-counter-style-css' href="{% static 'home/css/stats-counter.min.css' %}" type='text/css' media='all' />
 
 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
 
@@ -126,11 +126,7 @@
     <style>
         .woocommerce-product-gallery {
             opacity: 1 !important;
-        }
-    </style>
-</noscript>
-<noscript>
-    <style>
+        } 
         .wpb_animate_when_almost_visible {
             opacity: 1;
         }
@@ -153,10 +149,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     <div class="vc_column-inner">
                         <div class="wpb_wrapper">
                             <div class="wpb_layerslider_element wpb_content_element">
+                                
                                 <script data-cfasync="false" type="text/javascript">
                                     var lsjQuery = jQuery;
-
                                 </script>
+
                                 <script data-cfasync="false" type="text/javascript">
                                     lsjQuery(document).ready(function() {
                                         if (typeof lsjQuery.fn.layerSlider == "undefined") {
@@ -182,8 +179,9 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                     });
 
                                 </script>
-                                <div id="layerslider_1" class="ls-wp-container fitvidsignore" style="width:1280px;height:850px;margin:0 auto;margin-bottom: 0px;">
-                                    <div class="ls-slide" data-ls="kenburnsscale:1.2;"><img width="2000" height="1336" src="{%static 'home/images/ImagesHomePage/home5.jpg'%}" class="ls-bg" sizes="(max-width: 2000px) 100vw, 2000px" />
+
+                                <div id="layerslider_1" class="ls-wp-container fitvidsignore" style="width:1280px;height:850px;margin:0 auto; margin-bottom: 0px;">
+                                    <div class="ls-slide" data-ls="kenburnsscale:1.2;"><img width="2000" height="1336" src="{% static 'home/images/ImagesHomePage/home5.jpg' %}" class="ls-bg" sizes="(max-width: 2000px) 100vw, 2000px" />
                                         <p class="ls-l" style="top:450px;left:400px;text-align:center;font-weight:300;font-style:normal;text-decoration: none;color:#f50136;font-size:50px; font-weight: bold; font-family:Lao, serif;" data-ls="showinfo:1;parallax:true;parallaxlevel:-15;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">You Ideate, We Foster</p>
                                         <p style="top:520px;left:360px;text-align:center;font-weight:300;font-style:normal;text-decoration:none;color:#f50136;font-size:20px;font-weight: bold; font-family: Lato, serif;" class="ls-l" data-ls="showinfo:1;parallax:true;parallaxlevel:-15;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">THAPAR INSTITUTE OF ENGINEERING AND TECHNOLOGY</p>
                                         <h1 style="top:228px;left:241px;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:80px;line-height:100px;color:#ffffff; font-family:Lato, serif;" class="ls-l" data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">ENTREPRENEURSHIP <br>
