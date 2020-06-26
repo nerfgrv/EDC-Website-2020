@@ -7,5 +7,5 @@ def NavBar(request):
 def home(request):
 	return render(request,'home/index.html')
 
-def aboutus(request):
+def team(request):
 	return render(request,'home/aboutUs.html')

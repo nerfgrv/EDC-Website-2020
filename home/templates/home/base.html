@@ -17,8 +17,6 @@
     <!--<meta property="og:image:width" content="2000" />
 		<meta property="og:image:height" content="1338" /> -->
 
-    <link rel='dns-prefetch' href='http://s.w.org/' />
-
     <link rel='stylesheet' id='layerslider-css'             href="{% static 'home/css/layerslider.css' %}"              type='text/css' media='all' />
     <link rel='stylesheet' id='wp-block-library-css'        href="{% static 'home/css/block-library/style.min.css' %}"  type='text/css' media='all' />
     <link rel='stylesheet' id='wc-block-style-css'          href="{% static 'home/css/blocks/style.css' %}"             type='text/css' media='all'/>
@@ -767,7 +765,7 @@
     {% block head %}{% endblock head %}
 
 </head>
-{%block bodytag%}{%endblock bodytag%}
+<body {% block bodytag %}{% endblock bodytag %}>
     <!-- Pre Loader-->
     <div class="se-pre-con">
         <div class="rotating-plane"></div>
@@ -1067,7 +1065,7 @@
 
 
         <!-- Body -->
-        {% block 'body' %}{% endblock 'body' %}
+        {% block body %}{% endblock body %}
         <!--Footer-->
         <footer>
             <div class="main_footer footer_fourcolumns">
