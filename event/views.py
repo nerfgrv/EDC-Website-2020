@@ -6,3 +6,6 @@ def events(request):
 
 def esummit(request):
     return render(request,'event/esummit.html')
+
+def vl(request):
+    return render(request,'event/vl.html')
