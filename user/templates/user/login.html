@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 
-{% block content %}
+{% block body %}
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
@@ -14,8 +14,8 @@
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+            Need An Account? <a class="ml-2" href="{% url 'signup' %}">Sign Up Now</a>
         </small>
     </div>
 </div>
-{% endblock content %}
+{% endblock body %}
