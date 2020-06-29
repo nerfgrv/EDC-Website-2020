@@ -6,11 +6,9 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.EmailField("Enter email ")
+    email = models.EmailField("Enter email ", default='')
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     
-
-
 class Meta:
     db_table ="student"
