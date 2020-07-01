@@ -8,7 +8,11 @@ class Internship(models.Model):
     duration = models.CharField(max_length=20)
     about = models.CharField(max_length=5000)
     location = models.CharField(max_length=100)
-    stipend = models.IntegerField()
+    stipend = models.CharField(max_length=25)
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.IntegerField()
     perks = models.CharField(max_length=100)
+    who_can_apply = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.company_name

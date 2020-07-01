@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ('skills_required', models.CharField(max_length=500)),
                 ('no_of_internships', models.IntegerField()),
                 ('perks', models.CharField(max_length=100)),
+                ('who_can_apply', models.CharField(max_length=200)),
             ],
         ),
     ]
