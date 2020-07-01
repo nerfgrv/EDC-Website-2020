@@ -1,12 +1,11 @@
 {% extends 'home/base.html' %} 
 {%load crispy_forms_tags %} 
-<!-- {% block title%} Signup {% endblock %}
- -->
+
  {% block body %}
 
 
 
-<div id="content-container" class="container p-none" style="display: flex; justify-content: center;">
+<div id="content-container" class="container p-none" style="display: flex; justify-content: center; background-color: black; ">
   <div class="lgn-container vc_col-lg-8" style="margin-top: 80px; margin-bottom: 40px;">
     <form
       id="login-form"
@@ -45,7 +44,7 @@
       </p>
       {% endif %}
  -->
-      <input type="submit" value="Login" class="btn btn-primary pull-right" />
+      <input type="submit" value="Sign up" class="btn btn-primary pull-right" />
       <input type="hidden" name="next" value="{{ next }}" />
     </form>
   </div>
