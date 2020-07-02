@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'startupEcosystem.apps.StartupecosystemConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,8 +41,10 @@ INSTALLED_APPS = [
     'event.apps.EventConfig',
     'home.apps.HomeConfig',
     'internshipPortal.apps.InternshipportalConfig',
+    'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
