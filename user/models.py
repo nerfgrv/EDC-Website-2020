@@ -7,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class StudentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
-    city = models.CharField(max_length=40, blank=True)
+    city = models.CharField(max_length=40, default='')
     college = models.CharField(max_length=50)
     resume = models.URLField(default='')
     email = models.EmailField(max_length=254)

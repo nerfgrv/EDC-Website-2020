@@ -8,8 +8,15 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
+            user = form.save()
+            user.refresh_from_db()
+            user.studentprofile.city = form.cleaned_data.get('city')
+            user.studentprofile.bio = form.cleaned_data.get('bio')
+            user.studentprofile.college = form.cleaned_data.get('college')
+            user.studentprofile.resume = form.cleaned_data.get('resume')
+            user.studentprofile.contact = form.cleaned_data.get('contact')
+            user.studentprofile.email = form.cleaned_data.get('email')
+            user.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
     else:
