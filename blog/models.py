@@ -6,8 +6,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.CharField(default='', max_length=50)
-    image = models.ImageField(default='default.jpg')
-
+    image = models.ImageField(default='default.jpg', upload_to='blog_images')
 
     def __str__(self):
         return self.title
