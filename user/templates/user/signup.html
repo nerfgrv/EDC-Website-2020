@@ -1,53 +1,29 @@
 {% extends 'home/base.html' %} 
 {%load crispy_forms_tags %} 
-<!-- {% block title%} Signup {% endblock %}
- -->
+
  {% block body %}
 
 
 
-<div id="content-container" class="container p-none" style="display: flex; justify-content: center;">
+<div id="content-container" class="container p-none" style="display: flex; justify-content: center; background-color: black; ">
   <div class="lgn-container vc_col-lg-8" style="margin-top: 80px; margin-bottom: 40px;">
-    <form
-      id="login-form"
-      method="post"
-      action="{% url 'login' %}"
-    >
+    
       {% csrf_token %} 
-      {{ form|crispy}}
-      <!-- <table class="table">
-        <tr>
-          <td><label for="id_username">Username</label></td>
-          <td>
-            <input
-              id="id_username"
-              name="username"
-              type="text"
-              class="form-control"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td><label for="id_password">Password</label></td>
-          <td>
-            <input
-              id="id_password"
-              name="password"
-              type="password"
-              class="form-control"
-            />
-          </td>
-        </tr>
-      </table>
-      {% if form.errors %}
-      <p class="label label-danger">
-        Your username and password didn't match. Please try again.
-      </p>
-      {% endif %}
- -->
-      <input type="submit" value="Login" class="btn btn-primary pull-right" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-6 " style="font-size: 25px;color:red; padding-bottom: 20px;">Sign up</legend>
+        </fieldset>
+      <div class="border-bottom pt-3" style="margin-top: 80px; margin-bottom: 40px; font-size: 20px;   ">
+        <small class="text-muted">
+          <a href="{% url 'login' %}">SignUp as a Student</a>
+        </small>
+      </div>
+      <div class="border-bottom pt-3" style="margin-top: 80px; margin-bottom: 40px; font-size: 20px;   ">
+        <small class="text-muted">
+          <a href="{% url 'login' %}">SignUp as a Startup</a>
+        </small>
+      </div>
+      
+    
   </div>
 </div>
 {% endblock body %}
