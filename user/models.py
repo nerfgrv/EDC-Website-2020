@@ -11,8 +11,7 @@ class User(AbstractUser):
 
 
 class StudentProfile(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name ='student_profile')
     bio = models.TextField(max_length=500, blank=True)
     city = models.CharField(max_length=40, default='')
     college = models.CharField(max_length=50)
@@ -25,8 +24,7 @@ class StudentProfile(models.Model):
 
 
 class StartupProfile(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name = 'startup_profile')
     name = models.CharField(max_length=40, default='')
     about = models.TextField(max_length=500, blank=True)
     founder = models.CharField(max_length=40, default='')

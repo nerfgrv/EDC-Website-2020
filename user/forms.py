@@ -6,22 +6,20 @@ from django.db import transaction
 from .models import User, StudentProfile, StartupProfile
 
 class StudentRegisterForm(UserCreationForm):
-	email = forms.EmailField()
-	bio = forms.CharField(max_length=500, widget=forms.TextInput({}), required=False)
-	city = forms.CharField(max_length=40)
+	email 	= forms.EmailField()
+	bio 	= forms.CharField(max_length=500, widget=forms.TextInput({}), required=False)
+	city 	= forms.CharField(max_length=40)
 	college = forms.CharField(max_length=50)
-	resume = forms.URLField(max_length=254)
+	resume 	= forms.URLField(max_length=254)
 	contact = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': ('')}), label=("Phone number"), required=False) 
 	
 	class Meta(UserCreationForm.Meta):
-		model = User
-		fields = ['username', 'email', 'contact', 'college', 'city', 'bio', 'resume',  'password1', 'password2']
+		model 	= User
+		fields 	= ['username', 'email', 'contact', 'college', 'city', 'bio', 'resume',  'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):
-		user.is_student = True
 		email = self.cleaned_data.get('email')
-		contact = self.cleaned_data.get('contact')
 		username = self.cleaned_data.get('username')
 		
 		if User.objects.filter(username=username).exists():
@@ -32,10 +30,9 @@ class StudentRegisterForm(UserCreationForm):
 
 
 class StartupRegisterForm(UserCreationForm):
-    start = forms.CharField(max_length=40)
+    startupname = forms.CharField(max_length=40)
     email = forms.EmailField()
-    about = forms.CharField(
-    max_length=500, widget=forms.TextInput({}), required=False)
+    about = forms.CharField(max_length=500, widget=forms.TextInput({}), required=False)
     city = forms.CharField(max_length=40)
     fieldofwork = forms.CharField(max_length=50)
     website = forms.URLField(max_length=254)
@@ -43,13 +40,11 @@ class StartupRegisterForm(UserCreationForm):
 	
     class Meta():	
         model = User
-        fields = ['startupname ', 'username', 'email', 'contact', 'about',  'city', 'fieldofwork', 'website',  'password1','password2']
+        fields = ['startupname', 'username', 'email', 'contact', 'about',  'city', 'fieldofwork', 'website',  'password1','password2']
 
     @transaction.atomic
     def clean(self):
-        user.is_startup = True
         email = self.cleaned_data.get('email')
-        contact = self.cleaned_data.get('contact')
         username = self.cleaned_data.get('username')
 		
         if User.objects.filter(username=username).exists():
