@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import InternshipForm
+from .forms import InternshipForm, VenCapForm
 from .models import Internship
 from django.views.generic import DetailView
 
@@ -34,3 +34,15 @@ class InternshipDetailView(DetailView):
     model = Internship
     template_name = 'internshipPortal/internship_detail.html'
     queryset = Internship.objects.all()
+
+
+def VenCapCreateView(request):
+    form = VenCapForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('venture-capitalist')
+
+    context = {
+        'form': form
+    }
+    return render(request, 'internshipPortal/create_vencap.html', context)
