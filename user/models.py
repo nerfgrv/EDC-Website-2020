@@ -25,7 +25,7 @@ class StudentProfile(models.Model):
 
 class StartupProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name = 'startup_profile')
-    name = models.CharField(max_length=40, default='')
+    startupname = models.CharField(max_length=40, default='')
     about = models.TextField(max_length=500, blank=True)
     founder = models.CharField(max_length=40, default='')
     city = models.CharField(max_length=40, default='')
@@ -33,6 +33,7 @@ class StartupProfile(models.Model):
     website = models.URLField(default='')
     email = models.EmailField(max_length=254)
     contact = PhoneNumberField()
+    image = models.ImageField(null=True, blank=True,)
 
     def __str__(self):
         return self.user.username
