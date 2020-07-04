@@ -22,7 +22,7 @@ class StudentRegisterForm(UserCreationForm):
 		email = self.cleaned_data.get('email')
 		username = self.cleaned_data.get('username')
 		
-		if User.objects.filter(username=username).exists():
+		if student.objects.filter(username=username).exists():
 			raise forms.ValidationError("Account with this username already exists")
 		if User.objects.filter(email=email).exists():
 			raise forms.ValidationError("Account with this email already exists")
@@ -36,11 +36,12 @@ class StartupRegisterForm(UserCreationForm):
     city = forms.CharField(max_length=40)
     fieldofwork = forms.CharField(max_length=50)
     website = forms.URLField(max_length=254)
+    image = forms.ImageField()
     contact = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': ('')}), label=("Phone number"), required=False)
 	
     class Meta():	
         model = User
-        fields = ['startupname', 'username', 'email', 'contact', 'about',  'city', 'fieldofwork', 'website',  'password1','password2']
+        fields = ['startupname', 'username', 'email', 'contact', 'about',  'city', 'fieldofwork', 'website', 'image', 'password1','password2']
 
     @transaction.atomic
     def clean(self):
