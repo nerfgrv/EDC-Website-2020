@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'event.apps.EventConfig',
     'home.apps.HomeConfig',
     'internshipPortal.apps.InternshipportalConfig',
+    'investors.apps.InvestorsConfig',
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
     'crispy_forms',
