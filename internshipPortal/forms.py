@@ -1,5 +1,5 @@
 from django import forms
-from .models import Internship
+from .models import Internship, VentureCapitalist
 
 
 class InternshipForm(forms.ModelForm):
@@ -16,4 +16,14 @@ class InternshipForm(forms.ModelForm):
             'no_of_internships',
             'perks',
             'who_can_apply'
+        ]
+
+class VenCapForm(forms.ModelForm):
+    class Meta:
+        model = VentureCapitalist
+        fields = [
+            'company_name',
+            'about',
+            'contact',
+            'email',
         ]

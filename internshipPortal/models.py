@@ -16,3 +16,12 @@ class Internship(models.Model):
 
     def __str__(self):
         return self.company_name
+
+
+class VentureCapitalist(models.Model):
+    company_name = models.CharField(max_length=100)
+    about = models.CharField(max_length=5000)
+    contact = models.IntegerField()
+    email = models.EmailField(max_length=100)
+    def __str__(self):
+        return self.company_name
