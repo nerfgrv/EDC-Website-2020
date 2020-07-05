@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 # Create your models here.
 class Internship(models.Model):
@@ -16,6 +16,9 @@ class Internship(models.Model):
 
     def __str__(self):
         return self.company_name
+
+    def get_absolute_url(self):
+        return reverse('internship-detail', kwargs={'pk' : self.pk})
 
 
 class VentureCapitalist(models.Model):
