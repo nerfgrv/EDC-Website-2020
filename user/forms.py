@@ -22,7 +22,7 @@ class StudentRegisterForm(UserCreationForm):
 		email = self.cleaned_data.get('email')
 		username = self.cleaned_data.get('username')
 		
-		if student.objects.filter(username=username).exists():
+		if User.objects.filter(username=username).exists():
 			raise forms.ValidationError("Account with this username already exists")
 		if User.objects.filter(email=email).exists():
 			raise forms.ValidationError("Account with this email already exists")
@@ -53,3 +53,14 @@ class StartupRegisterForm(UserCreationForm):
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Account with this email already exists")
         return self.cleaned_data
+
+
+class StudentUpdateForm(forms.ModelForm):
+	class Meta:
+		model = StudentProfile
+		fields = ['bio', 'city', 'college', 'resume', 'email', 'contact']
+
+class StartupUpdateForm(forms.ModelForm):
+	class Meta:
+		model = StartupProfile
+		fields = ['startupname', 'about', 'founder', 'city', 'fieldofwork', 'website', 'email', 'contact', 'image']
