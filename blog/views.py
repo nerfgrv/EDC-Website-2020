@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, CreateView
+from django.urls import reverse
 from .models import Post
 
 
@@ -14,12 +15,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = Post
-    fields=['title','content']
+    fields=['title','content','author','image']
 
-    def form_valid(self, form):
-    	form.instance.author=self.request.user
-    	return super().form_valid(form)
-
-
-def home1(request):
-    return render(request, 'blog/home1.html')
+    def get_success_url(self):
+        return reverse('post-detail', kwargs={'pk': self.object.id})
