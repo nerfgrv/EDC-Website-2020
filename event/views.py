@@ -9,3 +9,13 @@ def esummit(request):
 
 def vl(request):
     return render(request,'event/vl.html')
+
+def starteco(request):
+    return render(request,'event/startupweekend.html')
+
+def etalk(request):
+    return render(request,'event/etalks.html')
+
+def etalk2(request):
+    return render(request,'event/etalks2.html')
+
