@@ -35,16 +35,14 @@
                         <div class="column" style="display: flex; justify-content: center;">
                             <div class="blog_item_wrapper effect-5  col-12 " style="display: flex; justify-content: center;">
                                 <div class="grid-sizer"></div>
-                                <div id="post-142" class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d" style="width: 750px;">
+                                <div id="post-142" class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d" style="width: 80vw;">
 
                                     <div class="spwrapper cat_color__background_color">
-                                        <div class="spbgimg blog-roll-i post142" >
-                                            
-                                            <img alt="" title="" height="1336" width="2000" src="{{ post.image.url }}" />
+                                        <div class="spbgimg blog-roll-i post142" style="background: url({{ post.blog_image.url }}); background-size: cover; width: 40%;">
                                         </div>
 
 
-                                        <div class="spdata">
+                                        <div class="spdata" style="width: 60%;">
                                             <div class="spcontent">
                                                 <span class="spauthor">
                                                     <a href="">
@@ -58,9 +56,9 @@
                                                 </div>
 
                                                 <h1 class="sptitle">
-                                                    <a rel="bookmark" href="{% url 'post-detail' post.id %}" style="font-weight: bold;">{{ post.title }}</a>
+                                                    <a rel="bookmark" href="{% url 'post-detail' post.id %}" style="font-weight: bold; text-align: justify;">{{ post.title }}</a>
                                                 </h1>
-                                                <p class="sptext">{{ post.content|slice:":150" }}</p>
+                                                <p class="sptext">{{ post.content|slice:":190" }}</p>
 
                                                 <a href="{% url 'post-detail' post.id %}">Read more</a>
                                             </div>
