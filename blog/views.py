@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView , UpdateView ,DeleteView
 from django.urls import reverse
 from .models import Post
 
@@ -19,3 +19,15 @@ class PostCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.id})
+
+class PostUpdateView(UpdateView):
+    model = Post
+    fields=['title','content','author','image']
+
+    def get_success_url(self):
+        return reverse('post-detail', kwargs={'pk': self.object.id})
+
+class PostDeleteView(DeleteView):
+    model = Post
+    success_url='/'
+

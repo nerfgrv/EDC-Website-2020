@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block head %}
 <style>
@@ -24,19 +24,22 @@
         <div class="page-title-bg rest-enable-parallax"></div>
         <div class="page-title-tint"></div>
         <div class="container header-flex header-enable-parallax">
-            <h1>Post A Blog</h1>
+            <h1>Delete Blog</h1>
+            
         </div>
     </div>
                                                     
-    <div class="main-content"  style="margin-top: 30px; margin-bottom: 30px; align-items: center; margin-right: auto; margin-left: auto; max-width: 70%; font-size: large;">
-        <div class="content-section">
+    <div class="main-content" style="margin-top: 30px; margin-bottom: 30px; align-items: center; margin-right: auto; margin-left: auto; max-width: 70%; font-size: large;">
+        <div class="content-section" width=100>
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    {{ form|crispy }}
+                    
                 </fieldset>
-                <div class="form-group" style=" width: 1000px max-width: 70%; font-size: large;" >
-                    <button class="btn btn-outline-info" type="submit" >Post</button>
+                <div class="form-group" width=100 ; style="font-size: 40px color=black">
+                    <h2> Are you sure you want to delete "{{ object.title}}" </h2>
+                    <button class="btn btn-outline-danger" type="submit" style="font-size: 21px; color: black; text-align: center;"">Yes, Delete</button>
+                    <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}" style="font-size: 21px; color: black; text-align: center;"">Cancel</a>
                 </div>
             </form>
         </div>
