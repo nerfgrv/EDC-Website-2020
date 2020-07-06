@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'markdown_deux',
     'phonenumber_field',
 ]
 

@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block head %}
+
+<head>
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
 
@@ -211,128 +213,162 @@
             }
         </style>
     </noscript>
+    <style>
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 100%;
+            padding: 30%;
+        }
+
+        #formContent {
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            background: #fff;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            padding: 0px;
+            -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+    </style>
 </head>
 {% endblock head %}
 
 
 {% block bodytag %}
-    class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5 vc_responsive" 
+class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
+vc_responsive"
 {% endblock bodytag %}
 
 
 {% block body %}
-    <div class="main-content " style="">
-        <div class="">
-            <div class="row">
-                <div class="vc_row wpb_row vc_row-fluid">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner">
-                            <div class="wpb_wrapper">
-                                <div class="wpb_layerslider_element wpb_content_element">
-                                    <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script>
-                                    <script data-cfasync="false" type="text/javascript">
-                                        lsjQuery(document).ready(function () {
-                                            if (typeof lsjQuery.fn.layerSlider == "undefined") {
-                                                if (window._layerSlider && window._layerSlider.showNotice) {
-                                                    window._layerSlider.showNotice('layerslider_1', 'jquery');
-                                                }
-                                            } else {
-                                                lsjQuery("#layerslider_1").layerSlider({ sliderVersion: '6.7.1', type: 'fullwidth', responsiveUnder: 1000, allowFullscreen: false, maxRatio: 1000, skin: 'v6', navPrevNext: false, hoverPrevNext: false, navStartStop: false, navButtons: false, showCircleTimer: false, thumbnailNavigation: 'disabled', skinsPath: 'https://skywarriorthemes.com/benri/demo1/wp-content/plugins/LayerSlider/static/layerslider/skins/' });
+<div class="main-content " style="">
+    <div class="">
+        <div class="row">
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="wpb_layerslider_element wpb_content_element">
+                                <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script>
+                                <script data-cfasync="false" type="text/javascript">
+                                    lsjQuery(document).ready(function () {
+                                        if (typeof lsjQuery.fn.layerSlider == "undefined") {
+                                            if (window._layerSlider && window._layerSlider.showNotice) {
+                                                window._layerSlider.showNotice('layerslider_1', 'jquery');
                                             }
-                                        });
-                                    </script>
-                                    <div id="layerslider_1" class="ls-wp-container fitvidsignore" style="width:1280px; height:650px; margin:0 auto; margin-bottom: 0px;">
-                                        <div class="ls-slide" data-ls="kenburnsscale:1.2;">
-                                            <img width="2000" height="1336"
-                                                    src="wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1.jpg"
-                                                    class="ls-bg" alt=""
-                                                    srcset="https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1.jpg 2000w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-300x200.jpg 300w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-768x513.jpg 768w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-1024x684.jpg 1024w"
-                                                    sizes="(max-width: 2000px) 100vw, 2000px" />
+                                        } else {
+                                            lsjQuery("#layerslider_1").layerSlider({ sliderVersion: '6.7.1', type: 'fullwidth', responsiveUnder: 1000, allowFullscreen: false, maxRatio: 1000, skin: 'v6', navPrevNext: false, hoverPrevNext: false, navStartStop: false, navButtons: false, showCircleTimer: false, thumbnailNavigation: 'disabled', skinsPath: 'https://skywarriorthemes.com/benri/demo1/wp-content/plugins/LayerSlider/static/layerslider/skins/' });
+                                        }
+                                    });
+                                </script>
+                                <div id="layerslider_1" class="ls-wp-container fitvidsignore"
+                                    style="width:1280px; height:650px; margin:0 auto; margin-bottom: 0px;">
+                                    <div class="ls-slide" data-ls="kenburnsscale:1.2;">
+                                        <img width="2000" height="1336"
+                                            src="wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1.jpg"
+                                            class="ls-bg" alt=""
+                                            srcset="https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1.jpg 2000w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-300x200.jpg 300w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-768x513.jpg 768w, https://skywarriorthemes.com/benri/demo1/wp-content/uploads/sites/17/layerslider/Home/rawpixel-com-196509-1-1024x684.jpg 1024w"
+                                            sizes="(max-width: 2000px) 100vw, 2000px" />
 
-                                            <h1 class="ls-l"
-                                                    style=" top:228px;left:241px;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center; padding-left: 80px"
-                                                    data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
-                                                    APPLY FOR <br>INTERNSHIPS
-                                            </h1>
-                                            <a style="" class="ls-l"
-                                                    href="#startup" target="_self"
-                                                    data-ls="showinfo:1;offsetyin:-50px;delayin:1000;parallax:true;parallaxlevel:-10;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
+                                        <h1 class="ls-l"
+                                            style=" top:50%;left:50%;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center; padding-left: 80px"
+                                            data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
+                                            INTERNSHIPS
+                                        </h1>
+                                        <a style="" class="ls-l" href="#startup" target="_self"
+                                            data-ls="showinfo:1;offsetyin:-50px;delayin:1000;parallax:true;parallaxlevel:-10;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
 
-                                            </a>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="vc_row-full-width vc_clearfix"></div>
-
-                <div class="clear"></div>
-
             </div>
-        </div>
 
+            <div class="vc_row-full-width vc_clearfix"></div>
 
-        <div class="row main_body" style="max-width:100% !important; display:flex; justify-content: center;">
-            <div class="col-12 col-md-8 main_body_center ">
-
-                <!--  Internship Cards  -->
-                {% for internship in internships %}
-                    <div id="startup" class="card supcard"
-                        style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px;">
-                        <div class="supcard_top" style="max-width:80% !important;">
-                            <div class="startup_logo">
-
-                            </div>
-
-                            <div class="card-body">
-                                <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                                <h5 class="card-title" style="font-size: 25px;">{{internship.company_name}}</h5>
-                                <h5 class="card-title" style="color:#f50136">{{ internship.fields_of_work }}</h5>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="supcard_mid" style=" margin-bottom: 20px;margin-left: 20px;">
-                            <div class="location">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Location:</h5>
-                                <p class="card-text">{{ internship.location }}</p>
-
-                            </div>
-                            <div class="duration">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Duration:</h5>
-
-                                <p class="card-text">{{ internship.duration }}</p>
-                            </div>
-                            <div class="Start">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Stipend</h5>
-
-                                <p class="card-text">{{ internship.stipend }}</p>
-                            </div>
-                            <div class="applyBy">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Skills Required:</h5>
-
-                                <p class="card-text">{{ internship.skills_required }}</p>
-                            </div>
-                        </div>
-                        <div class="card-footer " style="background-color:white;">
-                            <div class=col-6></div>
-                            <div class="col-6 mdet" style=" right: 0px;">
-                                <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
-                                    View Details
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-
-            </div>
+            <div class="clear"></div>
 
         </div>
     </div>
 
+
+    <div class="row main_body" style="max-width:100% !important; display:flex; justify-content: center;">
+        <div class="col-12 col-md-8 main_body_center ">
+
+            <!--  Internship Cards  -->
+            {%if internships %}
+            {% for internship in internships %}
+
+            <div id="startup" class="card supcard"
+                style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
+                <div class="supcard_top" style="max-width:80% !important;">
+                    <div class="startup_logo">
+
+                    </div>
+
+                    <div class="card-body">
+                        <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
+                        <h4 class="card-title" style="font-size: 28px;">{{internship.company_name}}</h4>
+                        <h5 class="card-title" style="color:#f50136; font-size: 20px; ">{{ internship.fields_of_work }}
+                        </h5>
+                        <hr>
+                    </div>
+                </div>
+                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px;">
+                    <div class="location">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
+
+                    </div>
+                    <div class="duration">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Duration:</h5>
+
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.duration }}</p>
+                    </div>
+                    <div class="Start">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Stipend:</h5>
+
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
+                    </div>
+                    <div class="applyBy">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:</h5>
+
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.skills_required }}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-footer " style="background-color:white;">
+                    <div class=col-6></div>
+                    <div class="col-6 mdet" style="font-size: 20px !important;">
+                        <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
+                            View Details
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <div class="wrapper">
+                <div id="formContent">
+                    <h1>Internships Coming Soon...</h1>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 {% endblock body%}
-
-
