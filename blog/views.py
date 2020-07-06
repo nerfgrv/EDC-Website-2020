@@ -16,7 +16,7 @@ class PostDetailView(DetailView):
 # @user_passes_test(lambda u: u.is_superuser)
 class PostCreateView(CreateView):
     model = Post
-    fields=['title','content','author','image']
+    fields=['title','content','blog_image','author','about_the_author','author_image']
 
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.id})
@@ -24,7 +24,7 @@ class PostCreateView(CreateView):
 # @user_passes_test(lambda u: u.is_superuser)
 class PostUpdateView(UpdateView):
     model = Post
-    fields=['title','content','author','image']
+    fields=['title','content','blog_image','author','about_the_author','author_image']
 
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.id})
