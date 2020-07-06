@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block head %}
+<head>
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
 
@@ -281,7 +282,7 @@
                 <!--  Internship Cards  -->
                 {% for internship in internships %}
                     <div id="startup" class="card supcard"
-                        style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px;">
+                        style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
                         <div class="supcard_top" style="max-width:80% !important;">
                             <div class="startup_logo">
 
@@ -289,36 +290,37 @@
 
                             <div class="card-body">
                                 <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                                <h5 class="card-title" style="font-size: 25px;">{{internship.company_name}}</h5>
-                                <h5 class="card-title" style="color:#f50136">{{ internship.fields_of_work }}</h5>
+                                <h4 class="card-title" style="font-size: 28px;">{{internship.company_name}}</h4>
+                                <h5 class="card-title" style="color:#f50136; font-size: 20px; ">{{ internship.fields_of_work }}</h5>
                                 <hr>
                             </div>
                         </div>
-                        <div class="supcard_mid" style=" margin-bottom: 20px;margin-left: 20px;">
+                        <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px;">
                             <div class="location">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Location:</h5>
-                                <p class="card-text">{{ internship.location }}</p>
+                                <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
+                                <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
 
                             </div>
                             <div class="duration">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Duration:</h5>
+                                <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;" >Duration:</h5>
 
-                                <p class="card-text">{{ internship.duration }}</p>
+                                <p class="card-text" style=" font-size: 16px;">{{ internship.duration }}</p>
                             </div>
                             <div class="Start">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Stipend</h5>
+                                <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Stipend:</h5>
 
-                                <p class="card-text">{{ internship.stipend }}</p>
+                                <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
                             </div>
                             <div class="applyBy">
-                                <h5 class="card-title" style="margin-bottom: 10px;">Skills Required:</h5>
+                                <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:</h5>
 
-                                <p class="card-text">{{ internship.skills_required }}</p>
+                                <p class="card-text" style=" font-size: 16px;">{{ internship.skills_required }}</p>
                             </div>
                         </div>
+                        <hr>
                         <div class="card-footer " style="background-color:white;">
                             <div class=col-6></div>
-                            <div class="col-6 mdet" style=" right: 0px;">
+                            <div class="col-6 mdet" style="font-size: 20px !important;">
                                 <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
                                     View Details
                                 </a>
