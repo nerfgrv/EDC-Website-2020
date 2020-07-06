@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block head %}
+<style>
+    .nav-previous > a:hover, .nav-next > a:hover {
+        color: black;
+    }
+</style>
 {% endblock head %}
 
 {% block bodytag %}
@@ -20,11 +25,11 @@
     			<a href="" title="View all posts by Skywarrior" rel="author" style="color: #555;">{{ object.author }}</a>
             </span>
             <span class="pmeta-date" style="color: #555;"><i class="far fa-calendar"></i>{{ object.date_posted }}</span>
-            <span class="pmeta-comments">
+            <!-- <span class="pmeta-comments">
                 <a data-original-title="4 comments in this post" href="index.html#comments" data-toggle="tooltip" style="color: #555">
                     <i class="fas fa-comments"></i> 4 Comments
                 </a>
-            </span>
+            </span> -->
         </div>
     </div>
 </div>                                            
@@ -42,8 +47,8 @@
 
                 <div class="blog-post">
                     <div class="blog-content">
-                        <img src="{{ post.image.url }}" style="width: 100%; height: 70vh;"/>
-                        <p style="text-align: justify;"> {{ post.content }}</p>
+                        <img src="{{ post.blog_image.url }}" style="width: 100%; height: 70vh;"/>
+                        <p style="text-align: justify;"> {{ post.content_markdown }}</p>
                     </div><!-- /.blog-content -->
 
 
@@ -52,11 +57,11 @@
 
                 <div class="clear"></div>
 
-                <div class="author-wrapper">
-                    <img src="" width="100" height="100" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />					
+                <div class="author-wrapper" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                    <img src="{{ post.author_image.url }}" width="100" height="100" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />					
                     <div id="author-info">
-                        <h3> AUTHOR</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius nunc pharetra nisl viverra, ut cursus dolor ultrices. Nam interdum sit amet elit vitae efficitur. Maecenas non interdum dui, et rhoncus nibh.</p>
+                        <h3>{{ post.author }}</h3>
+                        <p>{{ post.author_markdown }}</p>
                         <!-- <a class="author-link" href="" >See all author posts </a> -->
                     </div>
                     <div class="clear"></div>
@@ -145,19 +150,25 @@
                     <h2 class="screen-reader-text">Post navigation</h2>
                     <div class="nav-links">
                         <div class="nav-previous">
-                            <a href="../../../01/04/congue-sit-amet/blog3.html" rel="prev">
+                            {% if post.get_prev_post %}
+                            <a href="{% url 'post-detail' post.get_prev_post.id %}" rel="prev" >
                                 <span class="screen-reader-text">Previous Post:</span>
                                 <span class="nav-title">
                                     <span class="nav-title-icon-wrapper"><i class="fas fa-arrow-left"></i></span> 
                                     Previous
                                 </span>
                             </a>
+                            {% endif %}
                         </div>
                         <div class="nav-next">
-                            <a href="../../../05/04/vix-at-eros-intellegat-sea-no-facer/blog2.html" rel="next">
+                            {% if post.get_next_post %}
+                            <a href="{% url 'post-detail' post.get_next_post.id %}" rel="next">
                                 <span class="screen-reader-text">Next Post:</span>
-                                <span class="nav-title"> Next<span class="nav-title-icon-wrapper"><i class="fas fa-arrow-right"></i></span></span>
+                                <span class="nav-title"> Next
+                                    <span class="nav-title-icon-wrapper"><i class="fas fa-arrow-right"></i></span>
+                                </span>
                             </a>
+                            {% endif %}
                         </div>
                     </div>
                 </nav>
