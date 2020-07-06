@@ -68,57 +68,72 @@
         .fa:hover {
             opacity: 0.7;
         }
-        .vc_row,.wpb_column,.wpb_row{
-            position:relative
+        .container {
+            margin: 0;
+            
         }
 
-        .wpb_column,.wpb_row{
-            position:relative
+        .counters .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
+            text-align: center;
+            margin: 0;
         }
 
-        .wpb_column>.wpb_wrapper .aio-icon-component{
-            margin-bottom:35px
+        @media (max-width: 700px) {
+            .counters .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counters .container > div:nth-of-type(1),
+            .counters .container > div:nth-of-type(2) {
+                border-bottom: 1px lightskyblue solid;
+                padding-bottom: 20px;
+            }
         }
 
-        .wpb_row .wpb_column .wpb_wrapper .stats-block{
-            display:block;
-            margin-bottom:35px
+        .main-content > .container{
+            z-index: 9;
         }
-        .wpb_column .wpb_wrapper .uavc-icons{
-            display:block;
-            margin-bottom:35px;
-            line-height:1
+
+        .container{
+            width:1500px;
+            position:relative;
+            margin:0 auto;
         }
+
+        .container:after {
+            clear: both;
+            display: block;
+            content: '';
+        }
+
+        body.boxed .container{
+            width: auto;
+        }
+
+        .fullwidth .container{
+            width:100%;
+        }
+
+        .page-title-wrap, .page-title-wrap .container{
+            moz-transform: translate3d(0px, 0px, 0px);;
+            transform: translate3d(0px, 0px, 0px); opacity: 1;
+        }
+
+        .page-title-wrap .container{
+            z-index: 11;
+        }
+
+        #custom__menu .container{
+            width:100%;
+        }
+
         .wpb_column .wpb_wrapper .smile-icon-timeline-wrap .timeline-wrapper .timeline-block {
             margin-bottom: 10px;
             border-color: rgba(0, 0, 0, 0.08) !important;
         }
-@media screen and (max-width: 600px){
-    .container{
-            width: 100%;
-    }
-    .vc_column_container>.vc_column-inner{
-        padding-left: 15px !important;
-        padding-right:15px !important;
-    }
-    body .blogs-style1.spcard.blogs-style2.blogs-featured.no_image .spheader {
-        width: auto;
-        position: relative;
-        min-height: 0px;
-        padding: 30px 20px 20px 10px;
-        margin-bottom: -20px;
-        z-index: 11;
-        top: 0px;
-        right: 0px;
-    }
-    .blogs-style1.spcard.blogs-style2.blogs-featured.no_image .spcategory{
-        float:left;
-    }
-    .spcard .spcard .spdata .spcontent{
-        padding:1.9em;
-    }
-}
-
 
     </style>
     
@@ -184,7 +199,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                             <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                 <b>Dr. Mandeep Singh</b></h1>
                                             <div class="wraper2">
-                                                <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                     <ul style="list-style-type:none">
                                                         <li><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                                                         </li>
@@ -224,7 +239,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                             <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                 <b>Dr. Karun Verma</b></h1>
                                             <div class="wraper2">
-                                                <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                     <ul style="list-style-type:none">
                                                         <li><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                                                         </li>
@@ -264,7 +279,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                             <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                 <b>Dr. Inderveer Chahna</b></h1>
                                             <div class="wraper2">
-                                                <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                     <ul style="list-style-type:none">
                                                         <li><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                                                         </li>
@@ -305,7 +320,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                             <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                 <b>Dr. Karminderjit Singh Ghuman</b></h1>
                                             <div class="wraper2">
-                                                <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                     <ul style="list-style-type:none">
                                                         <li><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                                                         </li>
@@ -337,6 +352,8 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                     </div>
                 </div>
                 
+            </div>
+
                 <div class="vc_row wpb_row vc_row-fluid vc_custom_1494691486743">
                     <div class="wpb_column vc_column_container vc_col-sm-3">
                         <div class="vc_column-inner">
@@ -359,12 +376,8 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                     </div>
                 </div>
 
-                <div class="wpb_column vc_column_container vc_col-sm-3">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-            </div>
+                <div class="wpb_column vc_column_container vc_col-sm-3"></div>
+
             <div class="vc_row wpb_row vc_row-fluid">
                 <div class="wpb_column vc_column_container vc_col-sm-6">
                     <div class="vc_column-inner vc_custom_1494691324074">
@@ -387,6 +400,9 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="wpb_column vc_column_container vc_col-sm-6">
                     <div class="vc_column-inner vc_custom_1494690362247">
                         <div class="wpb_wrapper">
@@ -401,14 +417,15 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                 </div>
             </div><!-- Row Backgrounds -->
 
+
+
             <div class="upb_color" data-bg-override="0" data-bg-color="#202329" data-fadeout="fadeout_row_value" data-fadeout-percentage="30" data-parallax-content="parallax_content_value" data-parallax-content-sense="50" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.0.5" data-is_old_vc="" data-theme-support="" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div>
             
 
 
-
-            <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1494694034819" style="max-width: 100%; position: relative; left: 15px; box-sizing: border-box; width: 1903px; padding-left: 0px; padding-right: 0px;">                
+            <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1494694034819" style="max-width: 100%; position: relative; left: 15px; box-sizing: border-box; width: 1903px; padding-left: 0px; padding-right: 0px;">  
                 <div class="wpb_column vc_column_container vc_col-sm-12">
-                    <div class="vc_column-inner">
+                    <div class="vc_column-inner" style="padding: 150px !important;">
                         <div class="wpb_wrapper">
                             <div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_fadeIn fadeIn">
                                 <div class="wpb_wrapper" style="width: 100% !important;">
@@ -431,10 +448,10 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="0" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
                                                 <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AnimeshBisen.jpg'%}" />
                                                     <div id="interactive-banner-wrap-8317" class="ult-new-ib-desc" style="">
-                                                        <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#000000; font-size: 20px">
+                                                        <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Animesh Bisen</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/animesh-bisen'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='abisen_be18@thapar.edu'"></i></li>
@@ -474,7 +491,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Anmol Jindal</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/anmol-jindal-10a219195'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:ajindal4_be18@thapar.edu'"></i></li>
@@ -514,7 +531,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Soumallya Dev</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/soumallya-dev'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:sdev_be18@thapar.edu'"></i></li>
@@ -547,12 +564,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="1.5" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AashimaTandon.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AashimaTandon.png'%}" />
                                                     <div id="interactive-banner-wrap-1088" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Aashima Tandon</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/aashima-tandon-437139171'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:atandon_be18@thapar.edu'"></i></li>
@@ -586,12 +603,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="0" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/MartandTewari.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/MartandTewari.png'%}" />
                                                     <div id="interactive-banner-wrap-8317" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Martand Tiwari</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/martand-tewari-a11ab6167/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:mtewari_be18@thapar.edu'"></i></li>
@@ -624,13 +641,13 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="0.5" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/DevanshPahuja.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/DevanshPahuja.png'%}" />
 
                                                     <div id="interactive-banner-wrap-1883" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Devansh Pahuja</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/devansh-pahuja-6a7565170/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:dpahuja_bemba18@thapar.edu'"></i></li>
@@ -663,13 +680,13 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="1" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/StutiJain.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/StutiJain.png'%}" />
                                                     <div id="interactive-banner-wrap-8901" class="ult-new-ib-desc" style="">
 
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Stuti Jain</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/stuti-jain-125a02156/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:sjain4_be18@thapar.edu'"></i></li>
@@ -703,12 +720,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="1.5" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AtishayJain.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AtishayJain.png'%}" />
                                                     <div id="interactive-banner-wrap-1088" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Atishay Jain</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/atishay-jain-39740016a'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:ajain8_be18@thapar.edu'"></i></li>
@@ -741,12 +758,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="0" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/KajalGoel.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/KajalGoel.png'%}" />
                                                     <div id="interactive-banner-wrap-8317" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Kajal Goel</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/goel-kajal/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:kgoel_be18@thapar.edu'"></i></li>
@@ -779,12 +796,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="0.5" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/ChetanBansal.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/ChetanBansal.png'%}" />
                                                     <div id="interactive-banner-wrap-1883" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Chetan Bansal</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/chetan-bansal-808221192/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:cbansal_be18@thapar.edu'"></i></li>
@@ -822,7 +839,7 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Himanshu Tomer</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/himanshu-tomer-48b22916b/'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:htomer_be18@thapar.edu'"></i></li>
@@ -855,12 +872,12 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInDown" data-animation-delay="1.5" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
-                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AbhishekSheoran.jpg'%}" />
+                                                <div class="ult-new-ib ult-ib-effect-style15  ult-ib-resp  " data-min-width="768" data-max-width="900" style="background:#ff3e58;" data-opacity="1" data-hover-opacity="0.5"><img class="ult-new-ib-img" style="opacity:1;" alt="null" src="{%static 'home/images/ImagesAboutPage/AbhishekSheoran.png'%}" />
                                                     <div id="interactive-banner-wrap-1088" class="ult-new-ib-desc" style="">
                                                         <h1 class="ult-new-ib-title ult-responsive" data-ultimate-target='#interactive-banner-wrap-8901 .ult-new-ib-title' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-weight:normal;color:#ffffff; font-size: 20px">
                                                             <b>Abhishek Sheoran</b></h1>
                                                         <div class="wraper2">
-                                                            <div class="media" style="font-size: 24px; margin-left: 180px;">
+                                                            <div class="media" style="font-size: 24px; margin-left: 220px;">
                                                                 <ul style="list-style-type:none">
                                                                     <li><i class="fa fa-linkedin fa-2x" aria-hidden="true" onclick="location='https://www.linkedin.com/in/abhishek-sheoran-248189175'"></i></li>
                                                                     <li><i class="fa fa-envelope fa-2x" aria-hidden="true" onclick="location='mailto:aabhishek_be18@thapar.edu'"></i></li>
@@ -894,11 +911,10 @@ class="page-template-default page page-id-1064 woocommerce-no-js has-fixed-heade
                     </div>
                 </div>
             </div>
-            <div class="uvc-heading-spacer line_only" style="margin-top:20px;margin-bottom:35px;height:2px;">
-                <span class="uvc-headings-line" style="border-style:solid;border-bottom-width:2px;border-color:#ff3e58;width:70px;"></span>
-            </div>
-        </div>
 
+            <div class="vc_row-full-width vc_clearfix"></div>
+         </div>
+ 
 <a id="back-to-top" title="Back to top"><i class="fas fa-angle-double-up" aria-hidden="true"></i></a>
 </div> <!-- wrapper -->
 <script type="text/javascript">
