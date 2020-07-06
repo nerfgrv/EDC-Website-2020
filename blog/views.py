@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.generic import DetailView, CreateView , UpdateView ,DeleteView
 from django.urls import reverse
 from .models import Post
-# from django.contrib.auth.decorators import user_passes_test
 
 def home(request):
     context = {
@@ -13,7 +12,6 @@ def home(request):
 class PostDetailView(DetailView):
     model = Post
 
-# @user_passes_test(lambda u: u.is_superuser)
 class PostCreateView(CreateView):
     model = Post
     fields=['title','content','blog_image','author','about_the_author','author_image']
@@ -21,7 +19,6 @@ class PostCreateView(CreateView):
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.id})
 
-# @user_passes_test(lambda u: u.is_superuser)
 class PostUpdateView(UpdateView):
     model = Post
     fields=['title','content','blog_image','author','about_the_author','author_image']
@@ -29,7 +26,6 @@ class PostUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.id})
 
-# @user_passes_test(lambda u: u.is_superuser)
 class PostDeleteView(DeleteView):
     model = Post
 
