@@ -1101,43 +1101,43 @@ vc_responsive" {% endblock bodytag %}
 
 
 </div> <!-- content -->
-<div class="row main_body">
+<div class="row main_body" style="display: flex;">
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
 
-        <div class="card supcard" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
+        <div class="card supcard" style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
             <div class="supcard_top">
                 <div class="startup_logo">
 
                 </div>
                 <div class="card-body">
                     <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                    <h5 class="card-title" style="font-size: 25px;">{{object.company_name}}</h5>
-                    <h5 class="card-title" style="color:#f50136">{{object.fields_of_work}}
+                    <h4 class="card-title" style="font-size: 25px;">{{object.company_name}}</h4>
+                    <h5 class="card-title" style="color:#f50136; font-size:18px">{{object.fields_of_work}}
                     </h5>
-                    <hr>
                 </div>
             </div>
+            <hr>
             <div class="supcard_mid" style="margin-bottom: 20px;margin-left: 20px;">
                 <div class="location">
-                    <h5 class="card-title" style="margin-bottom: 10px;">Location:</h5>
+                    <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">Location:</h5>
 
-                    <p class="card-text">{{object.location}}</p>
+                    <p class="card-text" style=" font-size: 16px;">{{object.location}}</p>
                 </div>
                 <div class="duration">
-                    <h5 class="card-title" style="margin-bottom: 10px;">Duration:</h5>
+                    <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">Duration:</h5>
 
-                    <p class="card-text">{{object.duration}}</p>
+                    <p class="card-text" style=" font-size: 16px;">{{object.duration}}</p>
                 </div>
                 <div class="Start">
-                    <h5 class="card-title" style="margin-bottom: 10px;">Stipend</h5>
+                    <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">Stipend</h5>
 
-                    <p class="card-text">{{object.stipend}}</p>
+                    <p class="card-text" style=" font-size: 16px;">{{object.stipend}}</p>
                 </div>
                 <div class="applyBy">
-                    <h5 class="card-title" style="margin-bottom: 10px;">No. of Internships:</h5>
+                    <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">No. of Internships:</h5>
 
-                    <p class="card-text">{{object.no_of_internships}}</p>
+                    <p class="card-text" style=" font-size: 16px;">{{object.no_of_internships}}</p>
                 </div>
             </div>
 
@@ -1156,16 +1156,16 @@ vc_responsive" {% endblock bodytag %}
                     <a href="#">Next ></a>
                 </div>
             </div> -->
-        <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; ">
+        <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; padding: 1% 2% 1% 2%;">
             <div class="card-body">
-                <h5 class="card-title" style="margin-bottom: 10px;">About the Internship</h5>
-                <p class="card-text" style="margin-bottom: 35px;">{{object.about}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px; ">Skills Required:</h5> <p class="card-text"
-                        style="margin-bottom: 35px;">{{object.skills_required}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px;">Who can Apply:</h5>
-                <p class="card-text" style="margin-bottom: 35px;">{{object.who_can_apply}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px;">Perks:</h5>
-                <p class="card-text" style="margin-bottom: 35px;">{{object.perks}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> <p class="card-text"
+                        style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who can Apply:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_can_apply}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Perks:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.perks}}</p>
 
 
                 <a href="/login/" class="btn btn-rounded btn-lg btn-danger"
