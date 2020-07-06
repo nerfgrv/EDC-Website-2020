@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import InternshipForm, VenCapForm
-from .models import Internship
+from .models import Internship, VentureCapitalist
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
@@ -62,8 +62,11 @@ class InternshipDeleteView(DeleteView):
 #########################################################################
 
 
-def VentureCapitalist(request):
-    return render(request, 'internshipPortal/VentureCapitalist.html', {})
+def VenCapitalist(request):
+    context = {
+        'venture': VentureCapitalist.objects.all()
+    }
+    return render(request, 'internshipPortal/VentureCapitalist.html', context)
 
 
 def VenCapCreateView(request):
