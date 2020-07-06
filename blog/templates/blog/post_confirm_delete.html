@@ -33,13 +33,10 @@
         <div class="content-section" width=100>
             <form method="POST">
                 {% csrf_token %}
-                <fieldset class="form-group">
-                    
-                </fieldset>
-                <div class="form-group" width=100 ; style="font-size: 40px color=black">
-                    <h2> Are you sure you want to delete "{{ object.title}}" </h2>
-                    <button class="btn btn-outline-danger" type="submit" style="font-size: 21px; color: black; text-align: center;"">Yes, Delete</button>
-                    <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}" style="font-size: 21px; color: black; text-align: center;"">Cancel</a>
+                <div class="form-group" width=100 ; style="font-size: 40px color:black; text-align: center; margin-bottom: 100px; margin-top: 100px;">
+                    <h2> Are you sure you want to delete "{{ object.title}}" ?</h2>
+                    <button class="btn btn-outline-danger" type="submit" style="margin-right: 20px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;">Yes, Delete</button>
+                    <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}" style="border-radius: 10px; padding: 10px 90px; margin-top: 20px; border: solid 1px #000; font-size: 21px; color: black; text-align: center;"">Cancel</a>
                 </div>
             </form>
         </div>

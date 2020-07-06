@@ -30,13 +30,13 @@
                                                     
     <div class="main-content"  style="margin-top: 30px; margin-bottom: 30px; align-items: center; margin-right: auto; margin-left: auto; max-width: 70%; font-size: large;">
         <div class="content-section">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group" style=" width: 1000px max-width: 70%; font-size: large;" >
-                    <button class="btn btn-outline-info" type="submit" >Post</button>
+                    <button class="btn btn-outline-info" type="submit" style="border-radius: 10px; padding: 10px 100px; margin-top: 25px;">Post</button>
                 </div>
             </form>
         </div>
