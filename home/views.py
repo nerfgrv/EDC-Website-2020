@@ -8,4 +8,4 @@ def home(request):
 	return render(request,'home/index.html')
 
 def team(request):
-	return render(request,'home/aboutUs.html')
+	return render(request,'home/aboutUs-copy.html')
