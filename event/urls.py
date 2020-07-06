@@ -6,6 +6,6 @@ urlpatterns = [
     path('e-summit/',views.esummit,name='esummit'),
     path('venture-lab/',views.vl,name='vl'),
     path('startup-weekend/',views.starteco,name='startupweekend'),
-    path('e-talks/1/',views.etalk,name='etalks'),
-    path('e-talks/2/',views.etalk2,name='etalks2'),
+    path('e-talks/',views.etalk,name='etalks'),
+    path('e-talks2/',views.etalk2,name='etalks2'),
 ]
