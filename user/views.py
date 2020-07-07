@@ -96,7 +96,7 @@ def profileupdate(request):
 
     
 def startupprofile(request):
-    return render(request, 'user/profile-startup.html')
+    return render(request, 'user/startup_profile.html')
 
 def studentprofile(request):
-    return render(request, 'user/profile-student.html')
+    return render(request, 'user/student_profile.html')
