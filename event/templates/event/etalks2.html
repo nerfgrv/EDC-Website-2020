@@ -52,13 +52,13 @@
             padding-bottom:0px;
         }
         .blog .container .col-12 .spcard, .blog .container .col-12 .grid-sizer{
-            width:33.33%;
+            width:80%;
             min-width:auto;
         }
         @media screen and (min-width: 1300px){
 
             .blog .container .col-12 .spcard, .blog .container .col-12 .grid-sizer{
-                width:33.33%;
+                width:80%;
                 min-width:auto;
             }
             .blog .container .col-12 .blogs-featured.spcard {
@@ -118,13 +118,9 @@
 		<div class="row">
 
 			
-			<div class="blog_item_wrapper effect-5  col-12 ">
+			<div class="blog_item_wrapper effect-5  col-12 " style="display:flex; flex-direction: column; align-items: center;">
 				<div class="grid-sizer"></div>
-				        <div id="post-142" class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d">
-<!-- 	<a href="../../../2013/05/04/eget-ultrice-mauris-rhoncus-non/index.html" class="spvideolink"><i class="fas fa-play" aria-hidden="true"></i></a>
-	<a href="../../../2013/05/04/eget-ultrice-mauris-rhoncus-non/index.html" class="spaudiolink"><i class="fas fa-microphone" aria-hidden="true"></i></a>
- -->
-        <div class="spwrapper cat_color__background_color" >
+				        <div id="post-142" class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d">        <div class="spwrapper cat_color__background_color" >
 
         <div class="spbgimg blog-roll-i post1038" style=" background: url({% static 'event/images/etalk/e5.jpeg' %}); background-position: center; background-size: cover;" >
                     </div>
@@ -134,17 +130,18 @@
     <div class="spdata">
         <div class="spcontent">
             <span class="spauthor">
-                <a href="../author/admin/index.html">
+                <a href="">
                     
             </span>
 
             <div class="spdate">
-                <i class="far fa-clock" aria-hidden="true"></i> June 02, 2020           </div>
+                <i class="far fa-clock" aria-hidden="true"></i> June 02, 2020           
+            </div>
 
             <h1 class="sptitle">
                 <a rel="bookmark" style="font-weight: bold;">ETALKS 05</a>
             </h1>
-                <p class="sptext"><B> VIKRAM SHETTY </B>,on impact of covid 19 on industries and opportunities present post covid.</p>
+                <p class="sptext"><B> VIKRAM SHETTY </B>discusses the impact of covid 19 on industries and opportunities present post covid.</p>
 
         
         </div>
@@ -165,7 +162,7 @@
     <div class="spdata">
         <div class="spcontent">
             <span class="spauthor">
-                <a href="../author/admin/index.html">
+                <a href="">
                     
             </span>
 
@@ -175,7 +172,7 @@
             <h1 class="sptitle">
                 <a rel="bookmark" style="font-weight: bold;">ETALKS 04</a>
             </h1>
-                        <p class="sptext"><B> Saurabh Trivedi</B> on importance of strategic planning for startups</p>
+                        <p class="sptext"><B> Saurabh Trivedi</B> guides young entrepreneurs on importance of strategic planning for startups.</p>
 
             
         </div>
@@ -197,7 +194,7 @@
     <div class="spdata">
         <div class="spcontent">
             <span class="spauthor">
-                <a href="../author/admin/index.html">
+                <a href="">
                 
             </span>
 
@@ -230,7 +227,7 @@
 	<div class="spdata">
 		<div class="spcontent">
 			<span class="spauthor">
-				<a href="../../../author/admin/index.html">
+				<a href="">
 					
 			</span>
 
@@ -240,7 +237,7 @@
 			<h1 class="sptitle">
 				<a rel="bookmark" style="font-weight: bold;">ETALKS 02</a>
 			</h1>
-            			<p class="sptext"><B> ASHWINI BAJAJ</B> guides us through how to invest on yourself and startup culture in India</p>
+            			<p class="sptext"><B> ASHWINI BAJAJ</B> takes us down the road of how to invest on yourself and startup culture in India.</p>
 
 			
 		</div>
@@ -264,7 +261,7 @@
 	<div class="spdata">
 		<div class="spcontent">
 			<span class="spauthor">
-				<a href="../../../author/admin/index.html">
+				<a href="">
 					
 			</span>
 
@@ -274,7 +271,7 @@
 			<h1 class="sptitle">
 				<a rel="bookmark" style="font-weight: bold;">ETALKS 01</a>
 			</h1>
-            			<p class="sptext"><B>SANCHIT GOYAL</B> on Employment under recession and startup culture in India</p>
+            			<p class="sptext"><B>SANCHIT GOYAL</B>presents his views on Employment under recession and startup culture in India</p>
 
 			
 		</div>
@@ -283,8 +280,7 @@
 		<i class="fas fa-quote-left" aria-hidden="true"></i>
 
 	</div>
-</div>									
-		<div class="pagination">
+        <div class="pagination">
             <ul>
                 <li>
                     <a class='page-selector' href="{% url 'etalks' %}">
@@ -297,13 +293,15 @@
                     </a>
                 </li>
                 <li class='active'>
-                    <a href='index.html'>
+                    <a href=''>
                         2
                     </a>
                 </li>
             </ul>
-        </div>				
+        </div>              
         <div class="clear"></div>
+</div>									
+
 
 			</div><!-- /.span8 -->
 
