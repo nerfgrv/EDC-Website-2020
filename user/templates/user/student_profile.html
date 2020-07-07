@@ -49,51 +49,42 @@ vc_responsive" {% endblock bodytag %}
 
 
 <div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%;">
-    <h1 style="font-weight: bold; margin-bottom: 1%;">Baby Yoda</h1>
+    <h1 style="font-weight: bold; margin-bottom: 1%;">{{object.user}}</h1>
     <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 30%; margin-top: 2%; margin-bottom: 4%;">
 
     <input style="font-size: medium; margin-bottom: 2%;" type="submit" value="Update Profile" />
 
     <div style="text-align: left !important;">
         <h2 style="font-weight: bold; margin-bottom: 1%;">Bio</h2>
-        <p style="font-size: large; font-weight: 120;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            nec
-            mauris non ante tempus feugiat. Vivamus
-            lobortis volutpat odio eget aliquam. Fusce consectetur ut dolor id sodales. Vivamus metus sem, blandit at
-            odio
-            non, varius egestas justo. Vestibulum tellus sapien, bibendum sed condimentum vel, volutpat eget elit.
-            Mauris
-            ultrices risus quis nibh tincidunt, vitae vestibulum eros pellentesque. Nam auctor placerat tincidunt.
-            Interdum et
-            malesuada fames ac ante ipsum primis in faucibus.</p>
+        <p style="font-size: large; font-weight: 120;">{{object.bio}}</p>
 
         <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
 
 
         <h2 style="font-weight: bold; margin-bottom: 1%;">College</h2>
-        <p style="font-size: large; font-weight: 120;">Thapar University</p>
+        <p style="font-size: large; font-weight: 120;">{{object.college}}</p>
 
         <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
 
         <h2 style="font-weight: bold; margin-bottom: 1%;">City</h2>
-        <p style="font-size: large; font-weight: 120;">Patiala</p>
+        <p style="font-size: large; font-weight: 120;">{{object.city}}</p>
 
         <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
 
         <h2 style="font-weight: bold; margin-bottom: 1%;">Contact</h2>
         <p style="font-size: large; font-weight: 120; ">Email: <a style="color: #888888; text-decoration: underline"
-                href="mailto:tanya.sood.311@gmail.com">tanya.sood.311@gmail.com</a></p>
+                href="mailto:tanya.sood.311@gmail.com">{{object.email}}</a></p>
 
         <p style="font-size: large; font-weight: 120; ">Phone No.: <a style="color: #888888; text-decoration: underline"
-                href="tell:+91-8368478682">+91 8368478682</a></p>
+                href="tell:+91-8368478682">{{object.contact}}</a></p>
 
         <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
 
 
 
         <h2 style="font-weight: bold; margin-bottom: 1%;">Resume</h2>
-        <a href="#"
-            style="font-size: large; font-weight: 120; color: #888888; text-decoration: underline">www.google.com
+        <a href="{{object.resume}}"
+            style="font-size: large; font-weight: 120; color: #888888; text-decoration: underline">{{object.resume}}
         </a>
 
         <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">

@@ -98,4 +98,7 @@ def startupprofile(request):
     return render(request, 'user/startup_profile.html')
 
 def studentprofile(request):
-    return render(request, 'user/student_profile.html')
+    context = {
+        'studentprofile': StudentProfile.objects.all()
+    }
+    return render(request, 'user/student_profile.html', context)
