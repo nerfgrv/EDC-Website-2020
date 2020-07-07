@@ -97,7 +97,7 @@ def profileupdate(request):
     
 def startupprofile(request):
     context = {
-        'studentprofile': StartupProfile.objects.all()
+        'startupprofile': StartupProfile.objects.all()
     }
     return render(request, 'user/startup_profile.html', context)
 
