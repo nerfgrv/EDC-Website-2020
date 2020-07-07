@@ -1,0 +1,100 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block head%}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+
+
+  .profile-pic {
+    border-radius: 50%;
+    width: 200px !important;
+    height: 200px !important;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+
+
+  button:hover,
+  a:hover {
+    opacity: 0.7;
+  }
+</style>
+
+
+{% endblock head%}
+
+{% block bodytag %}
+
+class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
+vc_responsive" {% endblock bodytag %}
+
+
+
+{% block body %}
+
+
+
+<div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%;">
+  <img class="profile-pic" src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="John">
+  <h1 style="font-weight: bold; margin-bottom: 1%;">Baby Yoda</h1>
+  <h2 class="title">CEO & Founder, The Empire Strikes Back</h2>
+  <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 30%; margin-top: 2%; margin-bottom: 4%;">
+ 
+  <input style="font-size: medium; margin-bottom: 2%;" type="submit" value="Update Profile" />
+  
+  <div style="text-align: left !important;">
+    <h2 style="font-weight: bold; margin-bottom: 1%;">About</h2>
+    <p style="font-size: large; font-weight: 120;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
+      mauris non ante tempus feugiat. Vivamus
+      lobortis volutpat odio eget aliquam. Fusce consectetur ut dolor id sodales. Vivamus metus sem, blandit at odio
+      non, varius egestas justo. Vestibulum tellus sapien, bibendum sed condimentum vel, volutpat eget elit. Mauris
+      ultrices risus quis nibh tincidunt, vitae vestibulum eros pellentesque. Nam auctor placerat tincidunt. Interdum et
+      malesuada fames ac ante ipsum primis in faucibus.</p>
+
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+
+
+    <h2 style="font-weight: bold; margin-bottom: 1%;">Fields of Work</h2>
+    <p style="font-size: large; font-weight: 120;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
+      mauris non ante tempus feugiat. Vivamus lobortis volutpat odio eget aliquam. </p>
+
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+
+    <h2 style="font-weight: bold; margin-bottom: 1%;">Website</h2>
+    <a href="#" style="font-size: large; font-weight: 120; color: #888888; text-decoration: underline">www.google.com
+    </a>
+
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+
+    <h2 style="font-weight: bold; margin-bottom: 1%;">City</h2>
+    <p style="font-size: large; font-weight: 120;">Patiala</p>
+
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+
+    <h2 style="font-weight: bold; margin-bottom: 1%;">Contact</h2>
+    <p style="font-size: large; font-weight: 120; ">Email: <a style="color: #888888; text-decoration: underline"
+        href="mailto:tanya.sood.311@gmail.com">tanya.sood.311@gmail.com</a></p>
+
+    <p style="font-size: large; font-weight: 120; ">Phone No.: <a style="color: #888888; text-decoration: underline"
+        href="tell:+91-8368478682">+91 8368478682</a></p>
+
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+  </div>
+
+</div>
+
+{% endblock body%}
