@@ -12,3 +12,6 @@ def team1(request):
 
 def team(request):
 	return render(request,'home/aboutUs.html')
+
+def team2(request):
+	return render(request,'home/aboutUs1.html')
