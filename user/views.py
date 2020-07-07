@@ -96,7 +96,10 @@ def profileupdate(request):
 
     
 def startupprofile(request):
-    return render(request, 'user/startup_profile.html')
+    context = {
+        'studentprofile': StartupProfile.objects.all()
+    }
+    return render(request, 'user/startup_profile.html', context)
 
 def studentprofile(request):
     context = {
