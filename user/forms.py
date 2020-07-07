@@ -11,45 +11,43 @@ class StudentRegisterForm(UserCreationForm):
 	city 	= forms.CharField(max_length=40)
 	college = forms.CharField(max_length=50)
 	resume 	= forms.URLField(max_length=254)
+	name 	= forms.CharField(max_length=60)
 	contact = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': ('')}), label=("Phone number"), required=False) 
 	
 	class Meta(UserCreationForm.Meta):
 		model 	= User
-		fields 	= ['username', 'email', 'contact', 'college', 'city', 'bio', 'resume',  'password1', 'password2']
+		fields 	= ['name', 'email', 'contact', 'college', 'city', 'bio', 'resume',  'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):
 		email = self.cleaned_data.get('email')
-		username = self.cleaned_data.get('username')
-		
-		if User.objects.filter(username=username).exists():
-			raise forms.ValidationError("Account with this username already exists")
+
 		if User.objects.filter(email=email).exists():
 			raise forms.ValidationError("Account with this email already exists")
 		return self.cleaned_data
 
 
 class StartupRegisterForm(UserCreationForm):
-    startupname = forms.CharField(max_length=40)
+    startup_name = forms.CharField(max_length=40)
     email = forms.EmailField()
+    founders = forms.CharField(max_length=150)
     about = forms.CharField(max_length=500, widget=forms.TextInput({}), required=False)
     city = forms.CharField(max_length=40)
-    fieldofwork = forms.CharField(max_length=50)
+    field_of_work = forms.CharField(max_length=50)
     website = forms.URLField(max_length=254)
-    image = forms.ImageField()
+    startup_logo = forms.ImageField()
     contact = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': ('')}), label=("Phone number"), required=False)
 	
     class Meta():	
         model = User
-        fields = ['startupname', 'username', 'email', 'contact', 'about',  'city', 'fieldofwork', 'website', 'image', 'password1','password2']
+        fields = ['startup_name', 'email', 'contact', 'about', 'founders', 'city', 'field_of_work', 'website', 'startup_logo', 'password1','password2']
 
     @transaction.atomic
     def clean(self):
         email = self.cleaned_data.get('email')
-        username = self.cleaned_data.get('username')
-		
-        if User.objects.filter(username=username).exists():
-            raise forms.ValidationError("Account with this username already exists")
+        print("$$$$$$$$$$$$$$$$$$")
+        print(self.cleaned_data)
+        print("$$$$$$$$$$")
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Account with this email already exists")
         return self.cleaned_data
@@ -58,9 +56,9 @@ class StartupRegisterForm(UserCreationForm):
 class StudentUpdateForm(forms.ModelForm):
 	class Meta:
 		model = StudentProfile
-		fields = ['bio', 'city', 'college', 'resume', 'email', 'contact']
+		fields = ['bio', 'city', 'college', 'resume', 'contact']
 
 class StartupUpdateForm(forms.ModelForm):
 	class Meta:
 		model = StartupProfile
-		fields = ['startupname', 'about', 'founder', 'city', 'fieldofwork', 'website', 'email', 'contact', 'image']
+		fields = ['startup_name', 'about', 'founder', 'city', 'field_of_work', 'website', 'contact', 'image']
