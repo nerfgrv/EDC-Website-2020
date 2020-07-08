@@ -21,10 +21,11 @@
 
   .profile-pic {
     border-radius: 50%;
-    width: 200px !important;
-    height: 200px !important;
+    width: 120px !important;
+    height: 120px !important;
     margin-top: 2%;
     margin-bottom: 1%;
+    border: solid 1px rgba(0, 0, 0, 0.08);
   }
 
 
@@ -49,9 +50,9 @@ vc_responsive" {% endblock bodytag %}
 
 
 <div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%;">
-  <img class="profile-pic" src="{{object.image}}" alt="Profile Picture">
+  <img class="profile-pic" src="{{object.image.url}}" alt="{{object.startup_name}}">
   <h1 style="font-weight: bold; margin-bottom: 1%;">{{object.founder}}</h1>
-  <h2 class="title">Founder, {{object.startup_name}}</h2>
+  <h2 class="title">Founder: {{object.startup_name}}</h2>
   <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 30%; margin-top: 2%; margin-bottom: 4%;">
  
   <input style="font-size: medium; margin-bottom: 2%;" type="submit" value="Update Profile" />
