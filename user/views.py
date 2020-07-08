@@ -94,15 +94,21 @@ def profileupdate(request):
     return render(request, 'user/profile-update.html', context)
 
 
-    
-def startupprofile(request):
-    context = {
-        'startupprofile': StartupProfile.objects.all()
-    }
-    return render(request, 'user/startup_profile.html', context)
+@login_required   
+def profile(request):
+    if request.user.is_student:
+        context = {
+            'object': request.user.student_profile,
+        }
 
-def studentprofile(request):
-    context = {
-        'studentprofile': StudentProfile.objects.all()
-    }
-    return render(request, 'user/student_profile.html', context)
+        return render(request, 'user/startup_profile.html', context)
+    
+    elif request.user.is_startup:
+        context = {
+            'object': request.user.startup_profile,
+        }
+
+        return render(request, 'user/startup_profile.html', context)
+
+    else:
+        return redirect('home')
