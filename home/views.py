@@ -15,3 +15,4 @@ def team(request):
 
 def team2(request):
 	return render(request,'home/aboutUs1.html')
+
