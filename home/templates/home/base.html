@@ -1096,7 +1096,7 @@
         <footer>
             <div class="main_footer footer_fourcolumns">
                 <div class="">
-                    <div class="footer_column">
+                    <div class="footer_column" style="margin-left: 50px">
                         <div class="fc_inner">
                             <div>
                                 <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px">
@@ -1120,18 +1120,18 @@
                             <ul style="padding: 0%;" type="none">
                                 <br>
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'esummit' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Summit</p>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'vl' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Venture Lab</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'startupweekend' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Start-Up Weekend</p>
                                     </a>
                                 </li>
@@ -1146,8 +1146,8 @@
                             <ul style="padding: 0%;" type="none">
                                 <br>
                                 <li>
-                                    <a href="#">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Students</p>
+                                    <a href="{% url 'ecosystem-home' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">About</p>
                                     </a>
                                 </li>
 
@@ -1157,14 +1157,24 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Start-Up Weekend</p>
+                                    <a href="{% url 'venture-capitalist' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Venture Capitalists</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'investors' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Investors</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'internships' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Internships</p>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="footer_column">
+                    <div class="footer_column" style="margin-right: 50px">
                         <div class="fc_inner">
                             <div style="padding-bottom:1%;">
                                 <div class="textwidget">
@@ -1232,7 +1242,7 @@
                 <div class="">
                     <div class="fb_text" style="color: grey !important;">
                         <img src="{% static 'home/images/copyright.png' %}" height="15px" width="15px">
-                        <span style="font-size: 15px"> 2020-21 All Rights Reserved. Designed by <a href=""> EDC-TIET</a></span>
+                        <span style="font-size: 15px"> 2020-21 All Rights Reserved. Designed by <a href="{% url 'home' %}"> EDC-TIET</a></span>
                     </div>
                     <div class="fb_social">
                     </div>
