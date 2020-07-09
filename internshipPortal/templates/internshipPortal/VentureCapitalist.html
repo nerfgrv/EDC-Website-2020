@@ -2,15 +2,33 @@
 {% load static %}
 
 
-<!-- end Custom menu link HEADER -->
+{% block head %}
+<style>
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+        padding: 30%;
+    }
 
-
-
-<!-- page -->
-
-<!-- post -->
-
-<!-- portfolio -->
+    #formContent {
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
+        background: #fff;
+        padding: 30px;
+        width: 90%;
+        max-width: 450px;
+        position: relative;
+        padding: 0px;
+        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+</style>
+{% endblock head %}
 
 
 <!-- page -->
@@ -98,6 +116,8 @@ vc_responsive" {% endblock bodytag %}
             style="background-repeat: no-repeat;"></div>
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
 
+
+            {% if venture %}
             {% for vencap in venture %}
             <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
                 <div class="vc_column-inner vc_custom_1494625737076">
@@ -147,6 +167,14 @@ vc_responsive" {% endblock bodytag %}
                 </div>
             </div>
             {% endfor %}
+
+            {% else %}
+            <div class="wrapper" >
+                <div id="formContent">
+                    <h1>Venture Capitalists Coming Soon...</h1>
+                </div>
+            </div>
+            {% endif %}
 
         </div>
     </div>
