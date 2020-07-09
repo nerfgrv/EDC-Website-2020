@@ -101,7 +101,7 @@ def profile(request):
             'object': request.user.student_profile,
         }
 
-        return render(request, 'user/startup_profile.html', context)
+        return render(request, 'user/student_profile.html', context)
     
     elif request.user.is_startup:
         context = {

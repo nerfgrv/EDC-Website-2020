@@ -137,15 +137,19 @@
       }
   </style>
     <style>
-      body{
-        background-image: url({% static 'home/images/signup.jpg' %}) !important;
-        background-size: cover !important;
+      .body-bg{
+        background-image: url({% static 'home/images/al-ghazali-Uyxkm0HJ93E-unsplash.jpg' %}) !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 7em 0px;
       }
       .main {
         background-color: #FFFFFF;
         width: 800px;
         height: 1350px;
-        margin: 7em auto;
+        margin: 0em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
@@ -219,17 +223,19 @@
 {% endblock bodytag %}
 {% block body %}
 
-<div class="main">
-  <p class="sign" style="padding-top: 70px;" align="center">Sign Up as a Student</p>
-  <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
-    <form class="form1" id="login-form" method="post" action="">
-      {% csrf_token %} 
-      <fieldset class="form-group">
-        <legend class="border-bottom mb-6 " style="font-size: 25px;color:red; padding-bottom: 20px;"></legend>
-        </fieldset>
-      {{ form|crispy}}
-      <input style="background-color: #8C55AA" type="submit" value="Sign up" class="btn btn-primary pull-right" />
-    </form>
+<div class="body-bg">
+  <div class="main">
+    <p class="sign" style="padding-top: 70px;" align="center">Sign Up as a Student</p>
+    <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
+      <form class="form1" id="login-form" method="post" action="">
+        {% csrf_token %} 
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-6 " style="font-size: 25px;color:red; padding-bottom: 20px;"></legend>
+          </fieldset>
+        {{ form|crispy}}
+        <input style="background-color: #8C55AA" type="submit" value="Sign up" class="btn btn-primary pull-right" />
+      </form>
+    </div>
   </div>
 </div>
 {% endblock body %}
