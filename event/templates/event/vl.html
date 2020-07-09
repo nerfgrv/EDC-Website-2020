@@ -55,6 +55,10 @@
             margin-top: 0px !important;
         }
 
+        .port-links h4:hover {
+            color: #000;
+        } 
+
     </style>
     
     <noscript>
@@ -117,30 +121,36 @@ class="portfolio-template-default single single-portfolio postid-1432 woocommerc
                             <div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown vc_custom_1523379172385" style="padding-left: 20px!important; padding: right 20px!important;">
                             <div id="gallery_content_5ec7feb89ba8e">
                                 <ul id="gallery_content_center_5ec7feb89ba91" class="image-gallery-wrap effect-steve-img effect_1  gc-two-rows">
-                                    <li class="grid_element gallery-post">
+                                    <li class="grid_element gallery-post" style="margin: 5px 5px 5px -5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/1.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/1.jpg'%}"></figure>
-                                        </a></li>
-                                    <li class="grid_element gallery-post">
+                                            <figure class=""><img  alt="gallery-post" src="{%static 'event/images/vl/1.jpg'%}"></figure>
+                                        </a>
+                                    </li>
+                                    <li class="grid_element gallery-post" style="margin: 5px -5px 5px 5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/2.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/2.jpg'%}"></figure>
-                                        </a></li>
-                                    <li class="grid_element gallery-post">
+                                            <figure class=""><img alt="gallery-post" src="{%static 'event/images/vl/2.jpg'%}"></figure>
+                                        </a>
+                                    </li>
+                                    <li class="grid_element gallery-post" style="margin: 5px 5px 5px -5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/3.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/3.jpg'%}" /></figure>
-                                        </a></li>
-                                    <li class="grid_element gallery-post">
+                                            <figure class=""><img alt="gallery-post" src="{%static 'event/images/vl/3.jpg'%}" /></figure>
+                                        </a>
+                                    </li>
+                                    <li class="grid_element gallery-post" style="margin: 5px -5px 5px 5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/4.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/4.jpg'%}" /></figure>
-                                        </a></li>
-                                    <li class="grid_element gallery-post">
+                                            <figure class=""><img alt="gallery-post" src="{%static 'event/images/vl/4.jpg'%}" /></figure>
+                                        </a>
+                                    </li>
+                                    <li class="grid_element gallery-post" style="margin: 5px 5px 5px -5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/5.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/5.jpg'%}" /></figure>
-                                        </a></li>
-                                    <li class="grid_element gallery-post">
+                                            <figure class=""><img alt="gallery-post" src="{%static 'event/images/vl/5.jpg'%}" /></figure>
+                                        </a>
+                                    </li>
+                                    <li class="grid_element gallery-post" style="margin: 5px -5px 5px 5px;">
                                         <a data-rel=&quot;prettyPhoto[rel-1432-112476794]&quot; class="prettyphoto " href="{%static 'event/images/vl/6.jpg'%}">
-                                            <figure class=""><img style="padding-right: 10px;" alt="gallery-post" src="{%static 'event/images/vl/6.jpg'%}" /></figure>
-                                        </a></li>
+                                            <figure class=""><img alt="gallery-post" src="{%static 'event/images/vl/6.jpg'%}" /></figure>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div> </div>
                             <div></div>
@@ -160,16 +170,16 @@ class="portfolio-template-default single single-portfolio postid-1432 woocommerc
 
 <nav class="portfolio-navigation ">
     <div class="port-links container">
-        <a class="port-previous" href="../1420-2/index.html">
+        <a class="port-previous" href="{% url 'esummit' %}">
             <i class="fas fa-angle-left" aria-hidden="true"></i>
-            <span class="meta-nav" aria-hidden="true">Previous project</span>
-            <h4 class="post-title">Startup Weekend</h4>
+            <span class="meta-nav" aria-hidden="true">View Event</span>
+            <h4 class="post-title"><b>E-Summit</b></h4>
         </a>
-        <a class="back-to-list" href="../../our-work/index.html"><i class="fas fa-th" aria-hidden="true"></i></a>
-        <a class="port-next" href="../1420-4/index.html">
+        <a class="back-to-list" href="{% url 'events' %}"><i class="fas fa-th" aria-hidden="true"></i></a>
+        <a class="port-next" href="{% url 'etalks' %}">
             <i class="fas fa-angle-right" aria-hidden="true"></i>
-            <span class="meta-nav" aria-hidden="true">Next project</span>
-            <h4 class="post-title">E-SUMMIT</h4>
+            <span class="meta-nav" aria-hidden="true">View Event</span>
+            <h4 class="post-title"><b>E-Talks</b></h4>
         </a>
     </div>
 </nav>
