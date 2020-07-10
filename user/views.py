@@ -1,4 +1,4 @@
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -112,3 +112,8 @@ def profile(request):
 
     else:
         return redirect('home')
+
+
+@login_required
+def logout(request):
+	return render(request, 'startupEcosystem/ecosystem-home.html')
