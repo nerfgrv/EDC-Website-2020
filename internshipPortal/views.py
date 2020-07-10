@@ -13,12 +13,11 @@ def internships(request):
     }
     return render(request, 'internshipPortal/Internship.html', context)
 
-def internship_detail(request):
-    return render(request, 'internshipPortal/internship_detail.html', {})
-
 def InternshipCreateView(request):
     form = InternshipForm(request.POST or None)
+    
     if form.is_valid():
+        form.instance.startup = request.user.startup_profile
         form.save()
         return redirect('internships')
 

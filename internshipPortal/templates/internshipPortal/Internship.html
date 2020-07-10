@@ -305,6 +305,10 @@ vc_responsive"
 
     <div class="row main_body" style="max-width:100% !important; display:flex; justify-content: center;">
         <div class="col-12 col-md-8 main_body_center ">
+            {% if user.is_startup %}
+                <button>Create an Internship</button>
+            {% endif %}
+
 
             <!--  Internship Cards  -->
             {%if internships %}
@@ -319,8 +323,8 @@ vc_responsive"
 
                     <div class="card-body">
                         <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                        <h4 class="card-title" style="font-size: 28px;">{{internship.company_name}}</h4>
-                        <h5 class="card-title" style="color:#f50136; font-size: 20px; ">{{ internship.fields_of_work }}
+                        <h4 class="card-title" style="font-size: 28px;">{{internship.startup.startup_name}}</h4>
+                        <h5 class="card-title" style="color:#f50136; font-size: 20px; ">{{ internship.field_of_internship }}
                         </h5>
                         <hr>
                     </div>
@@ -349,12 +353,16 @@ vc_responsive"
                 </div>
                 <hr>
                 <div class="card-footer " style="background-color:white;">
-                    <div class=col-6></div>
+                    <div class="col-6"></div>
                     <div class="col-6 mdet" style="font-size: 20px !important;">
                         <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
                             View Details
                         </a>
-
+                        {% if user.startup_profile == internship.startup %}
+                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-danger btn-rounded" style="margin-left: 10px;">
+                                    Delete Internship
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
