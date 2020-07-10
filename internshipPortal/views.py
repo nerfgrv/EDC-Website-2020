@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import InternshipForm, VenCapForm
-from .models import Internship, VentureCapitalist
+from .forms import InternshipForm, ApplicationForm, VenCapForm
+from .models import Internship, InternshipApplication, VentureCapitalist
 from django.views.generic import DetailView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
-# Create your views here.
-def internships(request):
+def Internships(request):
     context = {
         'internships': Internship.objects.all()
     }
     return render(request, 'internshipPortal/Internship.html', context)
+
 
 def InternshipCreateView(request):
     form = InternshipForm(request.POST or None)
@@ -26,16 +26,50 @@ def InternshipCreateView(request):
     }
     return render(request, 'internshipPortal/create_internship.html', context)
 
-class InternshipDetailView(DetailView):
-    model = Internship
-    template_name = 'internshipPortal/internship_detail.html'
-    queryset = Internship.objects.all()
+
+def InternshipApplicationView(request, pk):
+    internship = Internship.objects.filter(id=pk).first()
+    applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+    for applicant in applied_by:
+        if(internship == applicant.internship):
+            return redirect('internship-detail', pk)
+
+    form = ApplicationForm(request.POST or None)
+    
+    if form.is_valid():
+        form.instance.internship = Internship.objects.filter(id = pk).first()
+        form.instance.applied_by = request.user.student_profile
+        form.save()
+        return redirect('internship-detail', pk)
+
+    context = {
+        'form': form
+    }
+    return render(request, 'internshipPortal/create_internship.html', context)
+
+
+def InternshipDetailView(request, pk):
+    applied = False
+
+    internship = Internship.objects.filter(id=pk).first()
+    if(request.user.is_student):
+        applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+        for applicant in applied_by:
+            if(internship == applicant.internship):
+                applied = True
+    
+    context = {
+        'object' : internship,
+        'applied' : applied,
+    }
+
+    return render(request, 'internshipPortal/internship_detail.html', context)
+
 
 class InternshipUpdateView(UpdateView):
     model = Internship
     fields = [
-            'company_name',
-            'fields_of_work',
+            'field_of_internship',
             'duration',
             'about',
             'location',
@@ -43,7 +77,7 @@ class InternshipUpdateView(UpdateView):
             'skills_required',
             'no_of_internships',
             'perks',
-            'who_can_apply'
+            'who_should_apply'
         ]
     template_name = 'internshipPortal/create_internship.html'
     def form_valid(self, form):

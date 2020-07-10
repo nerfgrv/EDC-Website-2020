@@ -1,8 +1,6 @@
 from django.contrib import admin
+from .models import Internship, InternshipApplication, VentureCapitalist
 
-# Register your models here.
-from .models import Internship
 admin.site.register(Internship)
-
-from .models import VentureCapitalist
 admin.site.register(VentureCapitalist)
+admin.site.register(InternshipApplication)
