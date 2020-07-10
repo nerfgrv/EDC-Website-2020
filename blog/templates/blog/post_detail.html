@@ -6,6 +6,7 @@
     .nav-previous > a:hover, .nav-next > a:hover {
         color: black;
     }
+    .btn:hover {background-color:#DB0000 }
 </style>
 {% endblock head %}
 
@@ -33,6 +34,19 @@
         </div>
     </div>
 </div>                                            
+<div class="center" >
+                {% if user.is_superuser %}
+                  <div class="alert alert-success" role="alert">
+                
+                   <a href="{% url 'post-update' object.id %}"  >
+                  <button class="btn" type="submit" style="margin-right:10px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;margin-left:600px;">UPDATE</button>
+              </a> <a href="{% url 'post-delete' object.id %}"  >
+                  <button class="btn" type="submit" style="border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;">DELETE</button>
+              </a>
+                </div>
+                 {% endif %}
+            </div>
+
 
 <div class="main-content ">
     <div class="blog blog-nosidebar">

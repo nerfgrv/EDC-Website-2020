@@ -55,7 +55,21 @@ page-paged-2 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.
     <div class="container header-flex header-enable-parallax">
         <h1>Blogs</h1>
     </div>
+</div>                            
 </div>
+<div >
+                {% if user.is_superuser %}
+                  <div class="alert alert-success" role="alert" >
+                 
+                  <form method="post-create" action="{% url 'post-create' %}">
+                  <button class="btn btn-outline-danger" type="submit" style="margin-right: 20px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;margin:auto;display:block">CREATE</button>
+              </form>
+            
+                  
+                </div>
+                 {% endif %}
+            </div>
+
 
 <div class="main-content" style="margin-top: 70px;">
     <div class="blog  blog-standardfull">
@@ -73,7 +87,6 @@ page-paged-2 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.
                             <div class="spbgimg blog-roll-i post142"
                                 style="background: url({{ post.blog_image.url }}); background-size: 100% 100%; width: 40%;">
                             </div>
-
 
                             <div class="spdata" style="width: 60%;">
                                 <div class="spcontent">
@@ -97,18 +110,31 @@ page-paged-2 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.
                                     <p class="sptext">{{ post.content|slice:":190" }}</p>
 
                                     <a href="{% url 'post-detail' post.id %}" class="readmore">Read more</a>
+                         
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
             </div>
+
             {% endfor %}
             {% else %}
             <div class="wrapper">
                 <div id="formContent">
                     <h1>Blogs Coming Soon...</h1>
                 </div>
+                {% if user.is_superuser %}
+                  <div class="alert alert-success" role="alert">
+                  You are logged in as {{user.first_name}}, here is what you can do
+                  <form method="post-create" action="{% url 'post-create' %}">
+                  <button class="btn btn-outline-danger" type="submit" style="margin-right: 20px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;">CREATE</button>
+            
+                  
+                </div>
+                 {% endif %}
             </div>
             {% endif %}
         </div><!-- /row -->
