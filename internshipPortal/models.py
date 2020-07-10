@@ -1,25 +1,43 @@
 from django.db import models
 from django.urls import reverse
+from user.models import StartupProfile, StudentProfile
+from markdown_deux import markdown
+from django.utils.safestring import mark_safe
 
-# Create your models here.
 class Internship(models.Model):
-    company_name = models.CharField(max_length=100)
-    fields_of_work = models.CharField(max_length=1000)
+    startup = models.ForeignKey(StartupProfile, on_delete=models.CASCADE, related_name='internships_created', default='')
+    field_of_internship = models.CharField(max_length=100, default='')
     duration = models.CharField(max_length=20)
-    about = models.CharField(max_length=5000)
+    about = models.TextField()
     location = models.CharField(max_length=100)
-    stipend = models.CharField(max_length=25)
+    stipend = models.IntegerField()
     skills_required = models.CharField(max_length=500)
-    no_of_internships = models.IntegerField()
+    no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
-    who_can_apply = models.CharField(max_length=200)
+    who_should_apply = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.company_name
+        return self.startup.startup_name + "(" + str(self.id) + ")"
 
     def get_absolute_url(self):
         return reverse('internship-detail', kwargs={'pk' : self.pk})
 
+    def about_markdown(self):
+        about = self.about
+        return mark_safe(markdown(about))
+
+class InternshipApplication(models.Model):
+    internship = models.ForeignKey(Internship, on_delete=models.CASCADE, default='', related_name='internship')
+    message = models.TextField(max_length = 1200, blank=True, default='')
+    resume = models.URLField(default='')
+    applied_by = models.ForeignKey(StudentProfile, on_delete=models.CASCADE, default='', related_name='intern')
+    
+    def __str__(self):
+        return self.internship.startup.startup_name + "(" + str(self.internship.id) + ")" + " - " + self.applied_by.name
+
+    def message_markdown(self):
+        message = self.message
+        return mark_safe(markdown(message))
 
 class VentureCapitalist(models.Model):
     company_name = models.CharField(max_length=100)
