@@ -7,16 +7,14 @@ from .models import User, StudentProfile, StartupProfile
 
 class StudentRegisterForm(UserCreationForm):
 	email 	= forms.EmailField()
-	bio 	= forms.CharField(max_length=500, widget=forms.TextInput({}), required=False)
 	city 	= forms.CharField(max_length=40)
 	college = forms.CharField(max_length=50)
-	resume 	= forms.URLField(max_length=254)
 	name 	= forms.CharField(max_length=60)
 	contact = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': ('')}), label=("Phone number"), required=False) 
 	
 	class Meta(UserCreationForm.Meta):
 		model 	= User
-		fields 	= ['name', 'email', 'contact', 'college', 'city', 'bio', 'resume',  'password1', 'password2']
+		fields 	= ['name', 'email', 'contact', 'college', 'city',  'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):
@@ -56,7 +54,7 @@ class StartupRegisterForm(UserCreationForm):
 class StudentUpdateForm(forms.ModelForm):
 	class Meta:
 		model = StudentProfile
-		fields = ['bio', 'city', 'college', 'resume', 'contact']
+		fields = ['city', 'college', 'contact']
 
 class StartupUpdateForm(forms.ModelForm):
 	class Meta:
