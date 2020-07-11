@@ -65,7 +65,7 @@ def PostUpdateView(request, pk):
     
     return render(request, 'blog/post_form.html', context)
 
-@method_decorator(user_passes_test(lambda u: u.is_team), name='dispatch')
+@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_team), name='dispatch')
 class PostDeleteView(DeleteView):
     model = Post
 

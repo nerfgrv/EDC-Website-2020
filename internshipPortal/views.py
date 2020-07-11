@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import InternshipForm, ApplicationForm, VenCapForm
 from .models import Internship, InternshipApplication, VentureCapitalist
@@ -102,30 +104,43 @@ def VenCapitalist(request):
 
 
 def VenCapCreateView(request):
-    form = VenCapForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+    if request.user.is_authenticated and request.user.is_team:
+        if(request.method == 'POST'):
+            form = VenCapForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('venture-capitalist')
+        
+        else:
+            form = VenCapForm()
+        
+        context = {
+        'form': form
+        }
+        return render(request, 'internshipPortal/create_vencap.html', context)
+
+    else:
         return redirect('venture-capitalist')
 
-    context = {
-        'form': form
-    }
-    return render(request, 'internshipPortal/create_vencap.html', context)
+def VenCapUpdateView(request, pk):
+    if request.user.is_authenticated and request.user.is_team:
+        if request.method == 'POST':
+            form = VenCapForm(request.POST, request.FILES, instance=VentureCapitalist.objects.filter(id=pk))
+            
+            if form.is_valid():
+                form.save()
+                return redirect('venture-capitalist')
 
-class VenCapUpdateView(UpdateView):
-    model = VentureCapitalist
-    fields = [
-            'company_name',
-            'about',
-            'contact',
-            'email',
-        ]
-    template_name = 'internshipPortal/create_vencap.html'
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form) 
+        form = VenCapForm(instance=VentureCapitalist.objects.filter(id=pk))
+        context = {
+            'form': form
+        }
+        return render(request, 'internshipPortal/create_vencap.html', context)
 
+    else:
+        return redirect('venture-capitalist')
 
+@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_team), name='dispatch')
 class VenCapDeleteView(DeleteView):
     model = VentureCapitalist
     success_url = reverse_lazy('venture-capitalist')
