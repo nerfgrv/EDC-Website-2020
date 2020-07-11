@@ -1,24 +1,25 @@
-from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import InternshipForm, VenCapForm
-from .models import Internship, VentureCapitalist
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from .forms import InternshipForm, ApplicationForm, VenCapForm
+from .models import Internship, InternshipApplication, VentureCapitalist
 
 
-# Create your views here.
-def internships(request):
+def Internships(request):
     context = {
         'internships': Internship.objects.all()
     }
     return render(request, 'internshipPortal/Internship.html', context)
 
-def internship_detail(request):
-    return render(request, 'internshipPortal/internship_detail.html', {})
 
 def InternshipCreateView(request):
     form = InternshipForm(request.POST or None)
+    
     if form.is_valid():
+        form.instance.startup = request.user.startup_profile
         form.save()
         return redirect('internships')
 
@@ -27,16 +28,50 @@ def InternshipCreateView(request):
     }
     return render(request, 'internshipPortal/create_internship.html', context)
 
-class InternshipDetailView(DetailView):
-    model = Internship
-    template_name = 'internshipPortal/internship_detail.html'
-    queryset = Internship.objects.all()
+
+def InternshipApplicationView(request, pk):
+    internship = Internship.objects.filter(id=pk).first()
+    applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+    for applicant in applied_by:
+        if(internship == applicant.internship):
+            return redirect('internship-detail', pk)
+
+    form = ApplicationForm(request.POST or None)
+    
+    if form.is_valid():
+        form.instance.internship = Internship.objects.filter(id = pk).first()
+        form.instance.applied_by = request.user.student_profile
+        form.save()
+        return redirect('internship-detail', pk)
+
+    context = {
+        'form': form
+    }
+    return render(request, 'internshipPortal/create_internship.html', context)
+
+
+def InternshipDetailView(request, pk):
+    applied = False
+
+    internship = Internship.objects.filter(id=pk).first()
+    if(request.user.is_student):
+        applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+        for applicant in applied_by:
+            if(internship == applicant.internship):
+                applied = True
+    
+    context = {
+        'object' : internship,
+        'applied' : applied,
+    }
+
+    return render(request, 'internshipPortal/internship_detail.html', context)
+
 
 class InternshipUpdateView(UpdateView):
     model = Internship
     fields = [
-            'company_name',
-            'fields_of_work',
+            'field_of_internship',
             'duration',
             'about',
             'location',
@@ -44,7 +79,7 @@ class InternshipUpdateView(UpdateView):
             'skills_required',
             'no_of_internships',
             'perks',
-            'who_can_apply'
+            'who_should_apply'
         ]
     template_name = 'internshipPortal/create_internship.html'
     def form_valid(self, form):
@@ -58,7 +93,6 @@ class InternshipDeleteView(DeleteView):
     template_name = 'internshipPortal/confirm_delete.html'
 
 
-
 #########################################################################
 
 
@@ -70,30 +104,43 @@ def VenCapitalist(request):
 
 
 def VenCapCreateView(request):
-    form = VenCapForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+    if request.user.is_authenticated and request.user.is_team:
+        if(request.method == 'POST'):
+            form = VenCapForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('venture-capitalist')
+        
+        else:
+            form = VenCapForm()
+        
+        context = {
+        'form': form
+        }
+        return render(request, 'internshipPortal/create_vencap.html', context)
+
+    else:
         return redirect('venture-capitalist')
 
-    context = {
-        'form': form
-    }
-    return render(request, 'internshipPortal/create_vencap.html', context)
+def VenCapUpdateView(request, pk):
+    if request.user.is_authenticated and request.user.is_team:
+        if request.method == 'POST':
+            form = VenCapForm(request.POST, request.FILES, instance=VentureCapitalist.objects.filter(id=pk))
+            
+            if form.is_valid():
+                form.save()
+                return redirect('venture-capitalist')
 
-class VenCapUpdateView(UpdateView):
-    model = VentureCapitalist
-    fields = [
-            'company_name',
-            'about',
-            'contact',
-            'email',
-        ]
-    template_name = 'internshipPortal/create_vencap.html'
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form) 
+        form = VenCapForm(instance=VentureCapitalist.objects.filter(id=pk))
+        context = {
+            'form': form
+        }
+        return render(request, 'internshipPortal/create_vencap.html', context)
 
+    else:
+        return redirect('venture-capitalist')
 
+@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_team), name='dispatch')
 class VenCapDeleteView(DeleteView):
     model = VentureCapitalist
     success_url = reverse_lazy('venture-capitalist')

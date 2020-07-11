@@ -11,6 +11,34 @@
  .page-title-bg{
     background-image:url({%static 'home/images/patrick-tomasso-71909.jpg' %}) !important;
 }
+
+ .container{
+    width: 100% !important;
+ }
+
+ button {
+    margin-right: 20px;
+    border-radius: 10px; 
+    padding: 15px 90px; 
+    margin: 30px auto; 
+    font-size: 21px; 
+    color: black; 
+    text-align: center;
+    display:block; 
+    color: white;
+    transition: 0.5s;
+    background: rgb(255, 62, 88);
+    max-width: 300px;
+}
+
+ button:hover {
+    transform: scale(1.02); 
+    font-size: 21px; 
+    color: black; 
+    text-align: center;
+    display:block; 
+    color: white;
+}
 </style>
 {% endblock head %}
 
@@ -35,7 +63,7 @@
                 {% csrf_token %}
                 <div class="form-group" width=100 ; style="font-size: 40px color:black; text-align: center; margin-bottom: 100px; margin-top: 100px;">
                     <h2> Are you sure you want to delete "{{ object.title}}" ?</h2>
-                    <button class="btn btn-outline-danger" type="submit" style="margin-right: 20px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;">Yes, Delete</button>
+                    <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
                     <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}" style="border-radius: 10px; padding: 10px 90px; margin-top: 20px; border: solid 1px #000; font-size: 21px; color: black; text-align: center;"">Cancel</a>
                 </div>
             </form>

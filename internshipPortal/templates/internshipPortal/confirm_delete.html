@@ -1,58 +1,30 @@
-<html>
+{% extends 'home/base.html' %}
 
-
-
+{% block head %}
 <style>
-    .button {
-        background-color: rgb(228, 86, 86);
-        border: none;
-        color: rgb(71, 56, 56);
-        padding: 10px 20px;
+    .button, form a {
+        margin-right: 20px;
+        border-radius: 10px; 
+        padding: 10px 70px; 
+        margin-top: 20px; 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 16px;
-        font-weight: bold;
-        font-size: medium;
+        display:block; 
+        color: white;
+        transition: 0.5s;
+        background: rgb(255, 62, 88);
+        max-width: 300px;
+        width: 80%;
     }
 
-    .fadeInDown {
-        -webkit-animation-name: fadeInDown;
-        animation-name: fadeInDown;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-    }
-
-    @-webkit-keyframes fadeInDown {
-        0% {
-            opacity: 0;
-            -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
-        }
-
-        100% {
-            opacity: 1;
-            -webkit-transform: none;
-            transform: none;
-        }
-    }
-
-    @keyframes fadeInDown {
-        0% {
-            opacity: 0;
-            -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
-        }
-
-        100% {
-            opacity: 1;
-            -webkit-transform: none;
-            transform: none;
-        }
+    .button:hover, form a:hover {
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
     }
 
     .wrapper {
@@ -61,37 +33,21 @@
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        min-height: 100%;
+        margin: 120px 0px;
         padding: 20px;
     }
-
-    #formContent {
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border-radius: 10px 10px 10px 10px;
-        background: #fff;
-        padding: 30px;
-        width: 90%;
-        max-width: 450px;
-        position: relative;
-        padding: 0px;
-        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-        text-align: center;
-    }
 </style>
+{% endblock head %}
 
-<body>
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <form method="post">
-                {% csrf_token %}
-                <h2 style="color: rgb(117, 105, 105);">Are you sure you want to delete "{{ object }}"?</h2>
-                <input type="submit" value="Confirm" class="button">
-
-            </form>
-
-        </div>
+{% block body %}
+    <div class="wrapper">
+        <form method="post">
+            {% csrf_token %}
+            <h2 style="color: rgb(117, 105, 105);">Are you sure you want to delete "{{ object }}"?</h2>
+            <div style="display: flex; flex-wrap: wrap; flex-direction: row;">
+                <button class="button" type='submit'>Yes, I am Sure</button>
+                <a href="{% url 'venture-capitalist' %}">No, Don't Delete</a>
+            </div>
+        </form>
     </div>
-</body>
-
-</html>
+{% endblock body %}

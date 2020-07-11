@@ -1077,7 +1077,7 @@ vc_responsive" {% endblock bodytag %}
                                         <h1 class="ls-l"
                                             style=" top:45%;left:50%;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center;"
                                             data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
-                                            {{object.company_name}}</h1>
+                                            {{object.startup.startup_name}}</h1>
 
                                     </div>
                                 </div>
@@ -1112,8 +1112,8 @@ vc_responsive" {% endblock bodytag %}
                 </div>
                 <div class="card-body">
                     <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                    <h4 class="card-title" style="font-size: 25px;">{{object.company_name}}</h4>
-                    <h5 class="card-title" style="color:#f50136; font-size:18px">{{object.fields_of_work}}
+                    <h4 class="card-title" style="font-size: 25px;">{{object.startup.startup_name}}</h4>
+                    <h5 class="card-title" style="color:#f50136; font-size:18px">{{object.field_of_internship}}
                     </h5>
                 </div>
             </div>
@@ -1159,17 +1159,31 @@ vc_responsive" {% endblock bodytag %}
         <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; padding: 1% 2% 1% 2%;">
             <div class="card-body">
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship:</h5>
-                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about}}</p>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> <p class="card-text"
                         style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who can Apply:</h5>
-                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_can_apply}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who Should Apply:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_should_apply}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Perks:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.perks}}</p>
 
-
-                <a href="/login/" class="btn btn-rounded btn-lg btn-danger"
-                    style="margin-bottom: 10px; text-align:center;">Login As Student To Apply</a>
+                {% if applied %}
+                    <a href="#" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Applied
+                    </a>
+                {% elif user.is_student %}
+                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Apply For Internship
+                    </a>
+                {% elif user.startup_profile == object.startup %}
+                    <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Edit Details
+                    </a>
+                {% else %}
+                    <a href="{% url 'student-login' %}" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Login As Student To Apply
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

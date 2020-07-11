@@ -137,20 +137,26 @@
       }
   </style>
     <style>
-      body{
+      .body-bg{
         background-image: url({% static 'home/images/background.jpg' %}) !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 7em 0px;
       }
       .main {
         background-color: #FFFFFF;
         width: 800px;
-        height: 1150px;
-        margin: 7em auto;
+        height: 100%;
+        padding-bottom: 100px;
+        margin: 0em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
         .sign {
         padding-top: 40px;
-        color: #8C55AA;
+        color: rgb(47, 146, 187);
         font-family: 'Montserrat';
         font-weight: bold;
         font-size: 40px;
@@ -200,7 +206,7 @@
       cursor: pointer;
         border-radius: 5em;
         color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
+        background: linear-gradient(to right, rgb(12, 138, 192), rgb(47, 146, 187));
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
@@ -213,19 +219,26 @@
     }
     </style>
 {% endblock head %}
+
+{% block bodytag %}
+class="woocommerce-no-js has-fixed-header     wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
+{% endblock bodytag %}
+
 {% block body %}
 
-<div class="main">
-  <p class="sign" style="padding-top: 70px;" align="center">Profile Update</p>
-  <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
-    <form class="form1" id="login-form" method="post" action="">
-      {% csrf_token %} 
-      <fieldset class="form-group">
-        <legend class="border-bottom mb-6 " style="font-size: 25px;color:red; padding-bottom: 20px;"></legend>
-        </fieldset>
-      {{ form|crispy}}
-      <input style="background-color: #8C55AA" type="submit" value="Save" class="btn btn-primary pull-right" />
-    </form>
+<div class="body-bg">
+  <div class="main">
+    <p class="sign" style="padding-top: 70px; color: rgb(47, 146, 187)" align="center">Profile Update</p>
+    <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
+      <form class="form1" id="login-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-6 " style="font-size: 25px;color:rgb(47, 146, 187); padding-bottom: 20px;"></legend>
+          </fieldset>
+        {{ form|crispy}}
+        <input style="background-color: rgb(47, 146, 187)" type="submit" value="Update" class="btn btn-primary pull-right" />
+      </form>
+    </div>
   </div>
 </div>
 {% endblock body %}

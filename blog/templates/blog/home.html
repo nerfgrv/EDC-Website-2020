@@ -14,102 +14,132 @@
     .readmore:hover {
         color: black;
     }
-</style>
-<style>
+
+    .container{
+        width: 100% !important;
+
+    }
+
     .wrapper {
         display: flex;
         align-items: center;
-        flex-direction: column;
         justify-content: center;
         width: 100%;
-        min-height: 100%;
-        padding: 30%;
+        padding: 60px 0px 20px 0px;
+        color: #000;
     }
 
-    #formContent {
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border-radius: 10px 10px 10px 10px;
-        background: #fff;
-        padding: 30px;
-        width: 90%;
-        max-width: 450px;
-        position: relative;
-        padding: 0px;
-        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    .post-create a {
+        margin-right: 20px;
+        border-radius: 10px; 
+        padding: 15px 90px; 
+        margin: 30px auto; 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
+        display:block; 
+        color: white;
+        transition: 0.5s;
+        background: rgb(255, 62, 88);
+        max-width: 300px;
+    }
+
+    .post-create a:hover {
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
     }
 </style>
+
 {% endblock head %}
 
 {% block bodytag %}
-class="paged page-template page-template-tmp-blog-template page-template-tmp-blog-template-php page page-id-1039 paged-2
-page-paged-2 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
+    class="paged page-template page-template-tmp-blog-template page-template-tmp-blog-template-php page page-id-1039 paged-2 page-paged-2 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
 {% endblock bodytag %}
 
 {% block body %}
 
-<div class="page-title-wrap">
-    <div class="page-title-bg rest-enable-parallax"></div>
-    <div class="page-title-tint"></div>
-    <div class="container header-flex header-enable-parallax">
-        <h1>Blogs</h1>
+    <div class="page-title-wrap">
+        <div class="page-title-bg rest-enable-parallax"></div>
+        <div class="page-title-tint"></div>
+        <div class="container header-flex header-enable-parallax">
+            <h1>Blogs</h1>
+        </div>
     </div>
-</div>
 
-<div class="main-content" style="margin-top: 70px;">
+    <div class="post-create">
+        <a href="{% url 'post-create' %}">Write a Blog</a>
+    </div>    
+
+
+
+<div class="main-content">
     <div class="blog  blog-standardfull">
         <div class="row">
             {% if posts %}
-            {% for post in posts %}
-            <div class="column" style="display: flex; justify-content: center;">
-                <div class="blog_item_wrapper effect-5  col-12 " style="display: flex; justify-content: center;">
-                    <div class="grid-sizer"></div>
-                    <div id="post-142"
-                        class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d"
-                        style="width: 80vw;">
+                {% for post in posts %}
+                    <div class="column" style="display: flex; justify-content: center;">
+                        <div class="blog_item_wrapper effect-5  col-12 " style="display: flex; justify-content: center;">
+                            <div class="grid-sizer"></div>
+                            <div id="post-142"
+                                class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d"
+                                style="width: 80vw;">
 
-                        <div class="spwrapper cat_color__background_color">
-                            <div class="spbgimg blog-roll-i post142"
-                                style="background: url({{ post.blog_image.url }}); background-size: 100% 100%; width: 40%;">
-                            </div>
-
-
-                            <div class="spdata" style="width: 60%;">
-                                <div class="spcontent">
-                                    <span class="spauthor">
-                                        <a href="">
-                                            <img src="{% static 'home/images/logo-big-vector-100x100.jpg' %}" width="20"
-                                                height="20" alt="Skywarrior"
-                                                class="avatar avatar-20 wp-user-avatar wp-user-avatar-20 alignnone photo" />
-                                            {{ post.author }}
-                                        </a>
-                                    </span>
-
-                                    <div class="spdate">
-                                        <i class="far fa-clock" aria-hidden="true"></i>{{ post.date_posted }}
+                                <div class="spwrapper cat_color__background_color">
+                                    <div class="spbgimg blog-roll-i post142"
+                                        style="background: url({{ post.blog_image.url }}); background-size: 100% 100%; width: 40%;">
                                     </div>
 
-                                    <h1 class="sptitle">
-                                        <a rel="bookmark" href="{% url 'post-detail' post.id %}"
-                                            style="font-weight: bold; text-align: justify;">{{ post.title }}</a>
-                                    </h1>
-                                    <p class="sptext">{{ post.content|slice:":190" }}</p>
+                                    <div class="spdata" style="width: 60%;">
+                                        <div class="spcontent">
+                                            <span class="spauthor">
+                                                <a href="">
+                                                    <img src="{% static 'home/images/logo-big-vector-100x100.jpg' %}" width="20"
+                                                        height="20" alt="Skywarrior"
+                                                        class="avatar avatar-20 wp-user-avatar wp-user-avatar-20 alignnone photo" />
+                                                    {{ post.author }}
+                                                </a>
+                                            </span>
 
-                                    <a href="{% url 'post-detail' post.id %}" class="readmore">Read more</a>
+                                            <div class="spdate">
+                                                <i class="far fa-clock" aria-hidden="true"></i>{{ post.date_posted }}
+                                            </div>
+
+                                            <h1 class="sptitle">
+                                                <a rel="bookmark" href="{% url 'post-detail' post.id %}"
+                                                    style="font-weight: bold; text-align: justify;">{{ post.title }}</a>
+                                            </h1>
+                                            <p class="sptext">{{ post.content|slice:":190" }}...</p>
+                
+                                            <a href="{% url 'post-detail' post.id %}" class="readmore">Read more</a>
+                                            <br>
+                                            {% if user.is_authenticated %}
+                                                {% if user.is_team %}
+                                                    {% if post.is_published %}
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(0,255,0,0.1); width: 50%; margin-top: 20px;">Published</p>
+                                                    {% else %}
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(255,0,0,0.1); width: 50%; margin-top: 20px;">Not Published Yet</p>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
-                </div>
-            </div>
-            {% endfor %}
+
+                {% endfor %}
+
             {% else %}
-            <div class="wrapper">
-                <div id="formContent">
-                    <h1>Blogs Coming Soon...</h1>
+                <div class="wrapper">
+                        <h1 style="font-weight: bold;">New Blogs Will Posted Soon. Stay Tuned!</h1>
                 </div>
-            </div>
             {% endif %}
         </div><!-- /row -->
     </div><!-- /containerblog -->
