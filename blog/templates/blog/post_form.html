@@ -4,13 +4,41 @@
 
 {% block head %}
 <style>
+    .container{
+        width:100% !important;
+    }
+
     .page-title-wrap{
     background-image:url({%static 'home/images/patrick-tomasso-71909.jpg' %}) !important;
-}
+    }
 
- .page-title-bg{
-    background-image:url({%static 'home/images/patrick-tomasso-71909.jpg' %}) !important;
-}
+    .page-title-bg{
+        background-image:url({%static 'home/images/patrick-tomasso-71909.jpg' %}) !important;
+    }
+
+    .btn{
+        margin-right: 20px;
+        border-radius: 10px; 
+        padding: 10px 70px; 
+        margin-top: 20px; 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
+        transition: 0.5s;
+        background: rgb(255, 62, 88);
+        max-width: 300px;
+    }
+
+    .btn:hover {
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
+    }
 </style>
 {% endblock head %}
 
@@ -24,7 +52,7 @@
         <div class="page-title-bg rest-enable-parallax"></div>
         <div class="page-title-tint"></div>
         <div class="container header-flex header-enable-parallax">
-            <h1>Post A Blog</h1>
+            <h1>Write A Blog</h1>
         </div>
     </div>
                                                     
@@ -36,7 +64,7 @@
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group" style=" width: 1000px max-width: 70%; font-size: large;" >
-                    <button class="btn btn-outline-info" type="submit" style="border-radius: 10px; padding: 10px 100px; margin-top: 25px;">Post</button>
+                    <button class="btn btn-outline-info" type="submit">Submit</button>
                 </div>
             </form>
         </div>

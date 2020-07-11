@@ -19,6 +19,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Email Address', unique=True)
     is_student = models.BooleanField(default=False)
     is_startup = models.BooleanField(default=False)
+    is_team = models.BooleanField(default=False)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -31,10 +32,8 @@ class User(AbstractUser):
 class StudentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name ='student_profile')
     name = models.CharField(max_length=60, default='')
-    bio = models.TextField(max_length=500, blank=True)
     city = models.CharField(max_length=40, default='')
     college = models.CharField(max_length=50)
-    resume = models.URLField(default='')
     contact = PhoneNumberField()
 
     def __str__(self):
