@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
+from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import InternshipForm, ApplicationForm, VenCapForm
 from .models import Internship, InternshipApplication, VentureCapitalist
-from django.views.generic import DetailView, UpdateView, DeleteView
-from django.urls import reverse_lazy, reverse
 
 
 def Internships(request):
@@ -89,7 +89,6 @@ class InternshipDeleteView(DeleteView):
     model = Internship
     success_url = reverse_lazy('internships')
     template_name = 'internshipPortal/confirm_delete.html'
-
 
 
 #########################################################################

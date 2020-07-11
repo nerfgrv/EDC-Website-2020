@@ -19,6 +19,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Email Address', unique=True)
     is_student = models.BooleanField(default=False)
     is_startup = models.BooleanField(default=False)
+    is_team = models.BooleanField(default=False)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -34,7 +35,7 @@ class StudentProfile(models.Model):
     city = models.CharField(max_length=40, default='')
     college = models.CharField(max_length=50)
     contact = PhoneNumberField()
-    
+
     def __str__(self):
         return self.user.email
 

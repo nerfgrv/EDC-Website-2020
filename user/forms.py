@@ -14,7 +14,7 @@ class StudentRegisterForm(UserCreationForm):
 	
 	class Meta(UserCreationForm.Meta):
 		model 	= User
-		fields 	= ['name', 'email', 'contact', 'college', 'city',  'password1', 'password2']
+		fields 	= ['name', 'email', 'contact', 'college', 'city', 'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):
@@ -43,9 +43,6 @@ class StartupRegisterForm(UserCreationForm):
     @transaction.atomic
     def clean(self):
         email = self.cleaned_data.get('email')
-        print("$$$$$$$$$$$$$$$$$$")
-        print(self.cleaned_data)
-        print("$$$$$$$$$$")
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Account with this email already exists")
         return self.cleaned_data
