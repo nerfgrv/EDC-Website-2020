@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('',include('user.urls')),
     path('', include('blog.urls')),
-    path('events/',include('event.urls')),
+    path('',include('event.urls')),
     path('', include('internshipPortal.urls')),
     path('', include('investors.urls')),
     path('tnc/', include('tnc.urls')),
