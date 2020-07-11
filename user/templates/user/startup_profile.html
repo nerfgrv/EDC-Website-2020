@@ -5,34 +5,51 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 70%;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-  }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 70%;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
 
-  .title {
-    color: grey;
-    font-size: 18px;
-  }
-
-
-  .profile-pic {
-    border-radius: 50%;
-    width: 120px !important;
-    height: 120px !important;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    border: solid 1px rgba(0, 0, 0, 0.08);
-  }
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
 
 
-  button:hover,
-  a:hover {
-    opacity: 0.7;
-  }
+    .profile-pic {
+        border-radius: 50%;
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+
+    .btn{
+        margin-right: 20px;
+        border-radius: 10px; 
+        padding: 10px 70px; 
+        margin: 20px auto; 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
+        transition: 0.5s;
+        background: rgb(47, 146, 187);
+        max-width: 300px;
+    }
+
+    .btn:hover {
+        transform: scale(1.02); 
+        font-size: 21px; 
+        text-align: center;
+        display:block; 
+        color: white;
+    }
 </style>
 
 
@@ -42,6 +59,7 @@
 
 class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
 vc_responsive" 
+
 {% endblock bodytag %}
 
 
@@ -51,45 +69,53 @@ vc_responsive"
 
 
 <div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%;">
-  <img class="profile-pic" src="{{object.image.url}}" alt="{{object.startup_name}}">
-  <h1 style="font-weight: bold; margin-bottom: 1%;">{{object.founder}}</h1>
-  <h2 class="title">Founder: {{object.startup_name}}</h2>
-  <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 30%; margin-top: 2%; margin-bottom: 4%;">
- 
-  <input style="font-size: medium; margin-bottom: 2%;background-color: rgb(47, 146, 187);" type="submit" value="Update Profile" />
-  
-  <div style="text-align: left !important;">
-    <h2 style="font-weight: bold; margin-bottom: 1%;">About</h2>
-    <p style="font-size: large; font-weight: 120;">{{object.about}}</p>
-
-    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
-
-
-    <h2 style="font-weight: bold; margin-bottom: 1%;">Fields of Work</h2>
-    <p style="font-size: large; font-weight: 120;">{{object.field_of_work}} </p>
-
-    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
-
-    <h2 style="font-weight: bold; margin-bottom: 1%;">Website</h2>
-    <a href="{{object.website}}" style="font-size: large; font-weight: 120; color: #888888; text-decoration: underline">{{object.website}}
+    <img class="profile-pic" src="{{object.startup_logo.url}}" alt="{{object.startup_name}}">
+    <h1 style="font-weight: bold; margin-bottom: 1%; color: #000">{{object.startup_name}}</h1>
+    <a href="{{object.user.email}}">
+        <h3 style="font-weight: bold; margin-bottom: 1%; color: grey">{{object.user.email}}</h3>
     </a>
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 30%; margin-top: 2%; margin-bottom: 4%;">
 
-    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+    <div style="text-align: left !important;">
 
-    <h2 style="font-weight: bold; margin-bottom: 1%;">City</h2>
-    <p style="font-size: large; font-weight: 120;">{{object.city}}</p>
+        <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <div style="width:100%; text-align: center;">
+                <h2 style="font-weight: bold; margin-bottom: 1%;">About The Startup</h2>
+                <p style="font-size: large; font-weight: 120;">{{object.about_the_startup}}</p>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
+            </div>
+        </div>
 
-    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
+        <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <div style="min-width: 50%; text-align: center;">
+                <h2 style="font-weight: bold; margin-bottom: 1%;">Founders</h2>
+                <p style="font-size: large; font-weight: 120;">{{object.founders}}</p>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
+            </div>
+            <div style="min-width: 50%; text-align: center;">
+                <h2 style="font-weight: bold; margin-bottom: 1%;">Field Of Work</h2>
+                <p style="font-size: large; font-weight: 120;">{{object.field_of_work}}</p>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
+            </div>
+        </div>
 
-    <h2 style="font-weight: bold; margin-bottom: 1%;">Contact</h2>
-    <p style="font-size: large; font-weight: 120; ">Email: <a style="color: #888888; text-decoration: underline"
-        href="mailto:{{object.email}}">{{object.email}}</a></p>
+        <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <div style="min-width: 50%; text-align: center;">
+                <h2 style="font-weight: bold; margin-bottom: 1%;">Location</h2>
+                <p style="font-size: large; font-weight: 120;">{{object.location}}</p>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
+            </div>
 
-    <p style="font-size: large; font-weight: 120; ">Phone No.: <a style="color: #888888; text-decoration: underline"
-        href="tell:{{object.email}}">{{object.contact}}</a></p>
+            <div style="min-width: 50%; text-align: center;">
+                <h2 style="font-weight: bold; margin-bottom: 1%;">Website</h2>
+                <a href="{{object.website}}"><p style="font-size: large; font-weight: 120; color:#888888; text-decoration: underline;">{{object.website|slice:":25"}}...</p></a>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
+            </div>
+        </div>
 
-    <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 15%; margin: 2% 2% 4% 1%;">
-  </div>
+    </div>
+
+    <a href="{% url 'profile-update' %}" class="btn">Update Profile</a>
 
 </div>
 

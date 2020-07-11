@@ -32,9 +32,12 @@ class User(AbstractUser):
 class StudentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name ='student_profile')
     name = models.CharField(max_length=60, default='')
-    city = models.CharField(max_length=40, default='')
-    college = models.CharField(max_length=50)
-    contact = PhoneNumberField()
+    city_of_residence = models.CharField(max_length=40, default='')
+    college = models.CharField(max_length=50, default='')
+    area_of_specialization = models.CharField(max_length=60, default='')
+    year_of_study = models.IntegerField(default=1)
+    contact = PhoneNumberField(blank=False)
+    cgpa = models.FloatField(default=0)
 
     def __str__(self):
         return self.user.email
@@ -43,13 +46,12 @@ class StudentProfile(models.Model):
 class StartupProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name = 'startup_profile')
     startup_name = models.CharField(max_length=40, default='')
-    about = models.TextField(max_length=500, blank=True)
-    founder = models.CharField(max_length=150, default='')
-    city = models.CharField(max_length=40, default='')
+    about_the_startup = models.TextField(max_length=500, blank=True)
+    founders = models.CharField(max_length=150, default='')
+    location = models.CharField(max_length=100, default='')
     field_of_work = models.CharField(max_length=50)
-    website = models.URLField(default='')
-    contact = PhoneNumberField()
-    image = models.ImageField(default='default.jpg', upload_to='startup/')
+    website = models.URLField(default='', null=True, blank=True)
+    startup_logo = models.ImageField(blank=True, default='download.png', upload_to='startup/')
 
     def __str__(self):
         return self.user.email

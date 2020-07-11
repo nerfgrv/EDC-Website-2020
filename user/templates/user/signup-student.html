@@ -148,7 +148,7 @@
       .main {
         background-color: #FFFFFF;
         width: 800px;
-        height: 1350px;
+        height: 100%;
         margin: 0em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -216,6 +216,19 @@
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
+
+    a {
+      font-weight: bold;
+      color: rgb(47, 146, 187);
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    strong {
+      color: #ff1111;
+    }
     </style>
 {% endblock head %}
 {% block bodytag %}
@@ -225,7 +238,7 @@
 
 <div class="body-bg">
   <div class="main">
-    <p class="sign" style="padding-top: 70px;" align="center">Sign Up as a Student</p>
+    <p class="sign" style="padding-top: 70px;" align="center">Sign Up As a Student</p>
     <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
       <form class="form1" id="login-form" method="post" action="">
         {% csrf_token %} 
@@ -235,6 +248,12 @@
         {{ form|crispy}}
         <input style="background-color: rgb(47, 146, 187)" type="submit" value="Sign up" class="btn btn-primary pull-right" />
       </form>
+
+        <div class="border-top pt-4" style="font-size: 20px; padding-bottom: 50px; padding-top: 80px; text-align: center;">
+            <small class="text-muted">
+                Already Have An Account?<a class="ml-2" href="{% url 'login' %}"> Login Now </a>
+            </small>
+        </div>
     </div>
   </div>
 </div>
