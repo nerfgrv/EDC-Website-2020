@@ -59,7 +59,8 @@ vc_responsive" {% endblock bodytag %}
   <form method="POST"> 
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Save"/>
+    <input style="background-color: rgb(47, 146, 187)" type="submit" value="Save"/>
+    
   </form>
 </div>
 {% endblock body%}
