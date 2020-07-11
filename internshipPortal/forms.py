@@ -31,8 +31,11 @@ class VenCapForm(forms.ModelForm):
     class Meta:
         model = VentureCapitalist
         fields = [
-            'company_name',
+            'name',
             'about',
+            'startups_funded',
             'contact',
             'email',
-        ]
+            'photo',
+            'industries',
+        ]    

@@ -1,12 +1,22 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<style>
+  strong{
+    color: #ee1111;
+  }
+</style>
+{% endblock head %}
 
 
 {% block bodytag %}
 
 class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
-vc_responsive" {% endblock bodytag %}
+vc_responsive" 
 
+{% endblock bodytag %}
 
 
 {% block body %}
@@ -40,7 +50,7 @@ vc_responsive" {% endblock bodytag %}
                     <h1 class="ls-l"
                       style=" top:40%;left:50%;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center; padding-left: 80px"
                       data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
-                      CREATE <br>VENTURE CAPITALIST</h1><a style="" class="ls-l" href="#startup" target="_self"
+                      VENTURE CAPITALIST</h1><a style="" class="ls-l" href="#startup" target="_self"
                       data-ls="showinfo:1;offsetyin:-50px;delayin:1000;parallax:true;parallaxlevel:-10;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
 
                     </a>
@@ -56,9 +66,9 @@ vc_responsive" {% endblock bodytag %}
 </div>
 
 <div style="margin-top: 30px; margin-bottom: 30px; align-items: center; margin-right: auto; margin-left: auto; max-width: 70%; font-size: large;">
-  <form method="POST"> 
+  <form method="POST" enctype="multipart/form-data"> 
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <input type="submit" value="Save"/>
   </form>
 </div>

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'event.apps.EventConfig',
     'home.apps.HomeConfig',
-    'tnc.apps.TncConfig',
     'internshipPortal.apps.InternshipportalConfig',
     'investors.apps.InvestorsConfig',
     'startupEcosystem.apps.StartupecosystemConfig',
@@ -126,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = 'student-login'
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'profile'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

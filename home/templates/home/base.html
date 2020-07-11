@@ -1066,33 +1066,33 @@
                                 <div class="menu-main-menu-container">
                                     <ul  class="nav navbar-nav">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
-                                            <a href="" data-hover="Home" style="color: white">Home</a>
+                                            <a href="{% url 'home' %}" data-hover="Home" style="color: white">Home</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                            <a href="" style="color: white">Events</a>
+                                            <a href="{% url 'events' %}" style="color: white">Events</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                    <a href="" aria-current="page">E-Talks</a>
+                                                    <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="" data-hover="Header generic style">The StartUp Weekend</a>
+                                                    <a href="{% url 'startupweekend' %}"  data-hover="Header generic style">The StartUp Weekend</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="" data-hover="Header generic style">E-Summit</a>
+                                                    <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="" data-hover="Header generic style">Venture Lab Weekend</a>
+                                                    <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab Weekend</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                            <a href="" style="color: white">StartUp Ecosystem</a>
+                                            <a href="{% url 'ecosystem-home' %}" style="color: white">StartUp Ecosystem</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                                     <a href="" aria-current="page">StartUps</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="" data-hover="Header generic style">Investors</a>
+                                                    <a href="{% url 'investors' %}"  data-hover="Header generic style">Investors</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
                                                     <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture Capitalists</a>
@@ -1100,10 +1100,10 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                            <a href="" style="color: white">BizFinatics</a>
+                                            <a href="{% url 'blog-home' %}" style="color: white">BizFinatics</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                            <a href="" data-hover="Articles" style="color: white">Our Team</a>
+                                            <a href="{% url 'our-team' %}" data-hover="Articles" style="color: white">Our Team</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
                                             <a href="{% url 'internships' %}" style="color: white">Internships</a>
