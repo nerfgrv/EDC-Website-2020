@@ -23,26 +23,34 @@
       }
       .main {
         background-color: #FFFFFF;
-        width: 500px;
+        width: 75%;
         height: 300px;
         margin: 7em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
+        a{
+            color: rgb(47, 146, 187);
+        }
+        a:hover {
+            color:black;
+        }
     </style>
 {% endblock head %}
+
 {% block bodytag %}
     class="paged page-template page-template-tmp-blog-template page-template-tmp-blog-template-php page page-id-1039 paged-2 page-paged-2 woocommerce-no-js has-fixed-header     wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
 {% endblock bodytag %}
+
 {% block body %}
 <div class="main">
-    <h1 style="text-align: center; font-size: 40px; padding-top: 20px;">Logout</h1>
+    <h1 style="text-align: center; font-size: 40px; padding-top: 20px; font-weight: bold;">Logged Out</h1>
 <fieldset class="form-group">
-    <legend class="border-bottom mb-6 " style="font-size: 30px; padding-bottom: 5px; text-align: center; padding-top: 40px;">You have been logged out</legend>
+    <legend class="border-bottom mb-6 " style="font-size: 30px; padding-bottom: 5px; text-align: center; padding-top: 40px;">You have been successfully logged out.</legend>
 </fieldset>
-<div class="border-bottom pt-3"  style="margin-top: 25px; margin-bottom: 40px; font-size: 25px; text-align: center;   ">
+<div class="border-bottom pt-3"  style="margin-top: 25px; margin-bottom: 40px; font-size: 25px; text-align: center;">
     <small class="text-muted">
-        <a href="{% url 'startup-login' %}">Log In Again</a>
+       <a href="{% url 'login' %}">Log In Again</a>
     </small>
 </div>
 </div>

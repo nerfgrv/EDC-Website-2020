@@ -45,12 +45,7 @@
             background: linear-gradient(to bottom, rgba(9, 17, 25, 0.8) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             z-index: 10;
         }
-        .blog{
-            padding-bottom:70px;
-         }
-        body.blog{
-            padding-bottom:0px;
-        }
+
         .blog .container .col-12 .spcard, .blog .container .col-12 .grid-sizer{
             width:80%;
             min-width:auto;
@@ -317,5 +312,20 @@
 </div><!-- /containerblog -->
 </div> <!-- content -->
 
+<nav class="portfolio-navigation ">
+    <div class="port-links container">
+        <a class="port-previous" href="{% url 'vl' %}">
+            <i class="fas fa-angle-left" aria-hidden="true"></i>
+            <span class="meta-nav" aria-hidden="true">View Event</span>
+            <h4 class="post-title"><b>Venture Lab</b></h4>
+        </a>
+        <a class="back-to-list" href="{% url 'events' %}"><i class="fas fa-th" aria-hidden="true"></i></a>
+        <a class="port-next" href="{% url 'startupweekend' %}">
+            <i class="fas fa-angle-right" aria-hidden="true"></i>
+            <span class="meta-nav" aria-hidden="true">View Event</span>
+            <h4 class="post-title"><b>StartUp Weekend</b></h4>
+        </a>
+    </div>
+</nav>
 
 {% endblock body %}
