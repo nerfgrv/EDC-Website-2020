@@ -59,15 +59,17 @@
     </div>
 </div>                                            
 <div class="center" >
-                {% if user.is_team %}
-                    
-                    <div class="post-create" style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 80%; margin: auto">
-                        <a href="{% url 'post-update' post.id %}">Update Blog</a>
-                        <a href="{% url 'post-delete' post.id %}">Delete Blog</a>
-                    </div> 
+    {% if user.is_authenticated %}
+        {% if user.is_team %}
+            
+            <div class="post-create" style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 80%; margin: auto">
+                <a href="{% url 'post-update' post.id %}">Update Blog</a>
+                <a href="{% url 'post-delete' post.id %}">Delete Blog</a>
+            </div> 
 
-                 {% endif %}
-            </div>
+         {% endif %}
+    {% endif %}
+</div>
 
 
 <div class="main-content ">

@@ -30,14 +30,14 @@
       .main {
         background-color: #FFFFFF;
         width: 800px;
-        height: 1400px;
+        height: 100%;
         margin: 0px auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
         .sign {
         padding-top: 40px;
-        color: #8C55AA;
+        color: rgb(47, 146, 187);
         font-family: 'Montserrat';
         font-weight: bold;
         font-size: 40px;
@@ -87,7 +87,7 @@
         cursor: pointer;
         border-radius: 5em;
         color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
+        background: linear-gradient(to right, rgb(0, 155, 221), rgb(47, 146, 187));
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
@@ -97,6 +97,19 @@
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    a{
+      color: rgb(47, 146, 187);
+      font-weight: bold;
+    }
+
+    a:hover{
+      color: black;
+    }
+
+    strong {
+      color: #ff1111;
     }
     </style>
 {% endblock head %}
@@ -109,17 +122,21 @@
 
 <div class="body-bg">
   <div class="main">
-    <p class="sign" style="padding-top: 70px;" align="center">Sign Up as a Startup</p>
+    <p class="sign" style="padding-top: 70px;" align="center">Sign Up As a Startup</p>
     <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
       <form class="form1" id="login-form" method="post" enctype="multipart/form-data">
         {% csrf_token %} 
-        <fieldset class="form-group">
-          <legend class="border-bottom mb-6 " style="font-size: 25px;color:red; padding-bottom: 20px;"></legend>
-          </fieldset>
         {{ form|crispy}}
-        <input style="background-color: #8C55AA" type="submit" value="Sign up" class="btn btn-primary pull-right" />
+        <input style="background-color: rgb(47, 146, 187)" type="submit" value="Sign up" class="btn btn-primary pull-right" />
         <input type="hidden" name="next" value="{{ next }}" />
       </form>
+
+        <div class="border-top pt-4" style="font-size: 20px; padding-bottom: 50px; padding-top: 80px; text-align: center;">
+            <small class="text-muted">
+                Already Have An Account?<a class="ml-2" href="{% url 'login' %}"> Login Now </a>
+            </small>
+        </div>
+
     </div>
   </div>
 </div>

@@ -112,15 +112,17 @@
                                                 <a rel="bookmark" href="{% url 'post-detail' post.id %}"
                                                     style="font-weight: bold; text-align: justify;">{{ post.title }}</a>
                                             </h1>
-                                            <p class="sptext">{{ post.content|slice:":190" }}</p>
+                                            <p class="sptext">{{ post.content|slice:":190" }}...</p>
                 
                                             <a href="{% url 'post-detail' post.id %}" class="readmore">Read more</a>
                                             <br>
-                                            {% if user.is_team %}
-                                                {% if post.is_published %}
-                                                    <p style="color: #000; font-size: 25px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(0,255,0,0.1)">Published</p>
-                                                {% else %}
-                                                    <p style="color: #000; font-size: 25px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(255,0,0,0.1)">Not Published Yet</p>
+                                            {% if user.is_authenticated %}
+                                                {% if user.is_team %}
+                                                    {% if post.is_published %}
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(0,255,0,0.1); width: 50%; margin-top: 20px;">Published</p>
+                                                    {% else %}
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(255,0,0,0.1); width: 50%; margin-top: 20px;">Not Published Yet</p>
+                                                    {% endif %}
                                                 {% endif %}
                                             {% endif %}
                                         </div>

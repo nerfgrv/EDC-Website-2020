@@ -8,9 +8,8 @@ urlpatterns = [
     
     path('signup/student/', core_views.studentregister,												name='student-signup'),
     path('signup/startup/', core_views.startupregister, 											name='startup-signup'),
-    path('login/student/', 	auth_views.LoginView.as_view(template_name='user/login-student.html'),	name='student-login'),
-    path('login/startup/',	auth_views.LoginView.as_view(template_name='user/login-startup.html'),	name='startup-login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
+    path('login/', 			auth_views.LoginView.as_view(template_name='user/login.html'),			name='login'),
+   	path('logout/', 		auth_views.LogoutView.as_view(template_name='user/logout.html'),		name='logout'),
     path('profile/',        core_views.profile,                                                     name='profile'),
     path('profile/update/', core_views.profileupdate,												name='profile-update'),
 

@@ -17,11 +17,15 @@ def studentregister(request):
             user.email          = form.cleaned_data.get('email')
             user.save()
             student             = StudentProfile.objects.create(user=user)
-            student.city        = form.cleaned_data.get('city')
             student.college     = form.cleaned_data.get('college')
             student.contact     = form.cleaned_data.get('contact')
             student.name        = form.cleaned_data.get('name')
+            student.cgpa        = form.cleaned_data.get('cgpa')
+            student.area_of_specialization  = form.cleaned_data.get('area_of_specialization')
+            student.year_of_study           = form.cleaned_data.get('year_of_study')
+            student.city_of_residence       = form.cleaned_data.get('city_of_residence')
             student.save()
+
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('student-login')
     else:
@@ -39,15 +43,14 @@ def startupregister(request):
             user.save()
             startup                 = StartupProfile.objects.create(user=user)
             startup.startup_name    = form.cleaned_data.get('startup_name')
-            startup.city            = form.cleaned_data.get('city')
-            startup.founder         = form.cleaned_data.get('founders')
-            startup.about           = form.cleaned_data.get('about')
+            startup.location        = form.cleaned_data.get('location')
+            startup.founders        = form.cleaned_data.get('founders')
+            startup.about_the_startup = form.cleaned_data.get('about_the_startup')
             startup.field_of_work   = form.cleaned_data.get('field_of_work')
-            startup.contact         = form.cleaned_data.get('contact')
             startup.website         = form.cleaned_data.get('website')
-            startup.image           = form.cleaned_data.get('startup_logo')
+            startup.startup_logo    = form.cleaned_data.get('startup_logo')
             startup.save()
-            messages.success(request, f'Your account has been created! You are now able to log in')
+            messages.success(request, f'Your account has been created successfully!')
             return redirect('startup-login')
     else:
         form = StartupRegisterForm()
@@ -63,7 +66,7 @@ def profileupdate(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, f'Account update successfully!')
-                return redirect('home')
+                return redirect('profile')
 
         else:
             form = StudentUpdateForm(instance=request.user.student_profile)
@@ -78,7 +81,7 @@ def profileupdate(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, f'Account update successfully!')
-                return redirect('home')
+                return redirect('profile')
 
         else:
             form = StartupUpdateForm(instance=request.user.startup_profile)
