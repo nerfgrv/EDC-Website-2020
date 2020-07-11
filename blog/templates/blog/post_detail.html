@@ -7,6 +7,30 @@
         color: black;
     }
     .btn:hover {background-color:#DB0000 }
+
+    .post-create a {
+        margin-right: 20px;
+        border-radius: 10px; 
+        padding: 10px 90px; 
+        margin-top: 20px; 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
+        transition: 0.5s;
+        background: rgb(255, 62, 88);
+        max-width: 300px;
+    }
+
+    .post-create a:hover {
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
+        text-align: center;
+        display:block; 
+        color: white;
+    }
 </style>
 {% endblock head %}
 
@@ -35,15 +59,13 @@
     </div>
 </div>                                            
 <div class="center" >
-                {% if user.is_superuser %}
-                  <div class="alert alert-success" role="alert">
-                
-                   <a href="{% url 'post-update' object.id %}"  >
-                  <button class="btn" type="submit" style="margin-right:10px;border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;margin-left:600px;">UPDATE</button>
-              </a> <a href="{% url 'post-delete' object.id %}"  >
-                  <button class="btn" type="submit" style="border-radius: 10px; padding: 10px 90px; margin-top: 20px; font-size: 21px; color: black; text-align: center;">DELETE</button>
-              </a>
-                </div>
+                {% if user.is_team %}
+                    
+                    <div class="post-create" style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 80%; margin: auto">
+                        <a href="{% url 'post-update' post.id %}">Update Blog</a>
+                        <a href="{% url 'post-delete' post.id %}">Delete Blog</a>
+                    </div> 
+
                  {% endif %}
             </div>
 
@@ -52,12 +74,6 @@
     <div class="blog blog-nosidebar">
         <div class="container">
             <div class="col-12  post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d" >
-                <div class="share">
-                    <div class="fabs no twitter_share"></div>
-                    <div class="fabs no facebook_share"></div>
-                    <div class="fabs no google_share"></div>
-                </div>
-
 
                 <div class="blog-post">
                     <div class="blog-content">
@@ -72,7 +88,7 @@
                 <div class="clear"></div>
 
                 <div class="author-wrapper" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
-                    <img src="{{ post.author_image.url }}" width="100" height="100" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />					
+                    <img src="{{ post.author_image.url }}" width="100" height="100" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" style="border: 1px solid rgba(0, 0, 0, 0.05);" />					
                     <div id="author-info">
                         <h3>{{ post.author }}</h3>
                         <p>{{ post.author_markdown }}</p>
