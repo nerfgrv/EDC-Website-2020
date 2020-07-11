@@ -11,7 +11,7 @@ from user.models import User
 
 
 def home(request):
-    if request.user.is_team:
+    if request.user.is_authenticated and request.user.is_team:
         posts = Post.objects.order_by('-date_published')
     else:
         posts= Post.objects.filter(is_published=True).order_by('-date_published')
