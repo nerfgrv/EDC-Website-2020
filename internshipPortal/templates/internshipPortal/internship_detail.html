@@ -1162,17 +1162,17 @@ vc_responsive" {% endblock bodytag %}
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> <p class="card-text"
                         style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who can Apply:</h5>
-                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_can_apply}}</p>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who Should Apply:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_should_apply}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Perks:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.perks}}</p>
 
-                {% if user.student_profile in object.applied_by %}
-                    <a href="{% url 'delete-application' %}" class="btn btn-rounded btn-lg btn-danger"
+                {% if applied %}
+                    <a href="#" class="btn btn-rounded btn-lg btn-danger"
                         style="margin-bottom: 10px; text-align:center;">Applied
                     </a>
                 {% elif user.is_student %}
-                    <a href="{% url 'internship-apply' %}" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-danger"
                         style="margin-bottom: 10px; text-align:center;">Apply For Internship
                     </a>
                 {% elif user.startup_profile == object.startup %}

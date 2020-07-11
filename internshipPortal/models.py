@@ -14,11 +14,10 @@ class Internship(models.Model):
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
-    who_can_apply = models.CharField(max_length=200)
-    applied_by = models.ManyToManyField(StudentProfile, related_name='internships_applied', default='', blank=True)
+    who_should_apply = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.startup.startup_name
+        return self.startup.startup_name + "(" + str(self.id) + ")"
 
     def get_absolute_url(self):
         return reverse('internship-detail', kwargs={'pk' : self.pk})
@@ -27,6 +26,18 @@ class Internship(models.Model):
         about = self.about
         return mark_safe(markdown(about))
 
+class InternshipApplication(models.Model):
+    internship = models.ForeignKey(Internship, on_delete=models.CASCADE, default='', related_name='internship')
+    message = models.TextField(max_length = 1200, blank=True, default='')
+    resume = models.URLField(default='')
+    applied_by = models.ForeignKey(StudentProfile, on_delete=models.CASCADE, default='', related_name='intern')
+    
+    def __str__(self):
+        return self.internship.startup.startup_name + "(" + str(self.internship.id) + ")" + " - " + self.applied_by.name
+
+    def message_markdown(self):
+        message = self.message
+        return mark_safe(markdown(message))
 
 class VentureCapitalist(models.Model):
     company_name = models.CharField(max_length=100)
