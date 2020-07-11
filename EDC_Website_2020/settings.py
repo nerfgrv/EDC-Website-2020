@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'event.apps.EventConfig',
     'home.apps.HomeConfig',
-    'tnc.apps.TncConfig',
     'internshipPortal.apps.InternshipportalConfig',
     'investors.apps.InvestorsConfig',
     'startupEcosystem.apps.StartupecosystemConfig',
