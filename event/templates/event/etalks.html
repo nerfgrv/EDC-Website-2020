@@ -45,12 +45,6 @@
             background: linear-gradient(to bottom, rgba(9, 17, 25, 0.8) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             z-index: 10;
         }
-        .blog{
-            padding-bottom:70px;
-         }
-        body.blog{
-            padding-bottom:0px;
-        }
         .blog .container .col-12 .spcard, .blog .container .col-12 .grid-sizer{
             width:80%;
             min-width:auto;
@@ -314,7 +308,9 @@
 	</div><!-- /container -->
 
 </div><!-- /containerblog -->
+
 </div> <!-- content -->
+
 <nav class="portfolio-navigation ">
     <div class="port-links container">
         <a class="port-previous" href="{% url 'vl' %}">
@@ -330,5 +326,5 @@
         </a>
     </div>
 </nav>
-
+</div>
 {% endblock body %}
