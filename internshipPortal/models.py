@@ -3,6 +3,7 @@ from django.urls import reverse
 from user.models import StartupProfile, StudentProfile
 from markdown_deux import markdown
 from django.utils.safestring import mark_safe
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Internship(models.Model):
     startup = models.ForeignKey(StartupProfile, on_delete=models.CASCADE, related_name='internships_created', default='')
@@ -40,9 +41,13 @@ class InternshipApplication(models.Model):
         return mark_safe(markdown(message))
 
 class VentureCapitalist(models.Model):
-    company_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     about = models.CharField(max_length=5000)
-    contact = models.IntegerField()
-    email = models.EmailField(max_length=100)
+    startups_funded = models.CharField(max_length=500, default='')
+    contact = PhoneNumberField(blank=True, null=True)
+    email = models.EmailField(default='')
+    photo = models.ImageField(default='', upload_to='vc/')
+    industries = models.CharField(max_length=500, default='')
+    
     def __str__(self):
-        return self.company_name
+        return self.name

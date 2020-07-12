@@ -4,28 +4,45 @@
 
 {% block head %}
 <style>
+    .container {
+        width: 100% !important;
+    }
+
+    .vc_row {
+        width: 98vw !important;
+    }
+
     .wrapper {
         display: flex;
         align-items: center;
-        flex-direction: column;
         justify-content: center;
         width: 100%;
-        min-height: 100%;
-        padding: 30%;
+        padding: 30px 0px 110px 0px;
+        color: #000;
     }
 
-    #formContent {
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border-radius: 10px 10px 10px 10px;
-        background: #fff;
-        padding: 30px;
-        width: 90%;
-        max-width: 450px;
-        position: relative;
-        padding: 0px;
-        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    .post-create a {
+        margin-right: 20px;
+        border-radius: 10px;
+        padding: 15px 90px;
+        margin: 10px auto;
+        font-size: 21px;
+        color: black;
         text-align: center;
+        display: block;
+        color: white;
+        transition: 0.5s;
+        background: rgb(255, 62, 88);
+        max-width: 450px;
+    }
+
+    .post-create a:hover {
+        transform: scale(1.02);
+        font-size: 21px;
+        color: black;
+        text-align: center;
+        display: block;
+        color: white;
     }
 </style>
 {% endblock head %}
@@ -35,7 +52,9 @@
 {% block bodytag %}
 
 class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
-vc_responsive" {% endblock bodytag %}
+vc_responsive"
+
+{% endblock bodytag %}
 
 {% block body %}
 <div class="main-content ">
@@ -81,42 +100,27 @@ vc_responsive" {% endblock bodytag %}
             </div>
         </div>
 
-
-
-
-
         <div class="vc_row-full-width vc_clearfix"></div>
-
         <div class="clear"></div>
 
-
     </div>
-
-
 </div> <!-- content -->
+
+{% if user.is_authenticated and user.is_team %}
+<div class="post-create">
+    <a href="{% url 'vencap-create' %}" style="margin: 30px auto;">Add a Venture Capitalist</a>
+</div>
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+
 <div class="row main_body">
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <!-- Row Backgrounds -->
-        <div class="upb_bg_img" data-ultimate-bg="url(./ImagesHomePage/ImageWebsite3.jpg)"
-            data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="repeat" data-bg-img-size="cover"
-            data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="scroll"
-            data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="fadeout_row_value"
-            data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat"
-            data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30"
-            data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false"
-            data-custom-vc-row="" data-vc="6.0.5" data-is_old_vc="" data-theme-support="" data-overlay="false"
-            data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""
-            style="background-repeat: no-repeat;"></div>
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
-
-
             {% if venture %}
             {% for vencap in venture %}
             <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
@@ -128,18 +132,17 @@ vc_responsive" {% endblock bodytag %}
                                 <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                            <img class="img-icon" alt="null"
-                                                src="https://kellton-revamp-prod.s3.amazonaws.com/s3fs-public/2019-04/1_8.jpg"
-                                                height="400px" width="400px" />
                                             <h3 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{vencap.company_name}} </h3>
+                                                style="color:#333333; ">{{vencap.name}} </h3>
+                                            <img class="img-icon" alt="null" src="{{vencap.photo}}" height="400px"
+                                                width="400px" />
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p>{{vencap.about}} </p>
+                                                <p>{{vencap.industries}} </p>
                                             </div>
                                         </div>
                                     </div><!-- END .front -->
@@ -148,16 +151,39 @@ vc_responsive" {% endblock bodytag %}
                                             <h3 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{vencap.company_name}}</h3>
+                                                style="color:#333333; ">{{vencap.name}}</h3>
+
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p>{{vencap.about}} <br> <br>Contact: <a
+                                                <p> Contact: <a
                                                         href="tel:{{vencap.contact}}">{{vencap.contact}}</a>
                                                     <br> Email: <a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
                                                 </p>
+
+                                                <div class="ifb-flip-box-section-content ult-responsive"
+                                                    data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
+                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
+                                                    style="color:#333333;color:#333333;">
+                                                    <p>{{vencap.startups_funded}} </p>
+                                                </div>
+
+                                                <div class="ifb-flip-box-section-content ult-responsive"
+                                                    data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
+                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
+                                                    style="color:#333333;color:#333333;">
+                                                    <p>{{vencap.about}} </p>
+                                                </div>
                                             </div>
+
+                                            {% if user.is_team %}
+                                            <div class="post-create"
+                                                style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 100%; margin: auto">
+                                                <a href="{% url 'vencap-update' vencap.id %}">Update VenCap</a>
+                                                <a href="{% url 'vencap-delete' vencap.id %}">Delete VenCap</a>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div><!-- END .back -->
                                 </div> <!-- ifb-flip-box -->
@@ -169,10 +195,8 @@ vc_responsive" {% endblock bodytag %}
             {% endfor %}
 
             {% else %}
-            <div class="wrapper" >
-                <div id="formContent">
-                    <h1>Venture Capitalists Coming Soon...</h1>
-                </div>
+            <div class="wrapper">
+                <h1 style="font-weight: bold;">Coming Soon!</h1>
             </div>
             {% endif %}
 
