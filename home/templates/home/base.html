@@ -721,6 +721,113 @@
             padding: 0px !important;
         }
     </style>
+    <style type="text/css">
+    	@media(max-width: 1200px){
+    		#linkedin_footer, #facebook_footer, #instagram_footer{
+    			width: 50px;
+    			height: auto;
+    		}
+    		#footer_h3{
+    			font-size: 22px !important;
+    		}
+    		#footer_h4{
+    			font-size: 25px !important;
+    		}
+    	}
+    	@media(max-width: 991px){
+    		#footer_h3{
+    			font-size: 18px !important;
+    		}
+    		#footer_h4{
+    			font-size: 20px !important;
+    		}
+    		#footer_logo{
+    			width: 200px;
+    		}
+    		#linkedin_footer, #facebook_footer, #instagram_footer{
+    			width: 40px;
+    			height: auto;
+    		}
+    		#footer_list li{
+    			font-size: 12px;
+    		}
+    	@media(max-width: 768px){
+    		#linkedin_footer, #facebook_footer, #instagram_footer{
+    			width: 35px;
+    			height: auto;
+    		}
+    		#footer_logo{
+    			margin-right: 100px;
+    		}
+    		.contact{
+    			margin-left: 260px;
+    		}
+    		#hr_footer{
+    			width: 500px;
+    		}
+    		#hr_footer1{
+    			width: 500px;
+    			margin-left: 110px;
+    		}
+    		#fc_inner2{
+    			margin-left: 200px;
+    		}
+    		#favimg{
+    			width: 25px;
+    		}
+    		#copyright_footer{
+    			margin-left: 180px;
+    		}
+    	}
+    	@media(max-width: 500px){
+    		#hr_footer{
+    			width: 300px;
+    		}
+    		.contact{
+    			margin-left: 100px;
+    		}
+    		#copyright_footer{
+    			margin-left: 120px;
+    		}
+    		#linkedin_footer, #facebook_footer, #instagram_footer{
+    			margin-left: 30px;
+    		}
+    	}
+
+    	@media(max-width: 414px){
+    		.contact{
+    			margin-left: 50px;
+    		}
+    		#hr_footer1{
+    			margin-left: 0px;
+    		}
+    		#footer_list li{
+    			font-size: 10px;
+    		}
+    		#copyright_footer{
+    			margin-left: 80px;
+    		}
+    		#copyright_text{
+    			font-size: 10px !important;
+    		}
+    		#favimg{
+    			width: 20px;
+    		}
+    	}
+    	@media(max-width: 360px){
+    		.contact{
+    			margin-left: 20px;
+    		}
+    	}
+    	@media(max-width: 320px){
+    		#footer_h3{
+    			font-size: 14px !important;
+    		}
+    		#footer_h4{
+    			font-size: 16px !important;
+    		}
+    	}
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -1099,23 +1206,23 @@
                     <div class="footer_column" style="margin-left: 50px">
                         <div class="fc_inner">
                             <div>
-                                <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px">
+                                <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px" id="footer_logo">
                             </div>
                             <br>
                             <br>
                             <div class="contact">
-                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="60px" width="60px"></a> </div>
+                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="60px" width="60px" id="linkedin_footer"></a> </div>
 
-                                <div><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/insta.png' %}" height="60px" width="60px" style="margin-left: 15px;"></a></div>
+                                <div><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/insta.png' %}" height="60px" width="60px" style="margin-left: 15px;" id="instagram_footer"></a></div>
 
-                                <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="60px" width="60px" style="margin-left: 15px;"></a></div>
+                                <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="60px" width="60px" style="margin-left: 15px;" id="facebook_footer"></a></div>
                             </div>
                         </div>
                     </div>
                     <div class="footer_column">
                         <div class="fc_inner">
-                            <h3 style="color: white; font-size: 25px;">Our Events</h3>
-                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px">
+                            <h3 style="color: white; font-size: 25px;" id="footer_h3">Our Events</h3>
+                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
                             </hr>
                             <ul style="padding: 0%;" type="none">
                                 <br>
@@ -1139,9 +1246,9 @@
                         </div>
                     </div>
                     <div class="footer_column" style="margin-left: -100px">
-                        <div class="fc_inner">
-                            <h3 style="color: white; font-size: 25px;">Start-Up Eco-System</h3>
-                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px">
+                        <div class="fc_inner" id="fc_inner2">
+                            <h3 style="color: white; font-size: 25px;" id="footer_h3">Start-Up Eco-System</h3>
+                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer1">
                             </hr>
                             <ul style="padding: 0%;" type="none">
                                 <br>
@@ -1178,15 +1285,15 @@
                         <div class="fc_inner">
                             <div style="padding-bottom:1%;">
                                 <div class="textwidget">
-                                    <h4 style="color:#ffffff; font-size: 30px;">Contact Us</h4>
-                                    <hr size="5px" align="left" noshade="noshade" color="#2f92bb" width="100px">
+                                    <h4 style="color:#ffffff; font-size: 30px;" id="footer_h4">Contact Us</h4>
+                                    <hr size="5px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
                                     </hr>
-                                    <ul style="padding-left:0%" type="none">
+                                    <ul style="padding-left:0%" type="none" id="footer_list">
                                         <br>
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/location.png' %}" height="35px" width="35px">
+                                                    <img src="{% static 'home/images/location.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="https://g.page/ThaparInstitute?share">
@@ -1199,7 +1306,7 @@
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/phone.png' %}" height="35px" width="35px">
+                                                    <img src="{% static 'home/images/phone.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 8px; margin-top: -6px;">
                                                     <p style="color: white; font-family: PT Sans;">Animesh Bisen: <a href="tel:9140470096">+91 9140470096</a></p>
@@ -1211,7 +1318,7 @@
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/mail.png' %}" height="35px" width="35px">
+                                                    <img src="{% static 'home/images/mail.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="mailto:tuedcell@gmail.com">
@@ -1240,9 +1347,9 @@
 
             <div class="footer_bottom">
                 <div class="">
-                    <div class="fb_text" style="color: grey !important;">
+                    <div class="fb_text" style="color: grey !important;" id="copyright_footer">
                         <img src="{% static 'home/images/copyright.png' %}" height="15px" width="15px">
-                        <span style="font-size: 15px"> 2020-21 All Rights Reserved. Designed by <a href="{% url 'home' %}"> EDC-TIET</a></span>
+                        <span style="font-size: 15px" id="copyright_text"> 2020-21 All Rights Reserved. Designed by <a href="{% url 'home' %}"> EDC-TIET</a></span>
                     </div>
                     <div class="fb_social">
                     </div>
