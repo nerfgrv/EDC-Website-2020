@@ -3,6 +3,7 @@ from . import views
 
 
 urlpatterns = [
+
     path('internships/', 						views.Internships,                      name='internships'),
     path('internship/create/', 					views.InternshipCreateView,),
     path('internships/<int:pk>/', 				views.InternshipDetailView,             name='internship-detail'),
@@ -13,5 +14,6 @@ urlpatterns = [
     path('venture_capitalist/create/', 			views.VenCapCreateView,                 name='vencap-create'),
     path('venture_capitalist/<int:pk>/update/', views.VenCapUpdateView,                 name='vencap-update'),
     path('venture_capitalist/<int:pk>/delete/', views.VenCapDeleteView.as_view(),       name='vencap-delete'),
+
     
 ]

@@ -40,7 +40,7 @@
         display:block; 
         color: white;
         transition: 0.5s;
-        background: rgb(255, 62, 88);
+        background: rgb(47, 146, 187);
         max-width: 300px;
     }
 
@@ -119,9 +119,9 @@
                                             {% if user.is_authenticated %}
                                                 {% if user.is_team %}
                                                     {% if post.is_published %}
-                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(0,255,0,0.1); width: 50%; margin-top: 20px;">Published</p>
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(47, 146, 187,0.1); width: 50%; margin-top: 20px;">Published</p>
                                                     {% else %}
-                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(255,0,0,0.1); width: 50%; margin-top: 20px;">Not Published Yet</p>
+                                                        <p style="color: #000; font-size: 20px; text-align: center;border-radius: 10px; padding: 10px; background: rgba(47, 146, 187,0.1); width: 50%; margin-top: 20px;">Not Published Yet</p>
                                                     {% endif %}
                                                 {% endif %}
                                             {% endif %}
