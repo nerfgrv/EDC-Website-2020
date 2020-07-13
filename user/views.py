@@ -27,7 +27,7 @@ def studentregister(request):
             student.save()
 
             messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('student-login')
+            return redirect('login')
     else:
         form = StudentRegisterForm()
     return render(request, 'user/signup-student.html', {'form': form})
@@ -51,7 +51,7 @@ def startupregister(request):
             startup.startup_logo    = form.cleaned_data.get('startup_logo')
             startup.save()
             messages.success(request, f'Your account has been created successfully!')
-            return redirect('startup-login')
+            return redirect('login')
     else:
         form = StartupRegisterForm()
     return render(request, 'user/signup-startup.html', {'form': form})

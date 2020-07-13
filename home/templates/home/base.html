@@ -819,7 +819,9 @@
             #hr_footer1{
                 width: 193px;
             }
-            
+            #lower_contact{
+                margin-left: 80px !important;
+            }
     	}
     	@media(max-width: 360px){
     		.contact{
@@ -831,6 +833,9 @@
             #hr_footer{
                 width: 140px;
             }
+            #lower_contact{
+                margin-left: 50px !important;
+            }
     	}
     	@media(max-width: 320px){
     		#footer_h3{
@@ -839,6 +844,7 @@
     		#footer_h4{
     			font-size: 16px !important;
     		}
+            
     	}
     </style>
     <meta charset="UTF-8" />
@@ -1621,12 +1627,12 @@
                         <div class="fc_inner">
                             <div style="padding-bottom:1%;">
                                 <div class="textwidget">
-                                    <h4 style="color:#ffffff; font-size: 30px;" id="footer_h4">Contact Us</h4>
+                                    <h4 style="color:#ffffff; font-size: 30px; font-weight: bold;" id="footer_h4">Contact Us</h4>
                                     <hr size="5px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
                                     </hr>
                                     <ul style="padding-left:0%" type="none" id="footer_list">
                                         <li>
-                                            <div class="contact">
+                                            <div class="contact" id="lower_contact">
                                                 <div class="col1">
                                                     <img src="{% static 'home/images/blueloct.png' %}" height="30px" width="30px" id="favimg">
                                                 </div>
@@ -1639,7 +1645,7 @@
                                         </li>
                                         <br>
                                         <li>
-                                            <div class="contact">
+                                            <div class="contact" id="lower_contact">
                                                 <div class="col1">
                                                     <img src="{% static 'home/images/bluecall.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
@@ -1651,7 +1657,7 @@
                                         </li>
                                         <br>
                                         <li>
-                                            <div class="contact">
+                                            <div class="contact" id="lower_contact">
                                                 <div class="col1">
                                                     <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
