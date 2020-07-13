@@ -34,11 +34,7 @@
         color: white;
         transition: 0.5s;
         background: rgb(47, 146, 187);
-<<<<<<< HEAD
-        max-width: 300px;
-=======
         max-width: 450px;
->>>>>>> eaa20225477d12f45db5d3b13eee0fe01a7aefc5
     }
 
     .post-create a:hover {
@@ -114,7 +110,7 @@ vc_responsive"
 
 {% if user.is_authenticated and user.is_team %}
 <div class="post-create">
-    <a href="{% url 'vencap-create' %}" style="margin: 30px auto;">Add a Venture Capitalist</a>
+    <a href="{% url 'vencap-create' %}" style="margin: 30px auto; width: ">Add a Venture Capitalist</a>
 </div>
 {% endif %}
 
