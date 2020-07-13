@@ -44,7 +44,7 @@ class VentureCapitalist(models.Model):
     name = models.CharField(max_length=100)
     about = models.CharField(max_length=5000)
     startups_funded = models.CharField(max_length=500, default='')
-    contact = PhoneNumberField(blank=True, null=True)
+    contact = PhoneNumberField(blank=True, null=True, help_text='Add country code before the contact no.')
     email = models.EmailField(default='')
     photo = models.ImageField(default='', upload_to='vc/')
     industries = models.CharField(max_length=500, default='')
