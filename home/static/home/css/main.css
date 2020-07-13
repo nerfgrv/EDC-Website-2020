@@ -208,7 +208,7 @@ a{
 	transition: all 0.35s ease;
     -webkit-transition: all 0.35s ease;
     -moz-transition: all 0.35s ease;
-    color: #ff3e58;
+    color: #2f92bb;
 }
 a img {
   border: none;
@@ -2547,7 +2547,7 @@ background-color: rgb(251, 251, 251);
     background: rgba(0, 0, 0, 0);
     padding: 7px 15px;
     font-size: 14px;
-    border: 3px solid rgba(255, 62, 88, 0.22);
+    border: 3px solid rgba(47, 146, 187, 0.22);
     display:inline-block;
 }
 .blog_item_wrapper .pagination{
@@ -2574,7 +2574,7 @@ background-color: rgb(251, 251, 251);
     background: rgba(0, 0, 0, 0);
     padding: 7px 15px;
     font-size: 14px;
-    border: 3px solid rgba(255, 62, 88, 0.22);
+    border: 3px solid rgba(47, 146, 187, 0.22);
     display: block;
 }
 .pagination ul li a:hover {
@@ -3727,7 +3727,7 @@ nav.navigation.post-navigation {
 	background-color:transparent;
 }
 ul.sub-menu{
-	background-color:#ff3e58;
+	background-color:#2f92bb;
 }
 
 
@@ -3877,7 +3877,7 @@ ul.sub-menu{
 	background-color:transparent;
 	}
 	#custom__menu ul.navbar-nav li ul.submenu li:hover a{
-	color: #ff3e58!important;
+	color: #2f92bb!important;
 	}
 	#custom__menu ul.navbar-nav li ul.sub-menu{
 		display:none;
