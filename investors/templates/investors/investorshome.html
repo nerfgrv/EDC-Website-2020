@@ -3,6 +3,7 @@
 
 
 {% block head %}
+<title>EDC,TIET-Investors</title>
 <style>
     .container {
         width: 100% !important;
@@ -32,7 +33,7 @@
         display: block;
         color: white;
         transition: 0.5s;
-        background: rgb(255, 62, 88);
+        background: rgb(47, 146, 187);
         max-width: 450px;
     }
 
@@ -43,6 +44,10 @@
         text-align: center;
         display: block;
         color: white;
+    }
+
+    .contactt:hover{
+        color: black !important;
     }
 </style>
 {% endblock head %}
@@ -160,7 +165,7 @@ vc_responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a class="contactt"
                                                         href="tel:{{vencap.contact}}">{{vencap.contact}}</a>
                                             </div>
                                             {% endif %}
@@ -168,7 +173,7 @@ vc_responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a class="contactt" href="mailto:{{vencap.email}}">{{vencap.email}}</a>
                                             </div>
 
                                             <div class="ifb-flip-box-section-content ult-responsive"
@@ -179,6 +184,7 @@ vc_responsive"
                                                 <p>{{vencap.about}}</p>
                                             </div>
                                         </div>
+                                        <br><br><br>
 
                                         {% if user.is_team %}
                                         <div class="post-create"
