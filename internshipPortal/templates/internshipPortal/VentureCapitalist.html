@@ -3,6 +3,7 @@
 
 
 {% block head %}
+<title>EDC,TIET-Venture Capitalist</title>
 <style>
     .container {
         width: 100% !important;
@@ -23,27 +24,28 @@
 
     .post-create a {
         margin-right: 20px;
-        border-radius: 10px;
-        padding: 15px 90px;
-        margin: 10px auto;
-        font-size: 21px;
-        color: black;
+        border-radius: 10px; 
+        padding: 15px 9px; 
+        margin: 30px auto; 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
-        display: block;
+        display:block; 
         color: white;
         transition: 0.5s;
-        background: rgb(255, 62, 88);
+        background: rgb(47, 146, 187);
         max-width: 450px;
     }
 
     .post-create a:hover {
-        transform: scale(1.02);
-        font-size: 21px;
-        color: black;
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
-        display: block;
+        display:block; 
         color: white;
     }
+
 </style>
 {% endblock head %}
 
@@ -108,7 +110,7 @@ vc_responsive"
 
 {% if user.is_authenticated and user.is_team %}
 <div class="post-create">
-    <a href="{% url 'vencap-create' %}" style="margin: 30px auto;">Add a Venture Capitalist</a>
+    <a href="{% url 'vencap-create' %}" style="margin: 30px auto; width: ">Add a Venture Capitalist</a>
 </div>
 {% endif %}
 
