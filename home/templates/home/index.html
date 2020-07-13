@@ -138,6 +138,32 @@
         max-width: 99vw;
     }
 </style>
+<style>
+    @media(max-width: 414px){
+        #cards{
+            min-width: 312px !important;
+            min-height: 550px !important;
+        }
+    }
+    @media(max-width:768px){
+        #cards{
+            min-width: 330px !important;
+            min-height: 550px !important; 
+        }
+    }
+    @media(max-width:375px){
+        #cards{
+            min-width: 312px !important;
+            min-height: 550px !important; 
+        }
+    }
+    @media(max-width:320px){
+        #cards{
+            min-width: 250px !important;
+            min-height: 800px !important; 
+        }
+    }
+</style>
 {% endblock head %}
 
 
@@ -445,7 +471,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     <div class="vc_column-inner vc_custom_1494625737076">
                         <div class="wpb_wrapper">
                             <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                                <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" style="min-width: 450px" data-min-height='550px'>
+                                <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
                                     <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                         <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -463,11 +489,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                                 </p>
                                             </div>
                                         </div><!-- END .front -->
-                                        <div class="ifb-face ifb-back" style="color:#333333;background:#fcfcfc;  ">
+                                        <div class="ifb-face ifb-back" id="cards" style="color:#333333;background:#fcfcfc;  ">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                                 <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333; ">VL-WEEKEND</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#333333;">
-                                                    <p style="text-align: justify;">Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's youth with the tools needed to become the fulcrum of change towards a self sustainable future for themselves and so that they may play a pivotal role in that change. The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
+                                                    <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
                                                 </div>
                                                 <div class=" vc_custom_1494621689637 ubtn-ctn-left " style="padding-left: 30%">
                                                     <a class="ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-custom " href="{% url 'vl' %}">
@@ -490,7 +516,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     <div class="vc_column-inner vc_custom_1494625737076">
                         <div class="wpb_wrapper">
                             <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                                <div class="flip-box ifb-custom-height horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" style="min-width: 450px" data-min-height='550px'>
+                                <div class="flip-box ifb-custom-height horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
                                     <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                         <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -502,11 +528,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                                 <p>Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's...</p>
                                             </div>
                                         </div><!-- END .front -->
-                                        <div class="ifb-face ifb-back" style="color:#333333;background:#fcfcfc;">
+                                        <div class="ifb-face ifb-back" id="cards" style="color:#333333;background:#fcfcfc;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                                 <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333; ">VL-WEEKEND</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#333333;">
-                                                    <p style="text-align: justify;">Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's youth with the tools needed to become the fulcrum of change towards a self sustainable future for themselves and so that they may play a pivotal role in that change. The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
+                                                    <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
                                                 </div>
                                                 <div class=" vc_custom_1494621689637 ubtn-ctn-left " style="padding-left: 30%">
                                                     <a class="ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-custom " href="{% url 'vl' %}">
