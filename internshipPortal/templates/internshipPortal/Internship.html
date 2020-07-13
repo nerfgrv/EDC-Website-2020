@@ -6,7 +6,7 @@
 <head>
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
-
+    <title>EDC,TIET-Internships</title>
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -206,7 +206,8 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
-    </style><noscript>
+    </style>
+    <noscript>
         <style>
             .wpb_animate_when_almost_visible {
                 opacity: 1;
@@ -214,30 +215,24 @@
         </style>
     </noscript>
     <style>
-        .wrapper {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            min-height: 100%;
-            padding: 30%;
-        }
+    .container {
+        width: 100% !important;
+    }
 
-        #formContent {
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border-radius: 10px 10px 10px 10px;
-            background: #fff;
-            padding: 30px;
-            width: 90%;
-            max-width: 450px;
-            position: relative;
-            padding: 0px;
-            -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-        .create_button a {
+    .vc_row {
+        width: 98vw !important;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 30px 0px 110px 0px;
+        color: #000;
+    }
+
+    .create_button a {
         margin-right: 20px;
         border-radius: 10px; 
         padding: 15px 90px; 
@@ -302,7 +297,8 @@ vc_responsive"
                                             sizes="(max-width: 2000px) 100vw, 2000px" />
 
                                         <h1 class="ls-l"
-                                            style=" top:50%;left:50%;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center; padding-left: 80px"
+                                            style="width: 100%; height: 100%;padding-top: 35%; text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center;" data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;"
+                                            
                                             data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
                                             INTERNSHIPS
                                         </h1>
@@ -344,11 +340,11 @@ vc_responsive"
             <div id="startup" class="card supcard"
                 style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
                 <div class="supcard_top" style="max-width:80% !important;">
-                    <div class="startup_logo">
-
+                    <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
+                        <img style="border-radius: 50%; width: 100px;" src="https://upload.wikimedia.org/wikipedia/en/0/00/The_Child_aka_Baby_Yoda_%28Star_Wars%29.jpg" alt="Avatar">
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" style="margin-top: 15px;">
                         <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
                         <h4 class="card-title" style="font-size: 28px;">{{internship.startup.startup_name}}</h4>
                         <h5 class="card-title" style="color:#2f92bb; font-size: 20px; ">{{ internship.field_of_internship }}
@@ -381,7 +377,7 @@ vc_responsive"
                 <hr>
                 <div class="card-footer " style="background-color:white;">
                     <div class="col-6"></div>
-                    <div class="col-6 mdet" style="font-size: 20px !important; ba">
+                    <div class="col-6 mdet" style="font-size: 20px !important;">
                         <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
                             View Details
                         </a>
@@ -396,14 +392,13 @@ vc_responsive"
             {% endfor %}
 
             {% else %}
-            <div class="wrapper">
-                <div id="formContent">
-                    <h1>Internships Coming Soon...</h1>
+                <br><br><br><br>
+                <div class="wrapper">
+                    <h1 style="font-weight: bold; ">New Internships To Be Added Soon...</h1>
                 </div>
-            </div>
             {% endif %}
         </div>
     </div>
 </div>
 
-{% endblock body%}
+{% endblock body %}

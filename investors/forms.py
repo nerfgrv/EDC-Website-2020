@@ -6,8 +6,10 @@ class InvestorForm(forms.ModelForm):
     class Meta:
         model = Investor
         fields = [
-            'company_name',
+            'name',
             'about',
+            'startups_funded',
             'contact',
-            'email'
-        ]
+            'email',
+            'photo',
+        ]    

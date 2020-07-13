@@ -764,10 +764,10 @@
     		}
     		#hr_footer{
     			width: 500px;
+                margin-left: 100px;
     		}
     		#hr_footer1{
     			width: 500px;
-    			margin-left: 110px;
     		}
     		#fc_inner2{
     			margin-left: 200px;
@@ -781,8 +781,11 @@
     	}
     	@media(max-width: 500px){
     		#hr_footer{
-    			width: 300px;
+    			width: 250px;
     		}
+            #hr_footer1{
+                width: 250px;
+            }
     		.contact{
     			margin-left: 100px;
     		}
@@ -798,9 +801,6 @@
     		.contact{
     			margin-left: 50px;
     		}
-    		#hr_footer1{
-    			margin-left: 0px;
-    		}
     		#footer_list li{
     			font-size: 10px;
     		}
@@ -813,11 +813,24 @@
     		#favimg{
     			width: 20px;
     		}
+            #hr_footer{
+                width: 193px;
+            }
+            #hr_footer1{
+                width: 193px;
+            }
+            
     	}
     	@media(max-width: 360px){
     		.contact{
     			margin-left: 20px;
     		}
+            #hr_footer1{
+                width: 140px;
+            }
+            #hr_footer{
+                width: 140px;
+            }
     	}
     	@media(max-width: 320px){
     		#footer_h3{
@@ -905,6 +918,14 @@
     </div>
 
     <div class="main-wrapper">
+        {% if messages %}
+            <div style="background: black; height:80px; width: 100%"></div>
+            <ul class="messages" style="background: #eeee01; width: 100%; color: rgb(47, 146, 187); text-align: center; margin: 0px; padding: 10px;">
+                {% for message in messages %}
+                    <h1 style="font-weight: 600; font-size: 25px; margin: 0px;">{{ message }}</h1>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
         <!-- NavBar -->
         <header class="right-aligned-menu fullwidth page_header regular-header">
@@ -917,7 +938,7 @@
                 <div class="">
                     <div class="hlogo">
                         <div class="hlogoinner">
-                            <a href="">
+                            <a href="{% url 'home' %}">
                                 <img height="80" width="146" alt="" src="{% static 'home/images/logo.png' %}" style="padding: 5px" />
                                 <img height="80" width="146" class="fixed_header_logo" alt="" src="{% static 'home/images/logoscroll.png' %}" style="padding: 5px" />
                             </a>
@@ -925,275 +946,585 @@
                     </div>
 
 
-                    <div class="mainmenucont menucont cl-effect-1">
-                        <div class="menu-main-menu-container">
-                            <ul class="nav navbar-nav">
-                                <li id="menu-item-1470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470"><a href="{% url 'home' %}" data-hover="Home">Home</a></li>
-                                <li id="menu-item-1478" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478"><a href="{% url 'events' %}">Events</a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-1482" class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482"><a href="{% url 'startupweekend' %}" aria-current="page">The StartUp Weekend</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'etalks' %}" data-hover="Header generic style">E-Talks</a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-1478" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478"><a href="{% url 'ecosystem-home' %}">StartUp Ecosystem</a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-1482" class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482"><a href="#" aria-current="page">StartUp</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'investors' %}" data-hover="Header generic style">Investor</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture Capitalist</a></li>
-                                    </ul>
-                                </li>
-
-                                <li id="menu-item-1471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1471">
-                                    <a href="{% url 'blog-home' %}">Bizfinatics</a>
-                                </li>
-                                <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
-                                    <a href="{% url 'internships' %}">Internships</a>
-                                </li>
-                                <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
-                                    <a href="{% url 'our-team' %}">Our Team</a>
-                                </li>
-                                <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
-                                    <a href="#">Signup</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <!-- Fullscreen pop up menu -->
-                    <div class="fullscreen-menu">
-                        <div class="menuArea">
-                            <input type="checkbox" id="menuToggle">
-
-                            <label for="menuToggle" class="menuOpen">
-                                <span class="open"></span>
-                            </label>
-
-                            <div class="menu menuEffects">
-                                <label for="menuToggle"></label>
-                                <div class="menuContent">
-                                    <div class="menu-main-menu-container">
-                                        <ul  class="nav navbar-nav">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
-                                                <a href="{% url 'home' %}" data-hover="Home">Home</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                                <a href="{% url 'events' %}">Events</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                        <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                        <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The Startup Weekend</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                        <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                        <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab Weekend</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                                <a href="{% url 'ecosystem-home' %}">Startup Ecosystem</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                        <a href="" aria-current="page">Startups</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                        <a href="{% url 'investors' %}" data-hover="Header generic style">Investors</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                        <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture Capitalists</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                                <a href="{% url 'blog-home' %}">BizFinatics</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                                <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                                <a href="{% url 'our-team' %}">Our Team</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                                <a href="">SignUp</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="clear"></div>
-                </div>
-            </div>
-
-
-            <div id="search_wrapper">
-                <form method="get" id="searchForma">
-                    <i class="fas fa-search"></i>
-                    <a id="search_close"><i class="fas fa-times"></i></a>
-                    <input type="text" class="field" name="s" placeholder="Enter your search">
-                    <input type="submit" class="submit" value="">
-                </form>
-
-            </div>
-
-        </header>
-
-
-        <!-- Custom menu link HEADER -->
-        <header id="custom__menu">
-            <!-- Top bar -->
-            <!-- Main menu container -->
-
-            <div class="">
-
-                <div class="hlogo">
-                    <div class="hlogoinner">
-                        <a href="">
-                            <img height="80" width="146" alt="" src="{% static 'home/images/logo.png' %}" />
-                            <img height="80" width="146" class="fixed_header_logo" alt="" src="{% static 'home/images/logoscroll.png' %}" />
-                        </a>
-                    </div>
-                </div>
-
-
-                <div class="menucont">
-
+                <div class="mainmenucont menucont cl-effect-1">
                     <div class="menu-main-menu-container">
-                        <ul  class="nav navbar-nav">
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
-                                <a href="{% url 'home' %}" data-hover="Home">Home</a>
-                            </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                        <ul class="nav navbar-nav">
+                            <li id="menu-item-1470"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470"><a
+                                    href="{% url 'home' %}" data-hover="Home">Home</a></li>
+                            <li id="menu-item-1478"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
                                 <a href="{% url 'events' %}">Events</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                        <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                        <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The StartUp Weekend</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                        <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                        <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab Weekend</a>
-                                    </li>
+                                    <li id="menu-item-1482"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                        <a href="{% url 'startupweekend' %}" aria-current="page">The StartUp Weekend</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'etalks' %}" data-hover="Header generic style">E-Talks</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                            <li id="menu-item-1478"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
                                 <a href="{% url 'ecosystem-home' %}">StartUp Ecosystem</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                        <a href="" aria-current="page">Startups</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                        <a href="{% url 'investors' %}" data-hover="Header generic style">Investors</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                        <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture Capitalists</a>
-                                    </li>
+                                    <li id="menu-item-1482"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                        <a href="#" aria-current="page">StartUp</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'investors' %}" data-hover="Header generic style">Investor</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture
+                                            Capitalist</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                
+                            <li id="menu-item-1471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1471">
                                 <a href="{% url 'blog-home' %}">Bizfinatics</a>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                <a href="" data-hover="Articles">Our Team</a>
+                            <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
+                                <a href="{% url 'internships' %}">Internships</a>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+                            <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
+                                <a href="{% url 'our-team' %}">Our Team</a>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                <a href="" data-hover="Articles">Sign Up</a>
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_student == True %}
+                                <li id="menu-item-1478"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                    <a href="#">Hi, {{ user.student_profile.name }}</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-1482"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                            <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                        <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="#"
+                                                data-hover="Header generic style">Internships applied</a></li>
+                                        <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                    </ul>
+                                </li>
+                    
+                                {% elif request.user.is_startup == True %}
+                                <li id="menu-item-1478"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                    <a href="#">Hi, {{ user.startup_profile.startup_name }}</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-1482"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                            <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                        <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="#"
+                                                data-hover="Header generic style">Internships offered</a></li>
+                                        <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                    </ul>
+                                </li>
+
+                                {% else %}
+                                <li id="menu-item-1478"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                    <a href="#">Hi, Team</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            {% else %}
+                            <li id="menu-item-1478"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                <a href="{% url 'login' %}">Login</a></li>
+                            <li id="menu-item-1478"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                <a href="#">SignUp</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-1482"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                        <a href="{% url 'student-signup' %}" aria-current="page">Student</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'startup-signup' %}" data-hover="Header generic style">Startup</a></li>
+                
+                                </ul>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
-
-
-            </div>
-
-
-
-            <!-- Fullscreen pop up menu -->
-
-            <div class="fullscreen-menu">
-                <div class="menuArea">
-                    <input type="checkbox" id="mobilemenu">
-
-                        <label for="mobilemenu" class="menuOpen">
+                </div>
+                
+                
+                <!-- Fullscreen pop up menu -->
+                <div class="fullscreen-menu">
+                    <div class="menuArea">
+                        <input type="checkbox" id="menuToggle">
+                
+                        <label for="menuToggle" class="menuOpen">
                             <span class="open"></span>
                         </label>
-
+                
                         <div class="menu menuEffects">
-                            <label for="mobilemenu"></label>
+                            <label for="menuToggle"></label>
                             <div class="menuContent">
-
                                 <div class="menu-main-menu-container">
-                                    <ul  class="nav navbar-nav">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
-                                            <a href="{% url 'home' %}" data-hover="Home" style="color: white">Home</a>
+                                    <ul class="nav navbar-nav">
+                                        <li
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
+                                            <a href="{% url 'home' %}" data-hover="Home">Home</a>
                                         </li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                            <a href="{% url 'events' %}" style="color: white">Events</a>
+                                        <li
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="{% url 'events' %}">Events</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                                     <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="{% url 'startupweekend' %}"  data-hover="Header generic style">The StartUp Weekend</a>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The Startup
+                                                        Weekend</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
                                                     <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
                                                     <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab Weekend</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                            <a href="{% url 'ecosystem-home' %}" style="color: white">StartUp Ecosystem</a>
+                                        <li
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="{% url 'ecosystem-home' %}">Startup Ecosystem</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                    <a href="" aria-current="page">StartUps</a>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="" aria-current="page">Startups</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="{% url 'investors' %}"  data-hover="Header generic style">Investors</a>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'investors' %}" data-hover="Header generic style">Investors</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
-                                                    <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture Capitalists</a>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture
+                                                        Capitalists</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                            <a href="{% url 'blog-home' %}" style="color: white">BizFinatics</a>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                                            <a href="{% url 'blog-home' %}">BizFinatics</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                            <a href="{% url 'our-team' %}" data-hover="Articles" style="color: white">Our Team</a>
+                                            <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                            <a href="{% url 'internships' %}" style="color: white">Internships</a>
+                                            <a href="{% url 'our-team' %}">Our Team</a>
                                         </li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
-                                            <a href="" style="color: white">Sign Up</a>
+                                        {% if request.user.is_authenticated %}
+                                            {% if request.user.is_student == True %}
+                                            <li id="menu-item-1478"
+                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                <a href="#">Hi, {{ user.student_profile.name }}</a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1482"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                        <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                        <a href="#" data-hover="Header generic style">Internships applied</a></li>
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                        <a href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                                </ul>
+                                            </li>
+                    
+                                            {% elif request.user.is_startup == True %}
+                                            <li id="menu-item-1478"
+                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                <a href="#">Hi, {{ user.startup_profile.startup_name }}</a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1482"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                        <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                        <a href="#" data-hover="Header generic style">Internships offered</a></li>
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                        <a href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                                </ul>
+                                            </li>
+                                            {% else %}
+                                            <li id="menu-item-1478"
+                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                <a href="#">Hi, Team</a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                            href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            {% endif %}
+                                        {% else %}
+                                        <li id="menu-item-1478"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="{% url 'login' %}">Login</a></li>
+                                        <li id="menu-item-1478"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="#">SignUp</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-1482"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="{% url 'student-signup' %}" aria-current="page">Student</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'startup-signup' %}" data-hover="Header generic style">Startup</a>
+                                                </li>
+                
+                                            </ul>
                                         </li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="clear"></div>
-            </div>
-        </header>
+                </div>
+                </div>
+                
+                
+                <div id="search_wrapper">
+                    <form method="get" id="searchForma">
+                        <i class="fas fa-search"></i>
+                        <a id="search_close"><i class="fas fa-times"></i></a>
+                        <input type="text" class="field" name="s" placeholder="Enter your search">
+                        <input type="submit" class="submit" value="">
+                    </form>
+                
+                </div>
+                
+                </header>
+                
+                
+                <!-- Custom menu link HEADER -->
+                <header id="custom__menu">
+                    <!-- Top bar -->
+                    <!-- Main menu container -->
+                
+                    <div class="">
+                
+                        <div class="hlogo">
+                            <div class="hlogoinner">
+                                <a href="">
+                                    <img height="80" width="146" alt="" src="{% static 'home/images/logo.png' %}" />
+                                    <img height="80" width="146" class="fixed_header_logo" alt=""
+                                        src="{% static 'home/images/logoscroll.png' %}" />
+                                </a>
+                            </div>
+                        </div>
+                
+                
+                        <div class="menucont">
+                
+                            <div class="menu-main-menu-container">
+                                <ul class="nav navbar-nav">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
+                                        <a href="{% url 'home' %}" data-hover="Home">Home</a>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                        <a href="{% url 'events' %}">Events</a>
+                                        <ul class="sub-menu">
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The StartUp
+                                                    Weekend</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab Weekend</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                        <a href="{% url 'ecosystem-home' %}">StartUp Ecosystem</a>
+                                        <ul class="sub-menu">
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                <a href="" aria-current="page">Startups</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'investors' %}" data-hover="Header generic style">Investors</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'venture-capitalist' %}" data-hover="Header generic style">Venture
+                                                    Capitalists</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                                        <a href="{% url 'blog-home' %}">Bizfinatics</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                                        <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                                        <a href="" data-hover="Articles">Our Team</a>
+                                    </li>
+                
+                                    {% if request.user.is_authenticated %}
+                                        {% if request.user.is_student == True %}
+                                        <li id="menu-item-1478"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="#">Hi, {{ user.student_profile.name }}</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-1482"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="#" data-hover="Header generic style">Internships applied</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                            </ul>
+                                        </li>
+                    
+                                        {% elif request.user.is_startup == True %}
+                                        <li id="menu-item-1478"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="#">Hi, {{ user.startup_profile.startup_name }}</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-1482"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="#" data-hover="Header generic style">Internships offered</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                    
+                                            </ul>
+                                        </li>
+                                        {% else %}
+                                        <li id="menu-item-1478"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="#">Hi, Team</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        {% endif %}
+                                    {% else %}
+                                    <li id="menu-item-1478"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                        <a href="{% url 'login' %}">Login</a></li>
+                                    <li id="menu-item-1478"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                        <a href="#">SignUp</a>
+                                        <ul class="sub-menu">
+                                            <li id="menu-item-1482"
+                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                <a href="{% url 'student-signup' %}" aria-current="page">Student</a></li>
+                                            <li id="menu-item-1483"
+                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                    href="{% url 'startup-signup' %}" data-hover="Header generic style">Startup</a></li>
+                
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                
+                
+                        </div>
+                
+                
+                
+                        <!-- Fullscreen pop up menu -->
+                
+                        <div class="fullscreen-menu">
+                            <div class="menuArea">
+                                <input type="checkbox" id="mobilemenu">
+                
+                                <label for="mobilemenu" class="menuOpen">
+                                    <span class="open"></span>
+                                </label>
+                
+                                <div class="menu menuEffects">
+                                    <label for="mobilemenu"></label>
+                                    <div class="menuContent">
+                
+                                        <div class="menu-main-menu-container">
+                                            <ul class="nav navbar-nav">
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1470">
+                                                    <a href="{% url 'home' %}" data-hover="Home" style="color: white">Home</a>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                    <a href="{% url 'events' %}" style="color: white">Events</a>
+                                                    <ul class="sub-menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                            <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The
+                                                                StartUp Weekend</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'esummit' %}" data-hover="Header generic style">E-Summit</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab
+                                                                Weekend</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                    <a href="{% url 'ecosystem-home' %}" style="color: white">StartUp Ecosystem</a>
+                                                    <ul class="sub-menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                            <a href="" aria-current="page">StartUps</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'investors' %}"
+                                                                data-hover="Header generic style">Investors</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'venture-capitalist' %}"
+                                                                data-hover="Header generic style">Venture Capitalists</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
+                                                    <a href="{% url 'blog-home' %}" style="color: white">BizFinatics</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
+                                                    <a href="{% url 'internships' %}" style="color: white">Internships</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
+                                                    <a href="{% url 'our-team' %}" data-hover="Articles" style="color: white">Our
+                                                        Team</a>
+                                                </li>
+                
+                                                {% if request.user.is_authenticated %}
+                                                    {% if request.user.is_student == True %}
+                                                    <li id="menu-item-1478"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                        <a href="">Hi, {{ user.student_profile.name }}</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-1482"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                                <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                                <a href="#" data-hover="Header generic style">Internships applied</a></li>
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                                <a href="{% url 'logout' %}" data-hover="Header generic style">Logout</a>
+                                                            </li>
+                    
+                                                        </ul>
+                                                    </li>
+                    
+                                                    {% elif request.user.is_startup == True %}
+                                                    <li id="menu-item-1478"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                        <a href="">Hi, {{ user.startup_profile.startup_name }}</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-1482"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                                <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                                <a href="#" data-hover="Header generic style">Internships offered</a></li>
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                                <a href="{% url 'logout' %}" data-hover="Header generic style">Logout</a>
+                                                            </li>
+                    
+                                                        </ul>
+                                                    </li>
+                                                    {% else %}
+                                                    <li id="menu-item-1478"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                        <a href="">Hi, Team</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                                    href="{% url 'logout' %}" data-hover="Header generic style">Logout</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% endif %}
+                                                {% else %}
+                                                <li id="menu-item-1478"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                    <a href="{% url 'login' %}">Login</a></li>
+                                                <li id="menu-item-1478"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                    <a href="#">SignUp</a>
+                                                    <ul class="sub-menu">
+                                                        <li id="menu-item-1482"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                            <a href="{% url 'student-signup' %}" aria-current="page">Student</a></li>
+                                                        <li id="menu-item-1483"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'startup-signup' %}"
+                                                                data-hover="Header generic style">Startup</a></li>
+                
+                                                    </ul>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="clear"></div>
+                    </div>
+                </header>
         <!-- end Custom menu link HEADER -->
 
 
@@ -1209,7 +1540,6 @@
                                 <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px" id="footer_logo">
                             </div>
                             <br>
-                            <br>
                             <div class="contact">
                                 <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="60px" width="60px" id="linkedin_footer"></a> </div>
 
@@ -1218,6 +1548,7 @@
                                 <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="60px" width="60px" style="margin-left: 15px;" id="facebook_footer"></a></div>
                             </div>
                         </div>
+                        <br>
                     </div>
                     <div class="footer_column">
                         <div class="fc_inner">
@@ -1225,7 +1556,6 @@
                             <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
                             </hr>
                             <ul style="padding: 0%;" type="none">
-                                <br>
                                 <li>
                                     <a href="{% url 'esummit' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Summit</p>
@@ -1238,12 +1568,18 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{% url 'etalks' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Talks</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="{% url 'startupweekend' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Start-Up Weekend</p>
                                     </a>
                                 </li>
                             </ul>
                         </div>
+                        <br>
                     </div>
                     <div class="footer_column" style="margin-left: -100px">
                         <div class="fc_inner" id="fc_inner2">
@@ -1251,7 +1587,6 @@
                             <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer1">
                             </hr>
                             <ul style="padding: 0%;" type="none">
-                                <br>
                                 <li>
                                     <a href="{% url 'ecosystem-home' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">About</p>
@@ -1280,6 +1615,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <br>
                     </div>
                     <div class="footer_column" style="margin-right: 50px">
                         <div class="fc_inner">
@@ -1289,11 +1625,10 @@
                                     <hr size="5px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
                                     </hr>
                                     <ul style="padding-left:0%" type="none" id="footer_list">
-                                        <br>
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/location.png' %}" height="35px" width="35px" id="favimg">
+                                                    <img src="{% static 'home/images/blueloct.png' %}" height="30px" width="30px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="https://g.page/ThaparInstitute?share">
@@ -1306,7 +1641,7 @@
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/phone.png' %}" height="35px" width="35px" id="favimg">
+                                                    <img src="{% static 'home/images/bluecall.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 8px; margin-top: -6px;">
                                                     <p style="color: white; font-family: PT Sans;">Animesh Bisen: <a href="tel:9140470096">+91 9140470096</a></p>
@@ -1318,7 +1653,7 @@
                                         <li>
                                             <div class="contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/mail.png' %}" height="35px" width="35px" id="favimg">
+                                                    <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg">
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="mailto:tuedcell@gmail.com">

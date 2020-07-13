@@ -15,6 +15,7 @@ class Internship(models.Model):
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
+
     who_should_apply = models.CharField(max_length=200)
 
     def __str__(self):
@@ -44,7 +45,7 @@ class VentureCapitalist(models.Model):
     name = models.CharField(max_length=100)
     about = models.CharField(max_length=5000)
     startups_funded = models.CharField(max_length=500, default='')
-    contact = PhoneNumberField(blank=True, null=True)
+    contact = PhoneNumberField(blank=True, null=True, help_text='Add country code before the contact no.')
     email = models.EmailField(default='')
     photo = models.ImageField(default='', upload_to='vc/')
     industries = models.CharField(max_length=500, default='')

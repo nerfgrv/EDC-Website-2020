@@ -1,38 +1,62 @@
-{%extends "home/base.html"%}
+{% extends 'home/base.html' %}
 {% load static %}
 
+
 {% block head %}
+<title>EDC,TIET-Investors</title>
 <style>
+    .container {
+        width: 100% !important;
+    }
+
+    .vc_row {
+        width: 98vw !important;
+    }
+
     .wrapper {
         display: flex;
         align-items: center;
-        flex-direction: column;
         justify-content: center;
         width: 100%;
-        min-height: 100%;
-        padding: 30%;
+        padding: 30px 0px 110px 0px;
+        color: #000;
     }
 
-    #formContent {
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border-radius: 10px 10px 10px 10px;
-        background: #fff;
-        padding: 30px;
-        width: 90%;
-        max-width: 450px;
-        position: relative;
-        padding: 0px;
-        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    .post-create a {
+        margin-right: 20px;
+        border-radius: 10px;
+        padding: 15px 90px;
+        margin: 10px auto;
+        font-size: 21px;
+        color: black;
         text-align: center;
+        display: block;
+        color: white;
+        transition: 0.5s;
+        background: rgb(47, 146, 187);
+        max-width: 450px;
+    }
+
+    .post-create a:hover {
+        transform: scale(1.02);
+        font-size: 21px;
+        color: black;
+        text-align: center;
+        display: block;
+        color: white;
     }
 </style>
 {% endblock head %}
 
+
+<!-- page -->
 {% block bodytag %}
+
 class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-header wpb-js-composer js-comp-ver-6.0.5
 vc_responsive"
+
 {% endblock bodytag %}
+
 {% block body %}
 <div class="main-content ">
     <div class="row">
@@ -54,16 +78,17 @@ vc_responsive"
                                 });
                             </script>
                             <div id="layerslider_1" class="ls-wp-container fitvidsignore"
-                                style="width:1280px;height:650px;margin:0 auto;margin-bottom: 0px;">
+                                style="width:1280px;height:700px;margin:0 auto;margin-bottom: 0px;">
                                 <div class="ls-slide" data-ls="kenburnsscale:1.2;">
-                                    <img width="2000" height="1000" src="/static/investors/investors_handshake.jpg"
-                                        class="ls-bg " id="trans" alt="" sizes="(max-width: 2000px) 100vw, 2000px"
-                                        alt="investors" />
+                                    <img width="2000" height="1000" src="./investors.jpg" class="ls-bg " id="trans"
+                                        alt=""
+                                        srcset="https://1v1d1e1lmiki1lgcvx32p49h8fe-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/handshake-1938-Getty-960x540.jpg"
+                                        sizes="(max-width: 2000px) 100vw, 2000px" />
 
                                     <h1 class="ls-l"
                                         style=" top:50%;left:50%;text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center; padding-left: 80px"
                                         data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
-                                        OUR INVESTORS</h1>
+                                        INVESTORS</h1>
                                     <a style="" class="ls-l" href="#startup" target="_self"
                                         data-ls="showinfo:1;offsetyin:-50px;delayin:1000;parallax:true;parallaxlevel:-10;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
 
@@ -77,35 +102,28 @@ vc_responsive"
         </div>
 
         <div class="vc_row-full-width vc_clearfix"></div>
-
         <div class="clear"></div>
+
     </div>
 </div> <!-- content -->
+
+{% if user.is_authenticated and user.is_team %}
+<div class="post-create">
+    <a href="{% url 'investor-create' %}" style="margin: 30px auto;">Add an Investor</a>
+</div>
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+
 <div class="row main_body">
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <!-- Row Backgrounds -->
-        <div class="upb_bg_img" data-ultimate-bg="url(./ImagesHomePage/ImageWebsite3.jpg)"
-            data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="repeat" data-bg-img-size="cover"
-            data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="scroll"
-            data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="fadeout_row_value"
-            data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat"
-            data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30"
-            data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false"
-            data-custom-vc-row="" data-vc="6.0.5" data-is_old_vc="" data-theme-support="" data-overlay="false"
-            data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""
-            style="background-repeat: no-repeat;"></div>
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
-
-
             {% if investors %}
-            {% for inv in investors %}
+            {% for vencap in investors %}
             <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
                 <div class="vc_column-inner vc_custom_1494625737076">
                     <div class="wpb_wrapper">
@@ -115,18 +133,19 @@ vc_responsive"
                                 <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                            <img class="img-icon" alt="null"
-                                                src="https://kellton-revamp-prod.s3.amazonaws.com/s3fs-public/2019-04/1_8.jpg"
-                                                height="400px" width="400px" />
-                                            <h3 class="ult-responsive flipbox_heading"
+                                            <h2 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{inv.company_name}} </h3>
+                                                style="color:#000; font-size: 30px; padding-bottom: 20px;">{{vencap.name}} </h2>
+                                            {% if vencap.photo.url %}
+                                                <img class="img-icon" alt="{{vencap.name}}" src="{{vencap.photo.url}}" height="400px"
+                                                    width="400px" />
+                                            {% endif %}
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p>{{inv.about}} </p>
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Startups Funded: </h2><p>{{vencap.startups_funded}} </p>
                                             </div>
                                         </div>
                                     </div><!-- END .front -->
@@ -135,35 +154,56 @@ vc_responsive"
                                             <h3 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{inv.company_name}}</h3>
+                                                style="color:#000;  font-size: 30px;">{{vencap.name}}</h3>
+
+                                            {% if vencap.contact %}
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p>{{inv.about}} <br> <br>Contact: <a
-                                                        href="tel:{{inv.contact}}">{{inv.contact}}</a>
-                                                    <br> Email: <a href="mailto:{{inv.email}}">{{inv.email}}</a>
-                                                </p>
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a
+                                                        href="tel:{{vencap.contact}}">{{vencap.contact}}</a>
+                                            </div>
+                                            {% endif %}
+                                            <div class="ifb-flip-box-section-content ult-responsive"
+                                                data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
+                                                data-responsive-json-new='{"font-size":"","line-height":""}'
+                                                style="color:#333333;color:#333333;">
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
+                                            </div>
+
+                                            <div class="ifb-flip-box-section-content ult-responsive"
+                                                data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
+                                                data-responsive-json-new='{"font-size":"","line-height":""}'
+                                                style="color:#333333;color:#333333;">
+                                                <h2 style="font-size: 20px; padding-top: 16px;">About: </h2>
+                                                <p>{{vencap.about}}</p>
                                             </div>
                                         </div>
-                                    </div><!-- END .back -->
-                                </div> <!-- ifb-flip-box -->
-                            </div> <!-- flip-box -->
-                        </div><!-- End icon block -->
-                    </div>
+
+                                        {% if user.is_team %}
+                                        <div class="post-create"
+                                            style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 100%; margin: auto">
+                                            <a href="{% url 'investor-update' vencap.id %}">Update</a>
+                                            <a href="{% url 'investor-delete' vencap.id %}">Delete</a>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- END .back -->
+                            </div> <!-- ifb-flip-box -->
+                        </div> <!-- flip-box -->
+                    </div><!-- End icon block -->
                 </div>
             </div>
+        
             {% endfor %}
 
             {% else %}
-            <div class="wrapper" >
-                <div id="formContent" >
-                    <h1>Investors Coming Soon...</h1>
-                </div>
+            <div class="wrapper">
+                <h1 style="font-weight: bold;">Coming Soon!</h1>
             </div>
             {% endif %}
-
         </div>
     </div>
 </div>
-{% endblock body %}
+{%endblock body%}
