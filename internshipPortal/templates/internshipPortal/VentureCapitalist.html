@@ -120,7 +120,7 @@ vc_responsive"
 <div class="row main_body">
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
-        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679" style="display: flex; flex-direction: row; flex-wrap: wrap;">
             {% if venture %}
             {% for vencap in venture %}
             <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
@@ -190,8 +190,8 @@ vc_responsive"
                                             {% if user.is_team %}
                                             <div class="post-create"
                                                 style="display: flex; flex-direction: row; flex-wrap: wrap; padding-top: 20px; justify-content: space-around; width: 100%; margin: auto">
-                                                <a href="{% url 'vencap-update' vencap.id %}">Update VenCap</a>
-                                                <a href="{% url 'vencap-delete' vencap.id %}">Delete VenCap</a>
+                                                <a href="{% url 'vencap-update' vencap.id %}">Update</a>
+                                                <a href="{% url 'vencap-delete' vencap.id %}">Delete</a>
                                             </div>
                                             {% endif %}
                                         </div>
@@ -201,15 +201,14 @@ vc_responsive"
                         </div><!-- End icon block -->
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
 
-            {% else %}
-            <div class="wrapper">
-                <h1 style="font-weight: bold;">Coming Soon!</h1>
+                {% else %}
+                <div class="wrapper">
+                    <h1 style="font-weight: bold;">Coming Soon!</h1>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
-
         </div>
     </div>
 </div>
