@@ -132,17 +132,19 @@ vc_responsive"
                                 <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                            <h3 class="ult-responsive flipbox_heading"
+                                            <h2 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{vencap.name}} </h3>
-                                            <img class="img-icon" alt="null" src="{{vencap.photo}}" height="400px"
-                                                width="400px" />
+                                                style="color:#000; font-size: 30px; padding-bottom: 20px;">{{vencap.name}} </h2>
+                                            {% if vencap.photo.url %}
+                                                <img class="img-icon" alt="{{vencap.name}}" src="{{vencap.photo.url}}" height="400px"
+                                                    width="400px" />
+                                            {% endif %}
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p>{{vencap.industries}} </p>
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Startups Funded: </h2><p>{{vencap.startups_funded}} </p>
                                             </div>
                                         </div>
                                     </div><!-- END .front -->
@@ -151,29 +153,37 @@ vc_responsive"
                                             <h3 class="ult-responsive flipbox_heading"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                style="color:#333333; ">{{vencap.name}}</h3>
+                                                style="color:#000;  font-size: 30px;">{{vencap.name}}</h3>
 
+                                            {% if vencap.contact %}
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <p> Contact: <a
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a
                                                         href="tel:{{vencap.contact}}">{{vencap.contact}}</a>
-                                                    <br> Email: <a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
-                                                </p>
+                                            </div>
+                                            {% endif %}
+                                            <div class="ifb-flip-box-section-content ult-responsive"
+                                                data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
+                                                data-responsive-json-new='{"font-size":"","line-height":""}'
+                                                style="color:#333333;color:#333333;">
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
+                                            </div>
 
                                                 <div class="ifb-flip-box-section-content ult-responsive"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
                                                     style="color:#333333;color:#333333;">
-                                                    <p>{{vencap.startups_funded}} </p>
+                                                    <h2 style="font-size: 20px; padding-top: 16px;">Industries: </h2><p>{{vencap.industries}}</p>
                                                 </div>
 
                                                 <div class="ifb-flip-box-section-content ult-responsive"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
                                                     style="color:#333333;color:#333333;">
-                                                    <p>{{vencap.about}} </p>
+                                                    <h2 style="font-size: 20px; padding-top: 16px;">About: </h2>
+                                                    <p>{{vencap.about}}</p>
                                                 </div>
                                             </div>
 
