@@ -206,7 +206,8 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
-    </style><noscript>
+    </style>
+    <noscript>
         <style>
             .wpb_animate_when_almost_visible {
                 opacity: 1;
@@ -214,30 +215,24 @@
         </style>
     </noscript>
     <style>
-        .wrapper {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            min-height: 100%;
-            padding: 30%;
-        }
+    .container {
+        width: 100% !important;
+    }
 
-        #formContent {
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border-radius: 10px 10px 10px 10px;
-            background: #fff;
-            padding: 30px;
-            width: 90%;
-            max-width: 450px;
-            position: relative;
-            padding: 0px;
-            -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-        .create_button a {
+    .vc_row {
+        width: 98vw !important;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 30px 0px 110px 0px;
+        color: #000;
+    }
+
+    .create_button a {
         margin-right: 20px;
         border-radius: 10px; 
         padding: 15px 90px; 
@@ -397,11 +392,10 @@ vc_responsive"
             {% endfor %}
 
             {% else %}
-            <div class="wrapper">
-                <div id="formContent">
-                    <h1>Internships Coming Soon...</h1>
+                <br><br><br><br>
+                <div class="wrapper">
+                    <h1 style="font-weight: bold; ">New Internships To Be Added Soon...</h1>
                 </div>
-            </div>
             {% endif %}
         </div>
     </div>
