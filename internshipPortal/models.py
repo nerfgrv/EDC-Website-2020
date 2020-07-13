@@ -15,6 +15,7 @@ class Internship(models.Model):
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
+
     who_should_apply = models.CharField(max_length=200)
 
     def __str__(self):
