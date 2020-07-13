@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
 
 
-    <title>Homepage - Agency - Demo 1</title>
+    <title>EDC,TIET-Internships</title>
     <style type="text/css" data-type="vc_shortcodes-custom-css">
         .vc_custom_1522954642578 {
             padding-top: 50px !important;
@@ -1107,10 +1107,10 @@ vc_responsive" {% endblock bodytag %}
 
         <div class="card supcard" style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
             <div class="supcard_top">
-                <div class="startup_logo">
-
+                <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
+                        <img style="border-radius: 50%; width: 100px; height:100px;" src="{{object.startup.startup_logo.url}}" alt="{{object.startup.startup_name}}">
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="margin-top: 25px;">
                     <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
                     <h4 class="card-title" style="font-size: 25px;">{{object.startup.startup_name}}</h4>
                     <h5 class="card-title" style="color:#2f92bb; font-size:18px">{{object.field_of_internship}}
@@ -1156,31 +1156,39 @@ vc_responsive" {% endblock bodytag %}
                     <a href="#">Next ></a>
                 </div>
             </div> -->
-        <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; padding: 1% 2% 1% 2%;">
+        <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-top: 40px; margin-bottom:30px; padding: 1% 2% 1% 2%;">
             <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Apply By:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.apply_by}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship:</h5>
-                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> <p class="card-text"
-                        style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
+                <div class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</div>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> 
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who Should Apply:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_should_apply}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Perks:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.perks}}</p>
 
+                {% now "Y-m-d" as current_date %}
                 {% if applied %}
                     <a href="#" class="btn btn-rounded btn-lg btn-danger"
                         style="margin-bottom: 10px; text-align:center;">Applied
-                    </a>
-                {% elif user.is_student %}
-                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-danger"
-                        style="margin-bottom: 10px; text-align:center;">Apply For Internship
                     </a>
                 {% elif user.startup_profile == object.startup %}
                     <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-danger"
                         style="margin-bottom: 10px; text-align:center;">Edit Details
                     </a>
+                {% elif current_date > object.apply_by|date:"Y-m-d" %}  
+                    <a href="" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Applications Closed
+                    </a>          
+                {% elif user.is_student %}
+                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-danger"
+                        style="margin-bottom: 10px; text-align:center;">Apply For Internship
+                    </a>
+
                 {% else %}
-                    <a href="{% url 'student-login' %}" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="{% url 'login' %}" class="btn btn-rounded btn-lg btn-danger"
                         style="margin-bottom: 10px; text-align:center;">Login As Student To Apply
                     </a>
                 {% endif %}
