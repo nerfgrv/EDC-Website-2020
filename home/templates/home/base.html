@@ -917,7 +917,7 @@
                 <div class="">
                     <div class="hlogo">
                         <div class="hlogoinner">
-                            <a href="">
+                            <a href="{% url 'home' %}">
                                 <img height="80" width="146" alt="" src="{% static 'home/images/logo.png' %}" style="padding: 5px" />
                                 <img height="80" width="146" class="fixed_header_logo" alt="" src="{% static 'home/images/logoscroll.png' %}" style="padding: 5px" />
                             </a>
@@ -1504,6 +1504,11 @@
                                 <li>
                                     <a href="{% url 'vl' %}">
                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Venture Lab</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'etalks' %}">
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Talks</p>
                                     </a>
                                 </li>
                                 <li>
