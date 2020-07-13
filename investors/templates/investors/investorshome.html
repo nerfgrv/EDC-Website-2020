@@ -108,7 +108,7 @@ vc_responsive"
 
 {% if user.is_authenticated and user.is_team %}
 <div class="post-create">
-    <a href="{% url 'vencap-create' %}" style="margin: 30px auto;">Add an Investor</a>
+    <a href="{% url 'investor-create' %}" style="margin: 30px auto;">Add an Investor</a>
 </div>
 {% endif %}
 
@@ -194,15 +194,15 @@ vc_responsive"
                     </div><!-- End icon block -->
                 </div>
             </div>
-        </div>
-        {% endfor %}
+        
+            {% endfor %}
 
-        {% else %}
-        <div class="wrapper">
-            <h1 style="font-weight: bold;">Coming Soon!</h1>
+            {% else %}
+            <div class="wrapper">
+                <h1 style="font-weight: bold;">Coming Soon!</h1>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-
     </div>
 </div>
 {%endblock body%}

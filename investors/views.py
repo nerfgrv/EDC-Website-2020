@@ -51,7 +51,7 @@ def InvestorUpdateView(request, pk):
                 form.save()
                 return redirect('investors')
 
-        form = InvestorForm(instance=VentureCapitalist.objects.filter(id=pk))
+        form = InvestorForm(instance=Investor.objects.filter(id=pk))
         context = {
             'form': form
         }
