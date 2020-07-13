@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
@@ -17,10 +18,13 @@ def Internships(request):
 
 def InternshipCreateView(request):
     form = InternshipForm(request.POST or None)
-    
-    if form.is_valid():
-        form.instance.startup = request.user.startup_profile
-        form.save()
+    if request.user.is_authenticated and request.user.is_startup:
+        if form.is_valid():
+            form.instance.startup = request.user.startup_profile
+            form.save()
+            return redirect('internships')
+    else:
+        messages.success(request, f'You are not authorised to access this page.')
         return redirect('internships')
 
     context = {
