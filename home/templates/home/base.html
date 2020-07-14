@@ -732,15 +732,18 @@
     		}
     		#footer_h4{
     			font-size: 25px !important;
-    		}
-            #footer_list{
-                margin-left: 0px !important;
+    		}          
+            .footer_column{
+                flex: 2 !important;
+            }
+            .contact-cards{
+                align-items: center !important;
             }
     	}
     	@media(max-width: 991px){
-    		.footer_column{
-                flex: 2 !important;
-            }
+            #footer_list{
+                margin-left: 0px !important;
+            } 
             #footer_h3{
     			font-size: 18px !important;
                 padding-bottom: 5px; 
@@ -780,9 +783,7 @@
     		#copyright_footer{
     			margin-left: 180px;
     		}
-            .contact-cards{
-                align-items: center !important;
-            }
+
     	}
     	@media(max-width: 500px){
     		#hr_footer{
@@ -1522,7 +1523,7 @@
         <footer>
             <div class="main_footer footer_fourcolumns" style="padding: 20px 0px 15px 0px;">
                 <div class="" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 90%; margin: auto;">
-                    <div class="footer_column" style="flex: 1; padding: 30px;">
+                    <div class="footer_column" style="flex: 1; padding: 30px; min-width: 100px;">
                         <div class="fc_inner">
                             <div>
                                 <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px" id="footer_logo">
