@@ -11,10 +11,11 @@ class Internship(models.Model):
     duration = models.CharField(max_length=20)
     about = models.TextField()
     location = models.CharField(max_length=100)
-    stipend = models.IntegerField()
+    stipend = models.CharField(max_length=100)
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
+    apply_by = models.DateField(default='2000-01-01', help_text='YYYY-MM-DD Format should be followed for the date.')
 
     who_should_apply = models.CharField(max_length=200)
 
@@ -49,6 +50,7 @@ class VentureCapitalist(models.Model):
     email = models.EmailField(default='')
     photo = models.ImageField(default='', upload_to='vc/')
     industries = models.CharField(max_length=500, default='')
-    
+
+
     def __str__(self):
         return self.name
