@@ -14,7 +14,8 @@ class InternshipForm(forms.ModelForm):
             'skills_required',
             'no_of_internships',
             'perks',
-            'who_should_apply'
+            'who_should_apply',
+            'apply_by',
         ]
 
 
