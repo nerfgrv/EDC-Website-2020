@@ -619,7 +619,7 @@
         }
 
         ul.sub-menu li a:hover {
-            color: #ffcece;
+            color: #c5e4f0;
         }
 
         ul.sub-menu,
@@ -732,11 +732,21 @@
     		}
     		#footer_h4{
     			font-size: 25px !important;
-    		}
+    		}          
+            .footer_column{
+                flex: 2 !important;
+            }
+            .contact-cards{
+                align-items: center !important;
+            }
     	}
     	@media(max-width: 991px){
-    		#footer_h3{
+            #footer_list{
+                margin-left: 0px !important;
+            } 
+            #footer_h3{
     			font-size: 18px !important;
+                padding-bottom: 5px; 
     		}
     		#footer_h4{
     			font-size: 20px !important;
@@ -756,18 +766,13 @@
     			width: 35px;
     			height: auto;
     		}
-    		#footer_logo{
-    			margin-right: 100px;
-    		}
-    		.contact{
-    			margin-left: 260px;
-    		}
     		#hr_footer{
-    			width: 500px;
-                margin-left: 100px;
-    		}
+    			width: 200px;
+                margin: auto;
+            }
     		#hr_footer1{
-    			width: 500px;
+    			width: 300px;
+                margin: auto;
     		}
     		#fc_inner2{
     			margin-left: 200px;
@@ -778,6 +783,7 @@
     		#copyright_footer{
     			margin-left: 180px;
     		}
+
     	}
     	@media(max-width: 500px){
     		#hr_footer{
@@ -786,9 +792,6 @@
             #hr_footer1{
                 width: 250px;
             }
-    		.contact{
-    			margin-left: 100px;
-    		}
     		#copyright_footer{
     			margin-left: 120px;
     		}
@@ -798,9 +801,6 @@
     	}
 
     	@media(max-width: 414px){
-    		.contact{
-    			margin-left: 50px;
-    		}
     		#footer_list li{
     			font-size: 10px;
     		}
@@ -818,23 +818,6 @@
             }
             #hr_footer1{
                 width: 193px;
-            }
-            #lower_contact{
-                margin-left: 80px !important;
-            }
-    	}
-    	@media(max-width: 360px){
-    		.contact{
-    			margin-left: 20px;
-    		}
-            #hr_footer1{
-                width: 140px;
-            }
-            #hr_footer{
-                width: 140px;
-            }
-            #lower_contact{
-                margin-left: 50px !important;
             }
     	}
     	@media(max-width: 320px){
@@ -1538,99 +1521,97 @@
         {% block body %}{% endblock body %}
         <!--Footer-->
         <footer>
-            <div class="main_footer footer_fourcolumns">
-                <div class="">
-                    <div class="footer_column" style="margin-left: 50px">
+            <div class="main_footer footer_fourcolumns" style="padding: 20px 0px 15px 0px;">
+                <div class="" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 90%; margin: auto;">
+                    <div class="footer_column" style="flex: 1; padding: 30px; min-width: 100px;">
                         <div class="fc_inner">
                             <div>
                                 <img src="{% static 'home/images/logoscroll.png' %}" height="300px" width="250px" id="footer_logo">
                             </div>
                             <br>
-                            <div class="contact">
-                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="60px" width="60px" id="linkedin_footer"></a> </div>
+                            <div class="contact" style="display: flex; flex-direction: row; justify-content: space-around;">
+                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="40px" width="40px" id="linkedin_footer"></a> </div>
 
-                                <div><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/insta.png' %}" height="60px" width="60px" style="margin-left: 15px;" id="instagram_footer"></a></div>
+                                <div><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/insta.png' %}" height="40px" width="40px" id="instagram_footer"></a></div>
 
-                                <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="60px" width="60px" style="margin-left: 15px;" id="facebook_footer"></a></div>
+                                <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="40px" width="40px" id="facebook_footer"></a></div>
                             </div>
                         </div>
                         <br>
                     </div>
-                    <div class="footer_column">
+                    <div class="footer_column" style="flex: 1; padding: 10px;">
                         <div class="fc_inner">
-                            <h3 style="color: white; font-size: 25px;" id="footer_h3">Our Events</h3>
-                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
+                            <h3 style="color: white; font-size: 18px; margin-bottom: 0px;" id="footer_h3">Our Events</h3>
+                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="50px" id="hr_footer">
                             </hr>
                             <ul style="padding: 0%;" type="none">
                                 <li>
                                     <a href="{% url 'esummit' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Summit</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">E-Summit</p>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="{% url 'vl' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Venture Lab</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Venture Lab</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'etalks' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">E-Talks</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">E-Talks</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'startupweekend' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Start-Up Weekend</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Start-Up Weekend</p>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <br>
                     </div>
-                    <div class="footer_column" style="margin-left: -100px">
-                        <div class="fc_inner" id="fc_inner2">
-                            <h3 style="color: white; font-size: 25px;" id="footer_h3">Start-Up Eco-System</h3>
-                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer1">
-                            </hr>
+                    <div class="footer_column" style="flex: 1.5;  padding: 10px;">
+                        <div class="fc_inner">
+                            <h3 style="color: white; font-size: 18px; margin-bottom: 0px;" id="footer_h3">Start-Up Eco-System</h3>
+                            <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="70px" id="hr_footer1">
                             <ul style="padding: 0%;" type="none">
                                 <li>
                                     <a href="{% url 'ecosystem-home' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">About</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">About</p>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="#">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">StartUps</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">StartUps</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'venture-capitalist' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Venture Capitalists</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Venture Capitalists</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'investors' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Investors</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Investors</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'internships' %}">
-                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Internships</p>
+                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Internships</p>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <br>
                     </div>
-                    <div class="footer_column" style="margin-right: 50px">
+                    <div class="footer_column" style="flex: 2; padding: 10px;">
                         <div class="fc_inner">
-                            <div style="padding-bottom:1%;">
+                            <div style="">
                                 <div class="textwidget">
-                                    <h4 style="color:#ffffff; font-size: 30px; font-weight: bold;" id="footer_h4">Contact Us</h4>
-                                    <hr size="5px" align="left" noshade="noshade" color="#2f92bb" width="100px" id="hr_footer">
-                                    </hr>
-                                    <ul style="padding-left:0%" type="none" id="footer_list">
+                                    <h3 style="color: white; font-size: 18px; margin-bottom: 0px;" id="footer_h3">Contact Us</h3>
+                                    <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="50px" id="hr_footer">
+                                    <ul type="none" class="contact-cards" id="footer_list" style="margin-left: -70px; margin-top: 10px;display: flex; flex-direction: column; align-items: flex-start;">
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
@@ -1638,7 +1619,7 @@
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="https://g.page/ThaparInstitute?share">
-                                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">Thapar Institute of Engineering and Technology, Patiala</p>
+                                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Thapar Institute of Engineering and Technology, Patiala</p>
                                                     </a>
                                                 </div>
                                             </div>
@@ -1659,11 +1640,11 @@
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg">
+                                                    <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg" style="color: blue; background: rgba(0,0,0,0)">
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="mailto:tuedcell@gmail.com">
-                                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#ffd5d5';" onmouseout="this.style.color='white';">tuedcell@gmail.com</p>
+                                                        <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">tuedcell@gmail.com</p>
                                                     </a>
                                                 </div>
                                             </div>

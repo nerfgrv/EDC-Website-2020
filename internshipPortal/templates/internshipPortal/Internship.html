@@ -255,6 +255,10 @@
         display:block; 
         color: white;
     }
+    .view-detail-btn:hover{
+        background-color: #2f92bb;
+        color: white;
+    }
     </style>
 </head>
 {% endblock head %}
@@ -378,6 +382,8 @@ vc_responsive"
                 <div class="card-footer " style="background-color:white;">
                     <div class="col-6"></div>
                     <div class="col-6 mdet" style="font-size: 20px !important;">
+                        <a href="{% url 'internship-detail' internship.id %}" class="btn btn-rounded view-detail-btn" style="border-color: #2f92bb; font-weight: bold;">
+
                         <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
                             View Details
                         </a>
