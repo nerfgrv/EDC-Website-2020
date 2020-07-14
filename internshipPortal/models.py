@@ -15,7 +15,7 @@ class Internship(models.Model):
     skills_required = models.CharField(max_length=500)
     no_of_internships = models.PositiveIntegerField()
     perks = models.CharField(max_length=100)
-    apply_by = models.DateField(default='2000-01-01', help_text='YYYY-MM-DD')
+    apply_by = models.DateField(default='2000-01-01', help_text='YYYY-MM-DD Format should be followed for the date.')
 
     who_should_apply = models.CharField(max_length=200)
 
