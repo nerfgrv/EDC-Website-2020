@@ -138,6 +138,32 @@
         max-width: 99vw;
     }
 </style>
+<style>
+    @media(max-width: 414px){
+        #cards{
+            min-width: 312px !important;
+            min-height: 550px !important;
+        }
+    }
+    @media(max-width:768px){
+        #cards{
+            min-width: 330px !important;
+            min-height: 550px !important; 
+        }
+    }
+    @media(max-width:375px){
+        #cards{
+            min-width: 312px !important;
+            min-height: 550px !important; 
+        }
+    }
+    @media(max-width:320px){
+        #cards{
+            min-width: 250px !important;
+            min-height: 800px !important; 
+        }
+    }
+</style>
 {% endblock head %}
 
 
@@ -445,7 +471,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     <div class="vc_column-inner vc_custom_1494625737076">
                         <div class="wpb_wrapper">
                             <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                                <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" style="min-width: 450px" data-min-height='550px'>
+                                <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
                                     <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                         <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -463,11 +489,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                                 </p>
                                             </div>
                                         </div><!-- END .front -->
-                                        <div class="ifb-face ifb-back" style="color:#333333;background:#fcfcfc;  ">
+                                        <div class="ifb-face ifb-back" id="cards" style="color:#333333;background:#fcfcfc;  ">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                                 <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333; ">VL-WEEKEND</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#333333;">
-                                                    <p style="text-align: justify;">Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's youth with the tools needed to become the fulcrum of change towards a self sustainable future for themselves and so that they may play a pivotal role in that change. The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
+                                                    <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
                                                 </div>
                                                 <div class=" vc_custom_1494621689637 ubtn-ctn-left " style="padding-left: 30%">
                                                     <a class="ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-custom " href="{% url 'vl' %}">
@@ -490,7 +516,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     <div class="vc_column-inner vc_custom_1494625737076">
                         <div class="wpb_wrapper">
                             <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                                <div class="flip-box ifb-custom-height horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" style="min-width: 450px" data-min-height='550px'>
+                                <div class="flip-box ifb-custom-height horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
                                     <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                         <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -502,11 +528,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                                 <p>Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's...</p>
                                             </div>
                                         </div><!-- END .front -->
-                                        <div class="ifb-face ifb-back" style="color:#333333;background:#fcfcfc;">
+                                        <div class="ifb-face ifb-back" id="cards" style="color:#333333;background:#fcfcfc;">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                                 <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333; ">VL-WEEKEND</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#333333;">
-                                                    <p style="text-align: justify;">Venture Lab will be a 3 day workshop and will be held from. The aim of this weekend will be to further the goal of instilling and promoting the spirit of entrepreneurship among the participants by empowering today's youth with the tools needed to become the fulcrum of change towards a self sustainable future for themselves and so that they may play a pivotal role in that change. The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
+                                                    <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today.</p>
                                                 </div>
                                                 <div class=" vc_custom_1494621689637 ubtn-ctn-left " style="padding-left: 30%">
                                                     <a class="ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-custom " href="{% url 'vl' %}">
@@ -643,7 +669,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                         <div class="wpb_wrapper">
                             <div class="ult-animation  ult-animate-viewport  ult-no-mobile " data-animate="fadeInRight" data-animation-delay="0" data-animation-duration="3" data-animation-iteration="1" style="opacity:0;" data-opacity_start_effect="">
                                 <div id="ultimate-heading-3055ec7fe8b6caae" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-3055ec7fe8b6caae uvc-3649 " data-hspacer="line_only" data-halign="left" style="text-align:left">
-                                    <div class="uvc-sub-heading ult-responsive" data-ultimate-target='.uvc-heading.ultimate-heading-3055ec7fe8b6caae .uvc-sub-heading ' data-responsive-json-new='{"font-size":"desktop:16px;","line-height":"desktop:35px;"}' style="font-family:&#039;Josefin Sans&#039;;font-weight:300;color:#666666; text-align: justify;margin-right:70px;"> The Entrepreneurship  Development cell,Tiet has been established with an aim to foster and nurture talented young minds with a vision. With India witnessingg the rise of start up culture, we encourage and guide everyone who is bitten by the entrepreneurs. Imagination dies a dreadful death as we grow but here, we nurture the imagination of young entrepreneurs by providing a platform to present their seminal ideas. We envision a team of spirited individuals who strive to make students accessible with resources and provide them an wasy link to venture capital firms, successful entrepreneurs, executive professionals and corporate so that they can watch their dream become reality. We believe that entrepreneurship is the key to unlock India's talent and untapped potential and thus we are striving to create, foster and promote entrepreneurship.
+                                    <div class="uvc-sub-heading ult-responsive" data-ultimate-target='.uvc-heading.ultimate-heading-3055ec7fe8b6caae .uvc-sub-heading ' data-responsive-json-new='{"font-size":"desktop:16px;","line-height":"desktop:35px;"}' style="font-family:&#039;Josefin Sans&#039;;font-weight:300;color:#666666; text-align: justify;margin-right:70px;">The Entrepreneurship Development Cell, TIET, has been established to foster and nurture our talented youth, who are the future of this nation. With India witnessing a massive growth in startup culture, we aim to encourage and guide anyone passionate to learn and make an impact on the world. EDC provides budding entrepreneurs a platform to present and nurture their fundamental ideas. We envision a team of talented and hard-working individuals who strive to make students accessible with necessary resources and provide them a channel to venture capital firms, successful entrepreneurs, executive professionals and corporate so that they can watch their dream become a reality. It is our firm belief that Entrepreneurship is the key to unlock India's potential talent and thus, we strive to create, foster and promote Entrepreneurship.
                                     </div>
                                 </div>
 

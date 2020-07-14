@@ -5,10 +5,11 @@ from . import views
 urlpatterns = [
 
     path('internships/', 						views.Internships,                      name='internships'),
+    path('my-internships/',                     views.MyInternships,                    name='my-internships'),
     path('internships/create/',					views.InternshipCreateView,             name='internship-create'),
     path('internships/<int:pk>/', 				views.InternshipDetailView,             name='internship-detail'),
     path('internships/<int:pk>/application/', 	views.InternshipApplicationView,        name='internship-application'),
-    path('internships/<int:pk>/update/', 		views.InternshipUpdateView.as_view(),   name='internship-update'),
+    path('internships/<int:pk>/update/', 		views.InternshipUpdateView,             name='internship-update'),
     path('internships/<int:pk>/delete/', 		views.InternshipDeleteView.as_view(),   name='internship-delete'),
     path('venture-capitalist/', 				views.VenCapitalist,                    name='venture-capitalist'), 
     path('venture-capitalist/create/', 			views.VenCapCreateView,                 name='vencap-create'),
