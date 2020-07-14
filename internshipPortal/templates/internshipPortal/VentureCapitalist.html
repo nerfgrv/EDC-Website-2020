@@ -24,26 +24,29 @@
 
     .post-create a {
         margin-right: 20px;
-        border-radius: 10px;
-        padding: 15px 90px;
-        margin: 10px auto;
-        font-size: 21px;
-        color: black;
+        border-radius: 10px; 
+        padding: 15px 9px; 
+        margin: 30px auto; 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
-        display: block;
+        display:block; 
         color: white;
         transition: 0.5s;
-        background: rgb(255, 62, 88);
+        background: rgb(47, 146, 187);
         max-width: 450px;
     }
 
     .post-create a:hover {
-        transform: scale(1.02);
-        font-size: 21px;
-        color: black;
+        transform: scale(1.02); 
+        font-size: 21px; 
+        color: black; 
         text-align: center;
-        display: block;
+        display:block; 
         color: white;
+    }
+    .contactt:hover{
+        color: black !important;
     }
 </style>
 {% endblock head %}
@@ -109,7 +112,7 @@ vc_responsive"
 
 {% if user.is_authenticated and user.is_team %}
 <div class="post-create">
-    <a href="{% url 'vencap-create' %}" style="margin: 30px auto;">Add a Venture Capitalist</a>
+    <a href="{% url 'vencap-create' %}" style="margin: 30px auto; width: ">Add a Venture Capitalist</a>
 </div>
 {% endif %}
 
@@ -138,8 +141,13 @@ vc_responsive"
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#000; font-size: 30px; padding-bottom: 20px;">{{vencap.name}} </h2>
                                             {% if vencap.photo.url %}
-                                                <img class="img-icon" alt="{{vencap.name}}" src="{{vencap.photo.url}}" height="400px"
-                                                    width="400px" />
+                                            <div style="height: 400px; width: 400px; align-content: center;" class="">
+                                                {% if vencap.photo.height > vencap.photo.width %}
+                                                <img class="img-icon" alt="{{vencap.name}}" src="{{vencap.photo.url}}" style="height: 100%; width: auto;" />
+                                                {% elif vencap.photo.width > vencap.photo.height %}
+                                                <img class="img-icon" alt="{{vencap.name}}" src="{{vencap.photo.url}}" style="height: auto; width: 100%; margin: auto;" />
+                                                {% endif %}
+                                            </div>
                                             {% endif %}
                                             <div class="ifb-flip-box-section-content ult-responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
@@ -161,7 +169,7 @@ vc_responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Contact No.: </h2><a class="contactt"
                                                         href="tel:{{vencap.contact}}">{{vencap.contact}}</a>
                                             </div>
                                             {% endif %}
@@ -169,7 +177,7 @@ vc_responsive"
                                                 data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                 data-responsive-json-new='{"font-size":"","line-height":""}'
                                                 style="color:#333333;color:#333333;">
-                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a href="mailto:{{vencap.email}}">{{vencap.email}}</a>
+                                                <h2 style="font-size: 20px; padding-top: 16px;">Email Id: </h2><a class="contactt" href="mailto:{{vencap.email}}">{{vencap.email}}</a>
                                             </div>
 
                                                 <div class="ifb-flip-box-section-content ult-responsive"

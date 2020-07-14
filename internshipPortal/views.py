@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
@@ -14,13 +15,35 @@ def Internships(request):
     }
     return render(request, 'internshipPortal/Internship.html', context)
 
+def MyInternships(request):
+    if(request.user.is_authenticated and request.user.is_startup):
+        internships = Internship.objects.filter(startup=request.user.startup_profile)
+        context = {
+            'internships': internships,
+        }
+        return render(request, 'internshipPortal/Internship.html', context)
+    elif(request.user.is_authenticated and request.user.is_student):
+        internships = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+        for internship in internships:
+            print(internship)
+        context = {
+            'internships': internships,
+        }
+        return render(request, 'internshipPortal/MyInternship.html', context)
+    else:
+        redirect(internships)
+    
+    
 
 def InternshipCreateView(request):
     form = InternshipForm(request.POST or None)
-    
-    if form.is_valid():
-        form.instance.startup = request.user.startup_profile
-        form.save()
+    if request.user.is_authenticated and request.user.is_startup:
+        if form.is_valid():
+            form.instance.startup = request.user.startup_profile
+            form.save()
+            return redirect('internships')
+    else:
+        messages.success(request, f'You are not authorised to access this page.')
         return redirect('internships')
 
     context = {
@@ -34,6 +57,7 @@ def InternshipApplicationView(request, pk):
     applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
     for applicant in applied_by:
         if(internship == applicant.internship):
+            messages.success(request, f'You have already applied for that internship.')
             return redirect('internship-detail', pk)
 
     form = ApplicationForm(request.POST or None)
@@ -50,11 +74,12 @@ def InternshipApplicationView(request, pk):
     return render(request, 'internshipPortal/create_internship.html', context)
 
 
+
 def InternshipDetailView(request, pk):
     applied = False
 
     internship = Internship.objects.filter(id=pk).first()
-    if(request.user.is_student):
+    if(request.user.is_authenticated and request.user.is_student):
         applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
         for applicant in applied_by:
             if(internship == applicant.internship):
@@ -68,25 +93,25 @@ def InternshipDetailView(request, pk):
     return render(request, 'internshipPortal/internship_detail.html', context)
 
 
-class InternshipUpdateView(UpdateView):
-    model = Internship
-    fields = [
-            'field_of_internship',
-            'duration',
-            'about',
-            'location',
-            'stipend',
-            'skills_required',
-            'no_of_internships',
-            'perks',
-            'who_should_apply'
-        ]
-    template_name = 'internshipPortal/create_internship.html'
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form) 
+def InternshipUpdateView(request, pk):
+    if request.user.is_authenticated and request.user.is_startup and (request.user.startup_profile == Internship.objects.filter(id=pk).first().startup):
+        if request.method == 'POST':
+            form = InternshipForm(request.POST, instance=Internship.objects.filter(id=pk).first())
+            
+            if form.is_valid():
+                form.save()
+                return redirect('internships')
 
+        form = InternshipForm(instance=Internship.objects.filter(id=pk).first())
+        context = {
+            'form': form
+        }
+        return render(request, 'internshipPortal/create_internship.html', context)
 
+    else:
+        return redirect('internships')
+
+@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_startup), name='dispatch')
 class InternshipDeleteView(DeleteView):
     model = Internship
     success_url = reverse_lazy('internships')
