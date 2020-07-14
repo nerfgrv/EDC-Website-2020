@@ -1171,24 +1171,24 @@ vc_responsive" {% endblock bodytag %}
 
                 {% now "Y-m-d" as current_date %}
                 {% if applied %}
-                    <a href="#" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="#" class="btn btn-rounded btn-lg btn-primary"
                         style="margin-bottom: 10px; text-align:center;">Applied
                     </a>
                 {% elif user.startup_profile == object.startup %}
-                    <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-primary"
                         style="margin-bottom: 10px; text-align:center;">Edit Details
                     </a>
                 {% elif current_date > object.apply_by|date:"Y-m-d" %}  
-                    <a href="" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="" class="btn btn-rounded btn-lg btn-primary"
                         style="margin-bottom: 10px; text-align:center;">Applications Closed
                     </a>          
                 {% elif user.is_student %}
-                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-primary"
                         style="margin-bottom: 10px; text-align:center;">Apply For Internship
                     </a>
 
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-rounded btn-lg btn-danger"
+                    <a href="{% url 'login' %}" class="btn btn-rounded btn-lg btn-primary"
                         style="margin-bottom: 10px; text-align:center;">Login As Student To Apply
                     </a>
                 {% endif %}

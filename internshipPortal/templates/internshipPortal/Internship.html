@@ -382,11 +382,11 @@ vc_responsive"
                 <div class="card-footer " style="background-color:white;">
                     <div class="col-6"></div>
                     <div class="col-6 mdet" style="font-size: 20px !important;">
-                        <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-danger btn-rounded">
+                        <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-primary btn-rounded">
                             View Details
                         </a>
                         {% if user.startup_profile == internship.startup %}
-                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-danger btn-rounded" style="margin-left: 10px;">
+                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded" style="margin-left: 10px;">
                                     Delete Internship
                             </a>
                         {% endif %}
