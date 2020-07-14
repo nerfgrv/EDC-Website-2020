@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'gsheets',
     'markdown_deux',
     'phonenumber_field',
 ]
@@ -123,6 +124,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 LOGIN_URL = 'login'
@@ -134,3 +136,7 @@ MEDIA_URL = '/media/'
 AUTH_USER_MODEL = "user.User"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+GSHEETS = {
+    'CLIENT_SECRETS': 'credentials.json'
+}
