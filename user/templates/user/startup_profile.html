@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head%}
-<title>EDC,TIET-Profile Student</title>
+<title>EDC,TIET-Profile Startup</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     .card {
@@ -80,7 +80,7 @@ vc_responsive"
 
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="width:100%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">About The Startup</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">About The Startup</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.about_the_startup}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
@@ -88,12 +88,12 @@ vc_responsive"
 
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Founders</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Founders</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.founders}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Field Of Work</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Field Of Work</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.field_of_work}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
@@ -101,13 +101,13 @@ vc_responsive"
 
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Location</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Location</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.location}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
 
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Website</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Website</h2>
                 <a href="{{object.website}}"><p style="font-size: large; font-weight: 120; color:#888888; text-decoration: underline;">{{object.website|slice:":25"}}...</p></a>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
