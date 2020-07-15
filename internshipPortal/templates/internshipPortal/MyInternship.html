@@ -389,8 +389,14 @@ vc_responsive"
             {% else %}
                 <br><br><br><br>
                 <div class="wrapper">
-                    <h1 style="font-weight: bold; ">New Internships To Be Added Soon...</h1>
+                    <h1 style="font-weight: bold; ">You have not applied to any internships yet </h1>
                 </div>
+                <div class="border-bottom pt-4" style=" padding-bottom: 50px;  text-align: center;">
+                <a href="{% url 'internships'  %}" class=" btn btn-primary btn-rounded " style="background-color: rgb(47, 146, 187);font-size: 25px; ">
+                    Browse Internships
+                </a>
+                </div>
+                
             {% endif %}
         </div>
     </div>
