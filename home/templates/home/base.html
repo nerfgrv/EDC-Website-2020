@@ -4,7 +4,7 @@
 
 <head>
 
-    <link rel="shortcut icon" href="{%static 'home/images/favicon.png'%}" type="image/x-icon">
+    <link rel="shortcut icon" href="{%static 'home/images/favicon.ico'%}" type="image/x-icon">
     <style id='benri-style-inline-css' type='text/css'>
         /* Body background */
         body {
@@ -757,6 +757,7 @@
     		#linkedin_footer, #facebook_footer, #instagram_footer{
     			width: 40px;
     			height: auto;
+    			font-size: 30px !important;
     		}
     		#footer_list li{
     			font-size: 12px;
@@ -778,7 +779,7 @@
     			margin-left: 200px;
     		}
     		#favimg{
-    			width: 25px;
+    			font-size: 30px !important;
     		}
     		#copyright_footer{
     			margin-left: 180px;
@@ -798,6 +799,9 @@
     		#linkedin_footer, #facebook_footer, #instagram_footer{
     			margin-left: 30px;
     		}
+    		.footer_column{
+    			min-width: auto !important;
+    		}
     	}
 
     	@media(max-width: 414px){
@@ -811,7 +815,7 @@
     			font-size: 10px !important;
     		}
     		#favimg{
-    			width: 20px;
+    			font-size: 25px !important;
     		}
             #hr_footer{
                 width: 193px;
@@ -829,6 +833,9 @@
     		}
             
     	}
+    </style>
+    <style type="text/css">
+    	@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1530,11 +1537,20 @@
                             </div>
                             <br>
                             <div class="contact" style="display: flex; flex-direction: row; justify-content: space-around;">
-                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin.png' %}" height="40px" width="40px" id="linkedin_footer"></a> </div>
+                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/">
+                                	<!-- <img src="{% static 'home/images/linkedin.png' %}" height="40px" width="40px" id="linkedin_footer"> -->
+                                	<i class="fa fa-linkedin" id="linkedin_footer" style="color: white; font-size: 40px;"></i>
+                                	</a> </div>
 
-                                <div><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/insta.png' %}" height="40px" width="40px" id="instagram_footer"></a></div>
+                                <div><a href="https://www.instagram.com/edc_tiet/">
+                                		<!-- <img src="{% static 'home/images/insta.png' %}" height="40px" width="40px" id="instagram_footer"> -->
+                                		<i class="fa fa-instagram" id="instagram_footer" style="color: white; font-size: 40px;"></i>
+                                	</a></div>
 
-                                <div><a href="https://www.facebook.com/tuedcell/"><img src="{% static 'home/images/Facebook.png' %}" height="40px" width="40px" id="facebook_footer"></a></div>
+                                <div><a href="https://www.facebook.com/tuedcell/">
+                                		<!-- <img src="{% static 'home/images/Facebook.png' %}" height="40px" width="40px" id="facebook_footer"> -->
+                                		<i class="fa fa-facebook" id="facebook_footer" style="color: white; font-size: 40px;"></i>
+                                	</a></div>
                             </div>
                         </div>
                         <br>
@@ -1615,9 +1631,10 @@
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/blueloct.png' %}" height="30px" width="30px" id="favimg">
+                                                    <!-- <img src="{% static 'home/images/blueloct.png' %}" height="30px" width="30px" id="favimg"> -->
+                                                    <i class="fa fa-map-marker" id="favimg" style="color: #2f92bb; font-size: 30px;"></i>
                                                 </div>
-                                                <div class="col2" style="margin-left: 12px; margin-top: 0px;">
+                                                <div class="col2" style="margin-left: 8px; margin-top: 0px;">
                                                     <a href="https://g.page/ThaparInstitute?share">
                                                         <p style="color: white; font-family: PT Sans;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Thapar Institute of Engineering and Technology, Patiala</p>
                                                     </a>
@@ -1628,11 +1645,12 @@
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/bluecall.png' %}" height="35px" width="35px" id="favimg">
+                                                    <!-- <img src="{% static 'home/images/bluecall.png' %}" height="35px" width="35px" id="favimg"> -->
+                                                    <i class="fa fa-mobile" id="favimg" style="color: #2f92bb; font-size: 30px; margin-top: 10px;"></i>
                                                 </div>
-                                                <div class="col2" style="margin-left: 8px; margin-top: -6px;">
-                                                    <p style="color: white; font-family: PT Sans;">Animesh Bisen: <a href="tel:9140470096">+91 9140470096</a></p>
-                                                    <p style="color: white; font-family: PT Sans; margin-top: -5px;">Anmol Jindal: <a href="tel:8264245458">+91 8264245458</a></p>
+                                                <div class="col2" style="margin-left: 12px; margin-top: -6px;">
+                                                    <p style="color: white; font-family: PT Sans; font-weight: bold;">Animesh Bisen: <a href="tel:9140470096">+91 9140470096</a></p>
+                                                    <p style="color: white; font-family: PT Sans; margin-top: -5px; font-weight: bold;">Anmol Jindal: <a href="tel:8264245458">+91 8264245458</a></p>
                                                 </div>
                                             </div>
                                         </li>
@@ -1640,7 +1658,8 @@
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
-                                                    <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg" style="color: blue; background: rgba(0,0,0,0)">
+                                                    <!-- <img src="{% static 'home/images/bluemail.png' %}" height="35px" width="35px" id="favimg" style="color: blue; background: rgba(0,0,0,0)"> -->
+                                                    <i class="fa fa-envelope" id="favimg" style="color: #2f92bb; font-size: 30px;"></i>
                                                 </div>
                                                 <div class="col2" style="margin-left: 12px; margin-top: 0px;">
                                                     <a href="mailto:tuedcell@gmail.com">
