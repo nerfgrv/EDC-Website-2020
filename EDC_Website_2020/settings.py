@@ -141,3 +141,5 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 GSHEETS = {
     'CLIENT_SECRETS': 'credentials.json'
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
