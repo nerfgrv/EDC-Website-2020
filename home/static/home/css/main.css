@@ -2660,7 +2660,7 @@ blockquote {
 	color:rgba(255, 255, 255, 0.8);
 }
 .post-meta a:hover {
-    color: white;
+    color: #6fb8d6;
 }
 .post-meta span{
 	    display: inline-block;
@@ -2763,7 +2763,7 @@ blockquote {
 ul.children {
     margin-left: 0px!important;
     padding-left: 40px;
-    background-image: url(../../../../../../../../themenectar.com/demo/salient-blog/wp-content/themes/salient/img/icons/comment-children-line.jpg);
+    background-image: url();
     border-left: 1px solid #ddd;
     background-position: left 33px!important;
     margin-left: 26px!important;

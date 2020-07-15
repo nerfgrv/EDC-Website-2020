@@ -50,6 +50,7 @@ class VentureCapitalist(models.Model):
     email = models.EmailField(default='')
     photo = models.ImageField(default='', upload_to='vc/')
     industries = models.CharField(max_length=500, default='')
-    
+
+
     def __str__(self):
         return self.name
