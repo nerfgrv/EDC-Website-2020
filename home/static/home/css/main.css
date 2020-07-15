@@ -2660,7 +2660,7 @@ blockquote {
 	color:rgba(255, 255, 255, 0.8);
 }
 .post-meta a:hover {
-    color: white;
+    color: #6fb8d6;
 }
 .post-meta span{
 	    display: inline-block;
