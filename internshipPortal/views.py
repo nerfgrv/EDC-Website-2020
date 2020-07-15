@@ -134,7 +134,7 @@ def InternshipDeleteView(request, pk):
         'object' : internship
     }
   
-    return render(request, "delete_view.html", context) 
+    return render(request, 'internshipPortal/confirm_delete.html', context) 
 
 
 
