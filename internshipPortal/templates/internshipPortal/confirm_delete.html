@@ -46,8 +46,9 @@
             {% csrf_token %}
             <h2 style="color: rgb(117, 105, 105); margin: 1%;">Are you sure you want to delete "{{ object }}"?</h2>
             <div style="display: flex; flex-wrap: wrap; flex-direction: row; margin: 1%;">
-                <button class="button" style="font-size: 15px; margin: 1%; color: white; padding: 3px;" type='submit'><b>Yes, I am Sure</b></button>
-                <a style="font-size: 15px; margin: 1%;" href="{% url 'venture-capitalist' %}">No, Don't Delete</a>
+                <button class="button"  type='submit'><b>Yes, I am Sure</b></button>
+                
+                <a  href="{% url 'internships' %}">No, Don't Delete</a>
             </div>
         </form>
     </div>
