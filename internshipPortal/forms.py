@@ -17,9 +17,6 @@ class InternshipForm(forms.ModelForm):
             'who_should_apply',
             'apply_by',
         ]
-        widgets = {
-            'apply_by': forms.SelectDateWidget
-        }
 
 
 class ApplicationForm(forms.ModelForm):
