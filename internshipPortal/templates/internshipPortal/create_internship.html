@@ -1,4 +1,5 @@
 {% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block head %}
   <title>EDC,TIET-Internships</title>
@@ -62,7 +63,7 @@ vc_responsive" {% endblock bodytag %}
 <div style="margin-top: 30px; margin-bottom: 30px; align-items: center; margin-right: auto; margin-left: auto; max-width: 70%; font-size: large;">
   <form method="POST"> 
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy}}
     <input type="submit" value="Save"/>
   </form>
 </div>

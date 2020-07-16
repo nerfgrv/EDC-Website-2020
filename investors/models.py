@@ -10,6 +10,7 @@ class Investor(models.Model):
     contact = PhoneNumberField(blank=True, null=True, help_text='Add country code before the contact no.')
     email = models.EmailField(default='')
     photo = models.ImageField(default='', upload_to='vc/')
+
     
     def __str__(self):
         return self.name
