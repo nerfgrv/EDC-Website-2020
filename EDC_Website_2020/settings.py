@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'startup.apps.StartupConfig',
     'crispy_forms',
-    'gsheets',
     'markdown_deux',
     'phonenumber_field',
 ]
@@ -137,9 +136,5 @@ MEDIA_URL = '/media/'
 AUTH_USER_MODEL = "user.User"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
-GSHEETS = {
-    'CLIENT_SECRETS': 'credentials.json'
-}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

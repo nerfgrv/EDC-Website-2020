@@ -62,9 +62,9 @@ def InternshipApplicationView(request, pk):
             messages.success(request, f'You have already applied for that internship.')
             return redirect('internship-detail', pk)
     
-    if(date > internship.apply_by):
-        messages.success(request, f'You have can not apply for this internship.')
-        return redirect('internship-detail', pk)
+    if(internship == None or date > internship.apply_by):
+        messages.success(request, f'Applications for this internship closed.')
+        return redirect('internships')
 
     form = ApplicationForm(request.POST or None)
     
@@ -77,7 +77,7 @@ def InternshipApplicationView(request, pk):
     context = {
         'form': form
     }
-    return render(request, 'internshipPortal/create_internship.html', context)
+    return render(request, 'internshipPortal/application.html', context)
 
 
 

@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('internshipPortal.urls')),
     path('', include('investors.urls')),
     path('', include('startup.urls')),
-    path('terms-and-conditions/',include('startupEcosystem.urls')),
+    path('',include('startupEcosystem.urls')),
 ]
 
 if settings.DEBUG:
