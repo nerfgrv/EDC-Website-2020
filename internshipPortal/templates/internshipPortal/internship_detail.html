@@ -10,6 +10,9 @@
     <link rel="pingback" href="xmlrpc.php" />
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.13.1/css/all.css'
+        integrity='sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q' crossorigin='anonymous'>
+
 
 
     <title>EDC,TIET-Internships</title>
@@ -163,6 +166,9 @@
             visibility: visible;
         }
     </style>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.13.1/css/all.css'
+        integrity='sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q' crossorigin='anonymous'>
+
     <link rel='stylesheet' id='wpsw_social-icons-css'
         href='wp-content/plugins/wp-social-widget/assets/css/social-icons.css' type='text/css' media='all' />
     <link rel='stylesheet' id='wpsw_social-css-css'
@@ -1101,14 +1107,23 @@ vc_responsive" {% endblock bodytag %}
 
 
 </div> <!-- content -->
+
+<a href="{% url 'internships'%}" class="btn btn-rounded btn-lg btn-primary" style="margin: 10px ; text-align:center;"><i
+        class="fas fa-undo"></i> Go Back
+</a>
+
+
 <div class="row main_body" style="display: flex;">
+
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
 
-        <div class="card supcard" style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
+        <div class="card supcard"
+            style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
             <div class="supcard_top">
                 <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
-                        <img style="border-radius: 50%; width: 100px; height:100px;" src="{{object.startup.startup_logo.url}}" alt="{{object.startup.startup_name}}">
+                    <img style="border-radius: 50%; width: 100px; height:100px;"
+                        src="{{object.startup.startup_logo.url}}" alt="{{object.startup.startup_name}}">
                 </div>
                 <div class="card-body" style="margin-top: 25px;">
                     <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
@@ -1118,7 +1133,7 @@ vc_responsive" {% endblock bodytag %}
                 </div>
             </div>
             <hr>
-            <div class="supcard_mid" style="margin-bottom: 20px;margin-left: 20px;">
+            <div class="supcard_mid" style="margin-bottom: 20px;margin-left: 20px; padding-right: 30px;">
                 <div class="location">
                     <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">Location:</h5>
 
@@ -1156,13 +1171,14 @@ vc_responsive" {% endblock bodytag %}
                     <a href="#">Next ></a>
                 </div>
             </div> -->
-        <div class="card" style="border:none; box-shadow: 3px 5px 6px #ccc; margin-top: 40px; margin-bottom:30px; padding: 1% 2% 1% 2%;">
+        <div class="card"
+            style="border:none; box-shadow: 3px 5px 6px #ccc; margin-top: 40px; margin-bottom:30px; padding: 1% 2% 1% 2%;">
             <div class="card-body">
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Apply By:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.apply_by}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship:</h5>
                 <div class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</div>
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5> 
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Who Should Apply:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_should_apply}}</p>
@@ -1171,26 +1187,26 @@ vc_responsive" {% endblock bodytag %}
 
                 {% now "Y-m-d" as current_date %}
                 {% if applied %}
-                    <a href="#" class="btn btn-rounded btn-lg btn-primary"
-                        style="margin-bottom: 10px; text-align:center;">Applied
-                    </a>
+                <a href="#" class="btn btn-rounded btn-lg btn-primary"
+                    style="margin-bottom: 10px; text-align:center;">Applied
+                </a>
                 {% elif user.startup_profile == object.startup %}
-                    <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-primary"
-                        style="margin-bottom: 10px; text-align:center;">Edit Details
-                    </a>
-                {% elif current_date > object.apply_by|date:"Y-m-d" %}  
-                    <a href="" class="btn btn-rounded btn-lg btn-primary"
-                        style="margin-bottom: 10px; text-align:center;">Applications Closed
-                    </a>          
+                <a href="{% url 'internship-update' object.id %}" class="btn btn-rounded btn-lg btn-primary"
+                    style="margin-bottom: 10px; text-align:center;">Edit Details
+                </a>
+                {% elif current_date > object.apply_by|date:"Y-m-d" %}
+                <a href="" class="btn btn-rounded btn-lg btn-primary"
+                    style="margin-bottom: 10px; text-align:center;">Applications Closed
+                </a>
                 {% elif user.is_student %}
-                    <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-primary"
-                        style="margin-bottom: 10px; text-align:center;">Apply For Internship
-                    </a>
+                <a href="{% url 'internship-application' object.id %}" class="btn btn-rounded btn-lg btn-primary"
+                    style="margin-bottom: 10px; text-align:center;">Apply For Internship
+                </a>
 
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-rounded btn-lg btn-primary"
-                        style="margin-bottom: 10px; text-align:center;">Login As Student To Apply
-                    </a>
+                <a href="{% url 'login' %}" class="btn btn-rounded btn-lg btn-primary"
+                    style="margin-bottom: 10px; text-align:center;">Login As Student To Apply
+                </a>
                 {% endif %}
             </div>
         </div>
