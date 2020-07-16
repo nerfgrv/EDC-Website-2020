@@ -44,19 +44,20 @@ def InvestorCreateView(request):
 class InvestorDeleteView(DeleteView):
     model = Investor
     success_url = reverse_lazy('investors')
-    template_name = 'internshipPortal/confirm_delete.html'
+    template_name = 'investors/confirm-delete-investors.html'
 
 
 def InvestorUpdateView(request, pk):
     if request.user.is_authenticated and request.user.is_team:
         if request.method == 'POST':
-            form = InvestorForm(request.POST, request.FILES, instance=Investor.objects.filter(id=pk))
+            form = InvestorForm(request.POST, request.FILES,
+                                instance=Investor.objects.filter(id=pk).first())
             
             if form.is_valid():
                 form.save()
                 return redirect('investors')
 
-        form = InvestorForm(instance=Investor.objects.filter(id=pk))
+        form = InvestorForm(instance=Investor.objects.filter(id=pk).first())
         context = {
             'form': form
         }
