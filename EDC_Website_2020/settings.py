@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'investors.apps.InvestorsConfig',
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
-    'startup.apps.StartupConfig',
     'crispy_forms',
     'markdown_deux',
     'phonenumber_field',
