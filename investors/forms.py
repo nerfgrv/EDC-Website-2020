@@ -14,15 +14,3 @@ class InvestorForm(forms.ModelForm):
             'email',
             'photo',
         ]    
-
-class StartupProfileForm(forms.ModelForm):
-    class Meta:
-        model = StartupProfile
-        fields = [
-            'startup_name',
-            'about_the_startup',
-            'founders',
-            'field_of_work',
-            'website',
-            'photo',
-        ]    

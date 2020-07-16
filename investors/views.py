@@ -7,7 +7,6 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
 from user.models import StartupProfile
-from .forms import StartupProfileForm
 
 # Create your views here.
 def Investors(request):
