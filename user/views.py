@@ -26,7 +26,7 @@ def studentregister(request):
             student.city_of_residence       = form.cleaned_data.get('city_of_residence')
             student.save()
 
-            messages.success(request, f'Your account has been created! You are now able to log in')
+            messages.success(request, f'Your account has been created! You can login now.')
             return redirect('login')
     else:
         form = StudentRegisterForm()
