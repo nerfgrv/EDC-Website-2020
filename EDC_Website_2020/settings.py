@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
     'crispy_forms',
-    'gsheets',
     'markdown_deux',
     'phonenumber_field',
 ]
@@ -137,6 +136,4 @@ AUTH_USER_MODEL = "user.User"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-GSHEETS = {
-    'CLIENT_SECRETS': 'credentials.json'
-}
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

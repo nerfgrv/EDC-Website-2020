@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head%}
-<title>EDC,TIET-Profile Startup</title>
+<title>EDC,TIET-Profile Student</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     .card {
@@ -39,7 +39,7 @@
         display:block; 
         color: white;
         transition: 0.5s;
-        background: rgb(47, 146, 187));
+        background: rgb(47, 146, 187);
         max-width: 300px;
     }
 
@@ -79,14 +79,14 @@ vc_responsive"
 
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">City Of Residence</h2>
-                <p style="font-size: large; font-weight: 120;">{{object.city_of_residence}}</p>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">City Of Residence</h2>
+                <p style="font-size: large; font-weight: 120; color: grey">{{object.city_of_residence}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
 
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Contact</h2>
-                <p style="font-size: large; font-weight: 120; ">Phone No.: <a style="color: #888888; text-decoration: none;">{{object.contact}}</a></p>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Contact</h2>
+                <p style="font-size: large; font-weight: 120;color: grey ">Phone No.: <a style="color: #888888; text-decoration: none;">{{object.contact}}</a></p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
         </div>
@@ -94,12 +94,12 @@ vc_responsive"
         
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">College</h2>
-                <p style="font-size: large; font-weight: 120;">{{object.college}}</p>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">College</h2>
+                <p style="font-size: large; font-weight: 120; color: grey">{{object.college}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">CGPA</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">CGPA</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.cgpa}}/10</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
@@ -107,13 +107,17 @@ vc_responsive"
        
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
             <div style="min-width: 50%; text-align: center;">
-                <h2 style="font-weight: bold; margin-bottom: 1%;">Area Of Specialization</h2>
+                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Area Of Specialization</h2>
                 <p style="font-size: large; font-weight: 120;">{{object.area_of_specialization}}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
             <div style="min-width: 50%; text-align: center;">
-               <h2 style="font-weight: bold; margin-bottom: 1%;">Year Of Study</h2>
-                <p style="font-size: large; font-weight: 120;">{{object.year_of_study}} Year</p>
+               <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Year Of Study</h2>
+                <p style="font-size: large; font-weight: 120;">{% if object.year_of_study == 1 %} 1st Year{% endif %}
+                {% if object.year_of_study == 2 %} 2nd Year {% endif %}
+                {% if object.year_of_study == 3 %} 3rd Year {% endif %}
+                {% if object.year_of_study == 4 %} 4th Year {% endif %}
+                </p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
         </div>

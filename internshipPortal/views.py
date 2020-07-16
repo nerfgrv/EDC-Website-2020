@@ -1,12 +1,13 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import InternshipForm, ApplicationForm, VenCapForm
 from .models import Internship, InternshipApplication, VentureCapitalist
+import datetime
 
 
 def Internships(request):
@@ -55,10 +56,15 @@ def InternshipCreateView(request):
 def InternshipApplicationView(request, pk):
     internship = Internship.objects.filter(id=pk).first()
     applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
+    date = datetime.date.today()
     for applicant in applied_by:
         if(internship == applicant.internship):
             messages.success(request, f'You have already applied for that internship.')
             return redirect('internship-detail', pk)
+    
+    if(internship == None or date > internship.apply_by):
+        messages.success(request, f'Applications for this internship closed.')
+        return redirect('internships')
 
     form = ApplicationForm(request.POST or None)
     
@@ -71,7 +77,7 @@ def InternshipApplicationView(request, pk):
     context = {
         'form': form
     }
-    return render(request, 'internshipPortal/create_internship.html', context)
+    return render(request, 'internshipPortal/application.html', context)
 
 
 
@@ -109,13 +115,27 @@ def InternshipUpdateView(request, pk):
         return render(request, 'internshipPortal/create_internship.html', context)
 
     else:
+        messages.success(request, f'You are not authorised to access this page.')
         return redirect('internships')
 
-@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_startup), name='dispatch')
-class InternshipDeleteView(DeleteView):
-    model = Internship
-    success_url = reverse_lazy('internships')
-    template_name = 'internshipPortal/confirm_delete.html'
+
+def InternshipDeleteView(request, pk): 
+    obj = get_object_or_404(Internship, id=pk)
+    internship = Internship.objects.filter(id=pk).first()
+    if request.user.is_authenticated and request.user.is_startup and (request.user.startup_profile == obj.startup):
+        if request.method =="POST":  
+            obj.delete()  
+            return redirect("internship-detail") 
+    else:
+        messages.success(request, f'You are not authorised to access this page')
+        return redirect('internship-detail', pk)
+    
+    context ={
+        'object' : internship
+    }
+  
+    return render(request, 'internshipPortal/confirm_delete.html', context) 
+
 
 
 #########################################################################
