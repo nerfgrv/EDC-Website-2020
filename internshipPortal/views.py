@@ -1,13 +1,14 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import InternshipForm, ApplicationForm, VenCapForm
 from .models import Internship, InternshipApplication, VentureCapitalist
-import datetime
+import datetime, xlwt
 
 
 def Internships(request):
@@ -62,9 +63,9 @@ def InternshipApplicationView(request, pk):
             messages.success(request, f'You have already applied for that internship.')
             return redirect('internship-detail', pk)
     
-    if(date > internship.apply_by):
-        messages.success(request, f'You have can not apply for this internship.')
-        return redirect('internship-detail', pk)
+    if(internship == None or date > internship.apply_by):
+        messages.success(request, f'Applications for this internship closed.')
+        return redirect('internships')
 
     form = ApplicationForm(request.POST or None)
     
@@ -77,7 +78,7 @@ def InternshipApplicationView(request, pk):
     context = {
         'form': form
     }
-    return render(request, 'internshipPortal/create_internship.html', context)
+    return render(request, 'internshipPortal/application.html', context)
 
 
 
@@ -192,3 +193,71 @@ class VenCapDeleteView(DeleteView):
     template_name = 'internshipPortal/confirm_delete.html'
 
 
+#################################################################
+
+
+def exceldownload(request, pk):
+    internship = Internship.objects.filter(id=pk).first()
+    if request.user.is_authenticated and request.user.is_startup and internship.startup == request.user.startup_profile: 
+        response = HttpResponse(content_type='application/ms-excel')
+        response['Content-Disposition'] = 'attachment; filename="Internship Applications.xls"'
+
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet(internship.field_of_internship) # this will make a sheet named Users Data
+
+        row_num = 0
+
+        style = 'font: bold 1; border: top thick, right thick, bottom thick, left thick;'
+        font_style = xlwt.easyxf(style)
+        columns = ['Message', 'Resume', 'Name', 'College', 'Field of Study', 'CGPA (/10)', 'Year of Study', 'City of Residence', 'Contact No.']
+
+        for col_num in range(len(columns)):
+            ws.write(row_num, col_num, columns[col_num], font_style) # at 0 row 0 column 
+
+        styles = [
+            'align: wrap 1; border: left thick, right thick;',
+            'font: underline 1;',
+            'align: horiz center; border: left thick, right thick;',
+            'border: left thick, right thick;',
+       ]
+
+        rows = InternshipApplication.objects.filter(id=pk).values_list('message', 'resume', 'applied_by__name', 'applied_by__college', 'applied_by__area_of_specialization', 'applied_by__cgpa','applied_by__year_of_study', 'applied_by__city_of_residence', 'applied_by__contact')
+        for row in rows:
+            row_num += 1
+            for col_num in range(len(row)):
+                if col_num == 0:
+                    font_style = xlwt.easyxf(styles[0])
+                elif col_num == 1:
+                    font_style = xlwt.easyxf(styles[1])
+                elif col_num == 5 or col_num == 6:
+                    font_style = xlwt.easyxf(styles[2])
+                else:
+                    font_style = xlwt.easyxf(styles[3])
+
+                if col_num == 1:
+                    ws.write(row_num, col_num, xlwt.Formula('HYPERLINK("%s")'%row[col_num]), font_style)
+                else:
+                    ws.write(row_num, col_num, row[col_num], font_style)
+
+        font_style = xlwt.easyxf('border: top thick;')
+        row_num += 1
+        for col_num in range(len(columns)):  
+            ws.write(row_num, col_num, "", font_style)
+
+        ws.col(0).width = 256*27
+        ws.col(1).width = 256*20
+        ws.col(2).width = 256*20
+        ws.col(3).width = 256*30
+        ws.col(4).width = 256*25
+        ws.col(5).width = 256*15
+        ws.col(6).width = 256*15
+        ws.col(7).width = 256*20
+        ws.col(8).width = 256*20
+
+        wb.save(response)
+
+        return response
+
+    else:
+        messages.success(request, f'You are not authorised to access this data.')
+        return redirect('home')

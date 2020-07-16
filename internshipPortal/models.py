@@ -32,7 +32,7 @@ class Internship(models.Model):
 class InternshipApplication(models.Model):
     internship = models.ForeignKey(Internship, on_delete=models.CASCADE, default='', related_name='internship')
     message = models.TextField(max_length = 1200, blank=True, default='')
-    resume = models.URLField(default='')
+    resume = models.URLField(default='', help_text='Add the drive link to your resume.')
     applied_by = models.ForeignKey(StudentProfile, on_delete=models.CASCADE, default='', related_name='intern')
     
     def __str__(self):
