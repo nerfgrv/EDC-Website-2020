@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'investors.apps.InvestorsConfig',
     'startupEcosystem.apps.StartupecosystemConfig',
     'user.apps.UserConfig',
+    'startup.apps.StartupConfig',
     'crispy_forms',
     'gsheets',
     'markdown_deux',
@@ -140,3 +141,5 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 GSHEETS = {
     'CLIENT_SECRETS': 'credentials.json'
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
