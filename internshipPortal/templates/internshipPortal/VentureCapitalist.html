@@ -205,9 +205,11 @@ vc_responsive"
                                             </div>
                                             {% if user.is_team %}
                                             <div class="post-create"
+
                                                 style="display: flex; flex:initial;flex-direction: row; flex-wrap: wrap; padding-top: 10px; justify-content: space-around; width: 100%; margin: auto">
                                                 <a style="margin-bottom: 0" href="{% url 'vencap-update' vencap.id %}">Update</a>
                                                 <a style="margin-bottom: 0" href="{% url 'vencap-delete' vencap.id %}">Delete</a>
+
                                             </div>
                                             {% endif %}
                                         </div>
