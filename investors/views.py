@@ -6,15 +6,21 @@ from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
-
+from user.models import StartupProfile
+from .forms import StartupProfileForm
 
 # Create your views here.
 def Investors(request):
-	context = {
+    context = {
         'investors': Investor.objects.all()
     }
-	return render(request,'investors/investorshome.html', context)
+    return render(request,'investors/investorshome.html', context)
 
+def Startup(request):
+    context = {
+        'startup': StartupProfile.objects.all()
+    }
+    return render(request,'investors/startup_home.html', context)
 
 def InvestorCreateView(request):
     if request.user.is_authenticated and request.user.is_team:

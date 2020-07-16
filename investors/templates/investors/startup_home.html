@@ -143,8 +143,8 @@ vc_responsive"
                 data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""
                 style="background-repeat: no-repeat;"></div>
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
-            
-            
+                {% if startup %}
+                {% for obj in startup %}
                 <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
                     <div class="vc_column-inner vc_custom_1494625737076">
                         <div class="wpb_wrapper">
@@ -154,21 +154,19 @@ vc_responsive"
                                     <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                         <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
                                             <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                                <img class="img-icon" alt="null"
-                                                    src="{%static 'startup/images/startup_1.jpg'%}"
+                                                <img class="img-icon" alt="{{obj.startup_name}}"
+                                                    src="{{obj.startup_logo.url}}"
                                                     height="400px" width="400px" />
                                                 <h3 class="ult-responsive flipbox_heading"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333; ">Startup 1</h3>
+                                                    style="color:#333333; ">{{obj.startup_name}}</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
                                                     style="color:#333333;color:#333333;">
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quo
-                                                        exercitationem atque alias aliquid deserunt tempora, repellendus reprehenderit
-                                                        fugiat corporis nobis ad, modi temporibus veritatis, amet dicta qui! Eligendi,
-                                                        quaerat. </p>
+                                                    <p>Founder : {{obj.founders}}
+                                                        <br> <br> Website : <a href="{{obj.website}}">{{obj.website}}</a> </p>
                                                 </div>
                                             </div>
                                         </div><!-- END .front -->
@@ -177,20 +175,13 @@ vc_responsive"
                                                 <h3 class="ult-responsive flipbox_heading"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333; ">Startup 1</h3>
+                                                    style="color:#333333; ">{{obj.startup_name}}</h3>
                                                 <div class="ifb-flip-box-section-content ult-responsive"
                                                     data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
                                                     data-responsive-json-new='{"font-size":"","line-height":""}'
                                                     style="color:#333333;color:#333333;">
-                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est aliquam ab aperiam
-                                                        odit vero magnam quo blanditiis atque
-                                                        qui amet doloribus voluptates eligendi, repellat rem architecto perferendis
-                                                        accusantium ratione quia omnis accusamus
-                                                        nostrum eius consectetur fugit ipsa Quae, rerum aperiam. Lorem ipsum dolor sit
-                                                        amet consectetur adipisicing elit.
-                                                        Assumenda quos corrupti unde asperiores ex quisquam voluptates inventore beatae
-                                                        pariatur facilis. <br> <br>Contact: <a href="tel:+91 458735245">+91 458735245</a>
-                                                        <br> Email: <a href="mailto:invemail@edc.in">investormail@edc.in</a> </p>
+                                                    <p> Field of Work : {{obj.field_of_work}} <br> <br> {{obj.about_the_startup}}<br> 
+                                                        <br> Address: <a href="mailto:invemail@edc.in">investormail@edc.in</a> </p>
                                                 </div>
                                             </div>
                                         </div><!-- END .back -->
@@ -199,53 +190,13 @@ vc_responsive"
                             </div><!-- End icon block -->
                         </div>
                     </div>
+                {% endfor %}
+
+                {% else %}
+                <div class="wrapper">
+                    <h1 style="font-weight: bold;">Coming Soon!</h1>
                 </div>
-                <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
-                    <div class="vc_column-inner vc_custom_1494625737076">
-                        <div class="wpb_wrapper">
-                            <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                                <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height"
-                                    style="min-width: 450px" data-min-height='550px'>
-                                    <div class="ifb-flip-box" id="flip-box-wrap-9665">
-                                        <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
-                                            <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                                <img class="img-icon" alt="null" src="{%static 'startup/images/startup_2.jpg'%}"
-                                                    height="400px" width="400px" />
-                                                <h3 class="ult-responsive flipbox_heading"
-                                                    data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
-                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333; ">Starup 2</h3>
-                                                <div class="ifb-flip-box-section-content ult-responsive"
-                                                    data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
-                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333;color:#333333;">
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quo exercitationem atque alias aliquid deserunt tempora, repellendus reprehenderit fugiat corporis nobis ad, modi temporibus veritatis, amet dicta qui! Eligendi, quaerat. </p>
-                                                </div>
-                                            </div>
-                                        </div><!-- END .front -->
-                                        <div class="ifb-face ifb-back" style="color:#333333;background:#e6e6e6;  ">
-                                            <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
-                                                <h3 class="ult-responsive flipbox_heading"
-                                                    data-ultimate-target='#flip-box-wrap-9665 .ult-responsive.flipbox_heading'
-                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333; ">Startup 2</h3>
-                                                <div class="ifb-flip-box-section-content ult-responsive"
-                                                    data-ultimate-target='#flip-box-wrap-9665 .ifb-flip-box-section-content.ult-responsive'
-                                                    data-responsive-json-new='{"font-size":"","line-height":""}'
-                                                    style="color:#333333;color:#333333;">
-                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est aliquam ab aperiam odit vero magnam quo blanditiis atque
-                                                    qui amet doloribus voluptates eligendi, repellat rem architecto perferendis accusantium ratione quia omnis accusamus
-                                                    nostrum eius consectetur fugit ipsa Quae, rerum aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                    Assumenda quos corrupti unde asperiores ex quisquam voluptates inventore beatae pariatur facilis. <br> <br>Contact: <a href="tel:+91 458735245">+91 458735245</a>
-                                                    <br> Email: <a href="mailto:invemail@edc.in">investormail@edc.in</a> </p>
-                                                </div>
-                                            </div>
-                                        </div><!-- END .back -->
-                                    </div> <!-- ifb-flip-box -->
-                                </div> <!-- flip-box -->
-                            </div><!-- End icon block -->
-                        </div>
-                    </div>
+                {% endif %}
                 </div>
                     </div>
                 </div>
