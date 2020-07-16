@@ -26,7 +26,6 @@ urlpatterns = [
     path('',include('event.urls')),
     path('', include('internshipPortal.urls')),
     path('', include('investors.urls')),
-    path('', include('startup.urls')),
     path('terms-and-conditions/',include('startupEcosystem.urls')),
 ]
 
