@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class Investor(models.Model):
     name = models.CharField(max_length=100)
-    about = models.CharField(max_length=5000)
+    about = models.CharField(max_length=200)
     startups_funded = models.CharField(max_length=500, default='')
     contact = PhoneNumberField(blank=True, null=True, help_text='Add country code before the contact no.')
     email = models.EmailField(default='')
