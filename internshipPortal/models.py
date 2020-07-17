@@ -44,7 +44,7 @@ class InternshipApplication(models.Model):
 
 class VentureCapitalist(models.Model):
     name = models.CharField(max_length=100)
-    about = models.CharField(max_length=5000)
+    about = models.CharField(max_length=550)
     startups_funded = models.CharField(max_length=500, default='')
     contact = PhoneNumberField(blank=True, null=True, help_text='Add country code before the contact no.')
     email = models.EmailField(default='')
