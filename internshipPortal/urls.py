@@ -14,7 +14,7 @@ urlpatterns = [
     path('venture-capitalist/', 				views.VenCapitalist,                    name='venture-capitalist'), 
     path('venture-capitalist/create/', 			views.VenCapCreateView,                 name='vencap-create'),
     path('venture-capitalist/<int:pk>/update/', views.VenCapUpdateView,                 name='vencap-update'),
-    path('venture-capitalist/<int:pk>/delete/', views.VenCapDeleteView,       name='vencap-delete'),
+    path('venture-capitalist/<int:pk>/delete/', views.VenCapDeleteView,                 name='vencap-delete'),
     path('download/<int:pk>/',                  views.exceldownload,                    name='application-download'),
 
 ]

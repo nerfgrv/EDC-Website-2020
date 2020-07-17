@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 
 {% block head %}
-{%if 'object' == internship %}
+{%if internship %}
 <title>EDC,TIET-Internships</title>
 {% else %}
 <title>EDC,TIET-Venture Capitalist</title>
@@ -68,7 +68,7 @@
             <h1 style="text-align: center; padding-top: 30px; font-weight: bold;">Are you sure you want to delete "{{ object }}"?</h1>
             <div style="margin-left: auto; margin-right: auto; display: flex; flex-wrap: wrap; margin: 1%;">
                 <button style="margin-left: auto; margin-bottom: 30px;" class="button"  type='submit'><b>Yes, I am Sure</b></button>
-                {%if 'object' == internship %}
+                {%if internship %}
                 <a style="margin-right: auto; margin-left: auto; margin-bottom: 30px;" href="{% url 'internships' %}">No, Don't Delete</a>
                 {%else%}
                 <a style="margin-right: auto; margin-left: auto; margin-bottom: 30px;" href="{% url 'venture-capitalist' %}">No, Don't Delete</a>
