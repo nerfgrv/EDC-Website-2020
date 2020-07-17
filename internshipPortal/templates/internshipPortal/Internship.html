@@ -61,7 +61,7 @@
         .sk-circle .sk-child:before,
         .sk-cube-grid .sk-cube,
         .sk-fading-circle .sk-circle:before {
-            background-color: #2f92bb   ;
+            background-color: #2f92bb;
         }
 
         .se-pre-con {
@@ -215,51 +215,87 @@
         </style>
     </noscript>
     <style>
-    .container {
-        width: 100% !important;
-    }
+        .container {
+            width: 100% !important;
+        }
 
-    .vc_row {
-        width: 98vw !important;
-    }
+        .vc_row {
+            width: 98vw !important;
+        }
 
-    .wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 30px 0px 110px 0px;
-        color: #000;
-    }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 30px 0px 110px 0px;
+            color: #000;
+        }
 
-    .create_button a {
-        margin-right: 20px;
-        border-radius: 10px; 
-        padding: 15px 40px; 
-        margin: 30px auto; 
-        font-size: 21px; 
-        color: black; 
-        text-align: center;
-        display:block; 
-        color: white;
-        transition: 0.5s;
-        background: rgb(47, 146, 187);
-        max-width: 300px;
-    }
+        .create_button a {
+            margin-right: 20px;
+            border-radius: 10px;
+            padding: 15px 40px;
+            margin: 30px auto;
+            font-size: 21px;
+            color: black;
+            text-align: center;
+            display: block;
+            color: white;
+            transition: 0.5s;
+            background: rgb(47, 146, 187);
+            max-width: 300px;
+        }
 
-    .create_button a:hover {
-        transform: scale(1.02); 
-        font-size: 21px; 
-        color: black; 
-        text-align: center;
-        display:block; 
-        color: white;
-        text-decoration: none !important;
-    }
-    .view-detail-btn:hover{
-        background-color: #2f92bb;
-        color: white;
-    }
+        .create_button a:hover {
+            transform: scale(1.02);
+            font-size: 21px;
+            color: black;
+            text-align: center;
+            display: block;
+            color: white;
+            text-decoration: none !important;
+        }
+
+        .view-detail-btn:hover {
+            background-color: #2f92bb;
+            color: white;
+        }
+
+        .supcard_top,
+        .supcard_mid {
+            display: flex;
+            align-content: space-between;
+        }
+
+        .location,
+        .duration,
+        .Start,
+        .applyBy {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .location,
+            .duration,
+            .Start,
+            .applyBy {
+                padding: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .supcard_top,
+            .supcard_mid {
+                flex-direction: column;
+                align-content: center;
+            }
+        }
     </style>
 </head>
 {% endblock head %}
@@ -302,8 +338,8 @@ vc_responsive"
                                             sizes="(max-width: 2000px) 100vw, 2000px" />
 
                                         <h1 class="ls-l"
-                                            style="width: 100%; height: 100%;padding-top: 35%; text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center;" data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;"
-                                            
+                                            style="width: 100%; height: 100%;padding-top: 35%; text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center;"
+                                            data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;"
                                             data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
                                             INTERNSHIPS
                                         </h1>
@@ -328,13 +364,13 @@ vc_responsive"
 
 
     <div class="row main_body" style="max-width:100% !important; display:flex; justify-content: center;">
-        <div class="col-12 col-md-8 main_body_center ">
+        <div class="col-12 col-md-8 col-lg-8 col-sm-12 main_body_center ">
             {% if user.is_startup %}
-                <div class="create_button">
-                    <a href="{% url 'internship-create' %}">
-                        Create an Internship
-                    </a>
-                </div>
+            <div class="create_button">
+                <a href="{% url 'internship-create' %}">
+                    Create an Internship
+                </a>
+            </div>
             {% endif %}
 
 
@@ -346,18 +382,21 @@ vc_responsive"
                 style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
                 <div class="supcard_top" style="max-width:80% !important;">
                     <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
-                        <img style="border-radius: 50%; width: 100px; height:100px;" src="{{internship.startup.startup_logo.url}}" alt="{{internship.startup.startup_name}}">
+                        <img style="border-radius: 50%; width: 100px; height:100px;"
+                            src="{{internship.startup.startup_logo.url}}" alt="{{internship.startup.startup_name}}">
                     </div>
 
                     <div class="card-body" style="margin-top: 15px;">
                         <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
                         <h4 class="card-title" style="font-size: 28px;">{{internship.startup.startup_name}}</h4>
-                        <h5 class="card-title" style="color:#2f92bb; font-size: 20px; ">{{ internship.field_of_internship }}
+                        <h5 class="card-title" style="color:#2f92bb; font-size: 20px; ">
+                            {{ internship.field_of_internship }}
                         </h5>
                         <hr>
                     </div>
                 </div>
                 <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible;">
+
                     <div class="location">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
                         <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
@@ -374,7 +413,8 @@ vc_responsive"
                         <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
                     </div>
                     <div class="applyBy">
-                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:</h5>
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:
+                        </h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.skills_required }}</p>
                     </div>
@@ -387,9 +427,10 @@ vc_responsive"
                             View Details
                         </a>
                         {% if user.startup_profile == internship.startup %}
-                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded" style="margin-left: 10px;">
-                                    Delete Internship
-                            </a>
+                        <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded"
+                            style="margin-left: 10px;">
+                            Delete Internship
+                        </a>
                         {% endif %}
                     </div>
                 </div>
@@ -397,10 +438,10 @@ vc_responsive"
             {% endfor %}
 
             {% else %}
-                <br><br><br><br>
-                <div class="wrapper">
-                    <h1 style="font-weight: bold; ">New Internships To Be Added Soon...</h1>
-                </div>
+            <br><br><br><br>
+            <div class="wrapper">
+                <h1 style="font-weight: bold; ">New Internships To Be Added Soon...</h1>
+            </div>
             {% endif %}
         </div>
     </div>

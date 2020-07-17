@@ -126,7 +126,8 @@ def InternshipDeleteView(request, pk):
     if request.user.is_authenticated and request.user.is_startup and (request.user.startup_profile == obj.startup):
         if request.method =="POST":  
             obj.delete()  
-            return redirect("internships") 
+            return redirect('internships') 
+
     else:
         messages.success(request, f'You are not authorised to access this page')
         return redirect('internship-detail', pk)
@@ -171,13 +172,13 @@ def VenCapCreateView(request):
 def VenCapUpdateView(request, pk):
     if request.user.is_authenticated and request.user.is_team:
         if request.method == 'POST':
-            form = VenCapForm(request.POST, request.FILES, instance=VentureCapitalist.objects.filter(id=pk))
+            form = VenCapForm(request.POST, request.FILES, instance=VentureCapitalist.objects.filter(id=pk).first())
             
             if form.is_valid():
                 form.save()
                 return redirect('venture-capitalist')
 
-        form = VenCapForm(instance=VentureCapitalist.objects.filter(id=pk))
+        form = VenCapForm(instance=VentureCapitalist.objects.filter(id=pk).first())
         context = {
             'form': form
         }
@@ -186,11 +187,29 @@ def VenCapUpdateView(request, pk):
     else:
         return redirect('venture-capitalist')
 
-@method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_team), name='dispatch')
-class VenCapDeleteView(DeleteView):
-    model = VentureCapitalist
-    success_url = reverse_lazy('venture-capitalist')
-    template_name = 'internshipPortal/confirm_delete.html'
+# @method_decorator(user_passes_test(lambda u: u.is_authenticated and u.is_team), name='dispatch')
+# class VenCapDeleteView(DeleteView):
+#     model = VentureCapitalist
+#     success_url = reverse_lazy('venture-capitalist')
+#     template_name = 'internshipPortal/confirm_delete.html'
+
+
+def VenCapDeleteView(request, pk): 
+    obj = get_object_or_404(VentureCapitalist, id=pk)
+    vencap = VentureCapitalist.objects.filter(id=pk).first()
+    if request.user.is_authenticated and request.user.is_team:
+        if request.method =="POST":  
+            obj.delete()  
+            return redirect("venture-capitalist") 
+    else:
+        messages.success(request, f'You are not authorised to access this page')
+        return redirect('venture-capitalist', pk)
+    
+    context ={
+        'object' : vencap
+    }
+  
+    return render(request, 'internshipPortal/confirm_delete.html', context)
 
 
 #################################################################
