@@ -23,7 +23,7 @@ def MyInternships(request):
         context = {
             'internships': internships,
         }
-        return render(request, 'internshipPortal/Internship.html', context)
+        return render(request, 'internshipPortal/MyInternshipStartup.html', context)
     elif(request.user.is_authenticated and request.user.is_student):
         internships = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
         for internship in internships:
@@ -31,7 +31,7 @@ def MyInternships(request):
         context = {
             'internships': internships,
         }
-        return render(request, 'internshipPortal/MyInternship.html', context)
+        return render(request, 'internshipPortal/MyInternshipStudent.html', context)
     else:
         redirect(internships)
     
@@ -127,6 +127,7 @@ def InternshipDeleteView(request, pk):
         if request.method =="POST":  
             obj.delete()  
             return redirect('internships') 
+
     else:
         messages.success(request, f'You are not authorised to access this page')
         return redirect('internship-detail', pk)
