@@ -1035,6 +1035,25 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
+
+        @media only screen and (max-width: 768px) {
+
+            .location,
+            .duration,
+            .Start,
+            .applyBy {
+                padding: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .supcard_top,
+            .supcard_mid {
+                flex-direction: column;
+                align-content: center;
+            }
+        }
     </style><noscript>
         <style>
             .wpb_animate_when_almost_visible {
@@ -1119,7 +1138,7 @@ vc_responsive" {% endblock bodytag %}
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
 
         <div class="card supcard"
-            style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px; ">
+            style="padding:0% 2% 1% 1%; border:none; box-shadow: 3px 5px 6px #ccc; margin-bottom:30px; margin-top: 30px;">
             <div class="supcard_top">
                 <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
                     <img style="border-radius: 50%; width: 100px; height:100px;"
@@ -1133,7 +1152,7 @@ vc_responsive" {% endblock bodytag %}
                 </div>
             </div>
             <hr>
-            <div class="supcard_mid" style="margin-bottom: 20px;margin-left: 20px; padding-right: 30px;">
+            <div class="supcard_mid" style="margin-bottom: 20px;margin-left: 20px; padding-right: 30px; overflow: visible;">
                 <div class="location">
                     <h5 class="card-title" style="margin-bottom: 10px; font-size:18px;">Location:</h5>
 

@@ -51,6 +51,14 @@
         color: white;
     }
 </style>
+<style type="text/css">
+    @media(max-width: 725px){
+        .main{
+            width: 100%;
+            margin-top: 50%;
+        }
+    }
+</style>
 
 
 {% endblock head%}
@@ -68,7 +76,7 @@ vc_responsive"
 
 
 
-<div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%;">
+<div class="card" style="margin-top: 10%; margin-bottom: 2%; padding: 2% 4% 2% 4%; overflow-wrap: break-word;">
     <img class="profile-pic" src="{{object.startup_logo.url}}" alt="{{object.startup_name}}">
     <h1 style="font-weight: bold; margin-bottom: 1%; color: #000">{{object.startup_name}}</h1>
     <a href="{{object.user.email}}">
