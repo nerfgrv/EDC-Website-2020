@@ -155,7 +155,7 @@ vc_responsive"
                                                 <p>Founder : {{obj.founders}} </p>
                                                 </div>
                                                 
-                                                <div style="height: 400px; width: 400px; align-content: center;" class="">
+                                                <div style="height: 400px; width: 100%; align-content: center;" class="">
                                                     {% if obj.startup_logo.height > obj.startup_logo.width %}
                                                     <img class="img-icon" alt="{{obj.startup_name}}" src="{{obj.startup_logo.url}}" style="height: 100%; width: 100%;" />
                                                     {% elif obj.startup_logo.width > obj.startup_logo.height %}
@@ -186,6 +186,7 @@ vc_responsive"
                             </div><!-- End icon block -->
                         </div>
                     </div>
+                </div>
                     {% endfor %}
 
                     {% else %}
