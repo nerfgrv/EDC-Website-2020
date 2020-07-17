@@ -127,6 +127,7 @@ def InternshipDeleteView(request, pk):
         if request.method =="POST":  
             obj.delete()  
             return redirect('internships') 
+
     else:
         messages.success(request, f'You are not authorised to access this page')
         return redirect('internship-detail', pk)
