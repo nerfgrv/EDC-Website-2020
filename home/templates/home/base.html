@@ -601,9 +601,14 @@
 
         .hsocial a:hover,
         .hsearch a:hover,
-        .menucont ul.navbar-nav>li>a:hover,
+        custom__menu .navbar-nav li:hover .sub-menu 
+        {
+        display: block;
+        
+        }
         .menucont ul.navbar-nav>li>a:focus {
             color: #2f92bb;
+            
         }
 
         ul.sub-menu li a,
@@ -616,19 +621,25 @@
             font-style: normal;
             color: #ffffff;
             font-size: 12px;
+            
+            
         }
 
         ul.sub-menu li a:hover {
+            
             color: #c5e4f0;
         }
 
         ul.sub-menu,
         .menu.menuEffects,
         #custom__menu .menu.menuEffects .menuContent {
+            
             background-color: #2f92bb;
+            
         }
 
         ul.sub-menu li a {
+            
             border-color: #2f92bb;
         }
 
@@ -946,7 +957,7 @@
     <div class="main-wrapper">
         {% if messages %}
             <div style="background: black; height:80px; width: 100%"></div>
-            <ul class="messages" style="background: #eeee01; width: 100%; color: rgb(47, 146, 187); text-align: center; margin: 0px; padding: 10px;">
+            <ul class="messages" style="background: rgb(0, 0, 0); width: 100%; color: rgb(255, 255, 255); text-align: center; margin: 0px; padding: 10px;">
                 {% for message in messages %}
                     <h1 style="font-weight: 600; font-size: 25px; margin: 0px;">{{ message }}</h1>
                 {% endfor %}
@@ -965,8 +976,8 @@
                     <div class="hlogo">
                         <div class="hlogoinner">
                             <a href="{% url 'home' %}">
-                                <img height="80" width="146" alt="" src="{% static 'home/images/Logo.png' %}" style="padding: 5px" />
-                                <img height="80" width="146" class="fixed_header_logo" alt="" src="{% static 'home/images/Logo.png' %}" style="padding: 5px" />
+                                <img height="80" width="146" alt="" src="{% static 'home/images/Logo.png' %}" style="padding: 5px !important" />
+                                <img height="80" width="146" class="fixed_header_logo" alt="" src="{% static 'home/images/Logo.png' %}" style="padding: 5px !important" />
                             </a>
                         </div>
                     </div>
@@ -1002,7 +1013,7 @@
                                 <ul class="sub-menu">
                                     <li id="menu-item-1482"
                                         class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                        <a href="" aria-current="page">StartUp</a></li>
+                                        <a href="{% url 'startup' %}"  aria-current="page">StartUp</a></li>
                                     <li id="menu-item-1483"
                                         class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
                                             href="{% url 'investors' %}" data-hover="Header generic style">Investor</a></li>
@@ -1141,7 +1152,7 @@
                                             <ul class="sub-menu">
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                    <a href="" aria-current="page">Startups</a>
+                                                    <a href="{% url 'startup' %}"  aria-current="page">Startups</a>
                                                 </li>
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
@@ -1301,7 +1312,7 @@
                                         <ul class="sub-menu">
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                <a href="" aria-current="page">Startups</a>
+                                                <a href="{% url 'startup' %}"  aria-current="page">Startups</a>
                                             </li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
                                                 <a href="{% url 'investors' %}" data-hover="Header generic style">Investors</a>
@@ -1417,10 +1428,11 @@
                                                     <a href="{% url 'events' %}" style="color: white">Events</a>
                                                     <ul class="sub-menu">
                                                         <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482" >
                                                             <a href="{% url 'etalks' %}" aria-current="page">E-Talks</a>
                                                         </li>
-                                                        <li
+                                                        
+                                                        <li 
                                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
                                                             <a href="{% url 'startupweekend' %}" data-hover="Header generic style">The
                                                                 StartUp Weekend</a>
@@ -1434,15 +1446,17 @@
                                                             <a href="{% url 'vl' %}" data-hover="Header generic style">Venture Lab
                                                                 Weekend</a>
                                                         </li>
+                                                        
                                                     </ul>
                                                 </li>
                                                 <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478" >
                                                     <a href="{% url 'ecosystem-home' %}" style="color: white">StartUp Ecosystem</a>
                                                     <ul class="sub-menu">
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
-                                                            <a href="" aria-current="page">StartUps</a>
+                                                            
+                                                            <a href="{% url 'startup' %}" 'startup'aria-current="page">StartUps</a>
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
@@ -1555,17 +1569,17 @@
                             </div>
                             <br>
                             <div class="contact" style="display: flex; flex-direction: row; justify-content: space-around;">
-                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/">
+                                <div><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/" target="_blank">
                                 	<!-- <img src="{% static 'home/images/linkedin.png' %}" height="40px" width="40px" id="linkedin_footer"> -->
                                 	<i class="fa fa-linkedin" id="linkedin_footer" style="color: white; font-size: 40px;"></i>
                                 	</a> </div>
 
-                                <div><a href="https://www.instagram.com/edc_tiet/">
+                                <div><a href="https://www.instagram.com/edc_tiet/" target="_blank">
                                 		<!-- <img src="{% static 'home/images/insta.png' %}" height="40px" width="40px" id="instagram_footer"> -->
                                 		<i class="fa fa-instagram" id="instagram_footer" style="color: white; font-size: 40px;"></i>
                                 	</a></div>
 
-                                <div><a href="https://www.facebook.com/tuedcell/">
+                                <div><a href="https://www.facebook.com/tuedcell/" target="_blank">
                                 		<!-- <img src="{% static 'home/images/Facebook.png' %}" height="40px" width="40px" id="facebook_footer"> -->
                                 		<i class="fa fa-facebook" id="facebook_footer" style="color: white; font-size: 40px;"></i>
                                 	</a></div>
@@ -1616,7 +1630,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="{% url 'startup' %}" >
                                         <p style="color: white; font-family: PT Sans; font-weight: bold;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">StartUps</p>
                                     </a>
                                 </li>
@@ -1653,7 +1667,7 @@
                                                     <i class="fa fa-map-marker" id="favimg" style="color: #2f92bb; font-size: 30px;"></i>
                                                 </div>
                                                 <div class="col2" style="margin-left: 8px; margin-top: 0px;">
-                                                    <a href="https://g.page/ThaparInstitute?share">
+                                                    <a href="https://g.page/ThaparInstitute?share" target="_blank">
                                                         <p style="color: white; font-family: PT Sans; font-weight: bold;" onmouseover="this.style.color='#c5e4f0';" onmouseout="this.style.color='white';">Thapar Institute of Engineering and Technology, Patiala</p>
                                                     </a>
                                                 </div>
