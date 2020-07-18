@@ -299,6 +299,18 @@
                 align-content: center;
             }
         }
+
+        .download-btn {
+            float: right !important;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .download-btn {
+                margin-top: 2%;
+                float: left !important;
+            }
+        }
     </style>
 </head>
 {% endblock head %}
@@ -425,22 +437,25 @@ vc_responsive"
                 </div>
                 <hr>
                 <div class="card-footer " style="background-color:white;">
-                    <div class="" style="font-size: 20px !important;">
-                        <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-primary btn-rounded">
-                            View Details
-                        </a>
-                        {% if user.startup_profile == internship.startup %}
-                        <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded"
-                            style="margin-left: 10px;">
-                            Delete Internship
-                        </a>
-                        {% endif %}
-                        {% if user.is_startup %}
-                            <a href="{% url 'excel-download' internship.pk %}" class=" btn btn-primary btn-rounded"
-                            style="float: right !important;"><i class="fas fa-download"></i>
+                    <div class="row" style="font-size: 20px !important;">
+                        <div class="col-12 col-md-12">
+                            <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-primary btn-rounded">
+                                View Details
+                            </a>
+                            {% if user.startup_profile == internship.startup %}
+                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded"
+                                style="margin-left: 10px;">
+                                Delete Internship
+                            </a>
+                            {% endif %}
+                            {% if user.is_startup %}
+                            <a href="{% url 'excel-download' internship.pk %}"
+                                class=" btn btn-primary btn-rounded download-btn" style=""><i
+                                    class="fas fa-download"></i>
                                 Download Applications
                             </a>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
