@@ -102,7 +102,17 @@
     .vc_custom_1495476642306 {
         padding-bottom: 50px !important;
     }
-
+    .flexx {
+        margin-left: 15px;
+        width: 100%;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-content: center !important;
+    }
+    .card {
+        width:39vw; 
+        margin:0 5% 5% 5%;
+    }
 </style>
 
 <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
@@ -136,28 +146,30 @@
     }
 </style>
 <style>
-    @media(max-width: 414px){
-        #cards{
-            min-width: 312px !important;
-            min-height: 550px !important;
+    @media only screen and (max-width: 1024px) {
+        .flexx {
+            margin-left: -15px;
         }
     }
-    @media(max-width:768px){
-        #cards{
-            min-width: 330px !important;
-            min-height: 550px !important; 
+    @media only screen and (max-width: 768px) {
+        .card {
+            width:60vw; 
+            margin:0 20% 5% 20%;
         }
     }
-    @media(max-width:375px){
-        #cards{
-            min-width: 312px !important;
-            min-height: 550px !important; 
+    @media only screen and (max-width: 425px) {
+        .flexx {
+            margin-left: 0px;
+        }
+        .card {
+            width:97vw; 
+            margin:0 1.5% 5% 1.5%;
+
         }
     }
-    @media(max-width:320px){
-        #cards{
-            min-width: 250px !important;
-            min-height: 800px !important; 
+    @media only screen and (max-width: 600px) {
+        .vc_column_container>.vc_column-inner {
+            padding: 0px !important;
         }
     }
 </style>
@@ -233,13 +245,13 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto; align-content: center;">
         
-        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679" style="margin-left: 15px;">
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679 flexx">
 
-            <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
+            <div class="wpb_column vc_column_container vc_col-sm-4 card" style="">
                 <div class="vc_column-inner vc_custom_1494625728900">
                     <div class="wpb_wrapper">
                         <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                            <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px;" data-min-height='550px'>
+                            <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="" data-min-height='550px'>
                                 <div class="ifb-flip-box" id="flip-box-wrap-4312">
                                     <div class="ifb-face ifb-front " style="color:#666666;background:#dbd6d6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -253,18 +265,18 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                                 </div>   
                                     
                                             <img class="img-icon" alt="null" src="{%static 'event/images/Etalks.png'%}" height="400px" width="400px" />   
-                                            <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-4312 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#666666; font-style: 'Montserrat' !important; padding-left: 10%; padding-right: 10%10%">
+                                            <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-4312 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#666666; font-style: 'Montserrat' !important; padding-left: 10%; padding-right: 10%">
                                                 <p><b>
                                                      In order to replace the quarantine boredom with a tête-à-tête with some top players in the entrepreneurial world,EDC came up with E -TALKS-A series of interactive sessions with entrepreneurs 
                                                 </b></p>
                                             </div>
                                         </div>
                                     </div><!-- END .front -->
-                                    <div class="ifb-face ifb-back" id="cards" style="color:#666666;background:#efefef;  ">
+                                    <div class="ifb-face ifb-back" id="cards" style="color:#666666;background:#efefef;">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                             <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-4312 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#666666 font-style: 'Montserrat' !important; ">E-TALKS</h3>
                                             <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-4312 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#666666; font-style: 'Montserrat' !important">
-                                                <p style="text-align: justify;">The Webinar Series involved a total of 10 sessions from 26 April to 21 June. Each webinar included an hour-long informative session by a business professional along with a question-answer round towards the end of the Webinar Series, each session welcomed more than 90 participants including by TIET Students, Students from outside TIET, and TIET faculty. The speakers at E-Talks included personalities like Mr. Samar Singla, CEO/Founder at Jugnoo; Mr. Ankit Prasad, Founder at Bobble.AI; Mr. Pratyush Kukreja, Marketing Head at Haptik and, Mr. Sudeep Gupta, Director of International Business at OYO Rooms and many more prominent business person. The Webinar Series was a success with something unique to learn at every session.</p>
+                                                <p style="text-align: justify;">The Webinar Series involved a total of 10 sessions from 26 April to 21 June. Each webinar included an hour-long informative session by a business professional along with a question-answer round towards the end of the Webinar Series, each session welcomed more than 90 participants including by TIET Students, Students from outside TIET, and TIET faculty. The speakers at E-Talks included personalities like Mr. Samar Singla, CEO/Founder at Jugnoo; Mr. Ankit Prasad, Founder at Bobble.AI and, Mr. Sudeep Gupta, Director of International Business at OYO Rooms and many more prominent business person. The Webinar Series was a success with something unique to learn at every session.</p>
                                                 <a href="{% url 'etalks' %}">
                                                     <button on- type="button" id="ubtn-2814" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-custom ubtn-center-dg-bg  none  ubtn-sep-icon ubtn-sep-icon-left-push  ubtn-left   tooltip-5ec7fe8b6caec" data-hover="#2f92bb" data-border-color="#2f92bb" data-bg="#2f92bb" data-hover-bg="#f9f9f9" data-border-hover="#2f92bb" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="" data-ultimate-target='#ubtn-2814' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-family:&#039;Josefin Sans&#039;;font-weight:500;width:px;min-height:px;padding:20px 50px;border-radius:0px;border-width:2px;border-color:#2f92bb;border-style:solid;background: #2f92bb;color: #ffffff;" style="margin-left: 20px">
                                                             <span class="ubtn-data ubtn-icon">
@@ -290,11 +302,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                 </div>
             </div>
 
-            <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
+            <div class="wpb_column vc_column_container vc_col-sm-4 card" style="">
                 <div class="vc_column-inner vc_custom_1494625737076">
                     <div class="wpb_wrapper">
                         <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                            <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
+                            <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height" id="cards" style="" data-min-height='550px'>
                                 <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -314,7 +326,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                             </div>
                                         </div>
                                     </div><!-- END .front -->
-                                    <div class="ifb-face ifb-back" id="cards" style="color:#333333;background:#fcfcfc;  ">
+                                    <div class="ifb-face ifb-back" id="cards" style="">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                             <h2 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-4312 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#666666; font-style: 'Montserrat' !important">STARTUP-WEEKEND</h2>
                                             <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-4312 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#666666;">
@@ -338,11 +350,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                 </div>
             </div>
 
-            <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
+            <div class="wpb_column vc_column_container vc_col-sm-4 card" style="">
                 <div class="vc_column-inner vc_custom_1494625719386">
                     <div class="wpb_wrapper">
                         <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                            <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px" data-min-height='550px'>
+                            <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height" id="cards" style="" data-min-height='550px'>
                                 <div class="ifb-flip-box" id="flip-box-wrap-5448">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#f3eeee;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -386,11 +398,11 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                     </div>
                 </div>
             </div> 
-            <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
+            <div class="wpb_column vc_column_container vc_col-sm-4 card" style="">
                 <div class="vc_column-inner vc_custom_1494625728900">
                     <div class="wpb_wrapper">
                         <div class="flip-box-wrap" style="margin:0px;padding:0px;">
-                            <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="min-width: 450px;" data-min-height='550px'>
+                            <div class="flip-box ifb-custom-height  horizontal_door_flip flip-box-custom-height flip-ifb-custom-height" id="cards" style="" data-min-height='550px'>
                                 <div class="ifb-flip-box" id="flip-box-wrap-4312">
                                     <div class="ifb-face ifb-front " style="color:#666666;background:#dbd6d6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
@@ -415,7 +427,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">
                                             <h3 class="ult-responsive flipbox_heading" data-ultimate-target='#flip-box-wrap-4312 .ult-responsive.flipbox_heading' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#666666 font-style: 'Montserrat' !important; ">VL-WEEKEND</h3>
                                             <div class="ifb-flip-box-section-content ult-responsive" data-ultimate-target='#flip-box-wrap-4312 .ifb-flip-box-section-content.ult-responsive' data-responsive-json-new='{"font-size":"","line-height":""}' style="color:#333333;color:#666666; font-style: 'Montserrat' !important">
-                                                <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today. Participants will be taught things like how to pitch their ideas, value proposition, the benefits of collaboration and the art of sustaining it in high-pressure situations and many more things which are essential for a startup. Various established individuals who have already made an impact in their chosen field have been invited to facilitate and mentor the participants over the weekend.</p>
+                                                <p style="text-align: justify;">The workshop expects a heavy footfall courtesy of students of Thapar Institute and other well known colleges of North India. The 3 day workshop will help the students understand how to execute an idea about something and make a profitable, marketable, feasible business out of it in the competitive environment of today. Participants will be taught things like how to pitch their ideas, value proposition, the benefits of collaboration and the art of sustaining it in high-pressure situations and many more things which are essential for a startup.</p>
                                                 <a href="{% url 'vl' %}">
                                                     <button on- type="button" id="ubtn-2814" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-custom ubtn-center-dg-bg  none  ubtn-sep-icon ubtn-sep-icon-left-push  ubtn-left   tooltip-5ec7fe8b6caec" data-hover="#2f92bb" data-border-color="#2f92bb" data-bg="#2f92bb" data-hover-bg="#f9f9f9" data-border-hover="#2f92bb" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="" data-ultimate-target='#ubtn-2814' data-responsive-json-new='{"font-size":"","line-height":""}' style="font-family:&#039;Josefin Sans&#039;;font-weight:500;width:px;min-height:px;padding:20px 50px;border-radius:0px;border-width:2px;border-color:#2f92bb;border-style:solid;background: #2f92bb;color: #ffffff;" style="margin-left: 20px">
                                                             <span class="ubtn-data ubtn-icon">
