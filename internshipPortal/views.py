@@ -215,7 +215,7 @@ def VenCapDeleteView(request, pk):
 #################################################################
 
 
-def exceldownload(request, pk):
+def exceldownload(request, pk = None):
     internship = Internship.objects.filter(id=pk).first()
     if request.user.is_authenticated and request.user.is_startup and internship.startup == request.user.startup_profile: 
         response = HttpResponse(content_type='application/ms-excel')
