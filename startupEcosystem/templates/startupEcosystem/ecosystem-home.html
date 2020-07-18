@@ -3,7 +3,12 @@
 {% block head %}
 <title>EDC,TIET-Terms and Condition</title>
 <style>
-    .flexx {}
+    .flexx {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-content: center !important;
+    }
+
 
     .fill {
         display: flex;
@@ -88,6 +93,57 @@
     details>p{
       margin-left: 15px;
     }
+
+    #card {
+        margin-bottom: 20px; 
+        margin-right:1%;
+        width:45vw; 
+        margin-left: 1%;
+    }
+    .heading{
+        position: absolute; 
+        top: 1%; 
+        left: 2%; 
+        text-transform: 
+        uppercase; 
+        color:rgb(47, 146, 187);
+    }
+    .alignmargin{
+        margin-left:3%;
+    }
+    @media only screen and (max-width: 1100px){
+        .text1{
+                font-size: 15px !important;   
+        }
+        #card {
+            margin-bottom: 20px; 
+            margin-right:1%;
+            width:80vw; 
+            margin-left: 1%;
+        }
+        .alignmargin{
+            margin-left:2%;
+        }
+    }   
+    @media only screen and (max-width: 890px){
+        .text1{
+                font-size: 10px !important;
+                margin-left: -5% !important;
+                margin-right: -1% !important; 
+                margin-top: 4% !important;
+                line-height: normal !important;
+        }
+        #card {
+        margin-bottom: 20px; 
+        margin-right:1%;
+        width:80vw; 
+        margin-left: 1%;
+        }
+        .alignmargin{
+            margin-left:2%;
+        }   
+    }
+
 </style>
 {% endblock head %}
 
@@ -314,7 +370,7 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1494624914514">
                 <div class="wpb_column vc_column_container">
                     <div class="vc_column-inner">
-                        <div class="wpb_wrapper" style="margin-left:30px;">
+                        <div class="wpb_wrapper alignmargin">
                             <div class="wpb_single_image wpb_content_element vc_align_left  wpb_animate_when_almost_visible wpb_fadeInLeft fadeInLeft">
 
                                 <div class="row justify-content-center">
@@ -326,15 +382,15 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                 </div>
                             </div>
 
-                            <div class="flexx">
-                                <div class="row justify-content-center mt30 fill">
+                            <div class="">
+                                <div class="row justify-content-center mt30 fill flexx">
 
-                                    <div class="col-md-5 c1" style="margin-bottom: 20px; margin-right:20px;width:50vw; margin-left: 20px; ">
+                                    <div class="col-md-5 c1 " id="card">
                                         <div class="icon_box_one" style="position: relative; width: 100%; display: inline-block; margin: auto; ">
                                             <img src="{%static 'startupEcosystem/images/students.png'%}" alt="students" style="position: relative; width: 100%; display: block; margin: auto; ">
-                                            <h2 style="position: absolute; top: 15px; left: 20px; text-transform: uppercase; color:rgb(47, 146, 187);">Students</h2>
+                                            <h2 class="heading">Students</h2>
                                             <div class="content overlay">
-                                                <p style="font-size: 20px; " class="text1">
+                                                <p class="text1">
                                                     Simply register with your college mail id, fill your work interests and choose a startup to work in. We will get you connected with them!
                                                     <br> <a href="{% url 'student-signup' %}" style="font-size: 21px; color: black; text-align: center;">Click Here to Signup.</a>
 
@@ -342,12 +398,12 @@ class="home page-template-default page page-id-17 woocommerce-no-js has-fixed-he
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" col-md-5 c1" style="margin-bottom: 20px; margin-right:20px;width:50vw; margin-left: 20px; ">
+                                    <div class=" col-md-5 c1" id="card">
                                         <div class="icon_box_one" style="position: relative; width: 100%; display: inline-block; margin: auto; ">
                                             <img src="{% static 'startupEcosystem/images/startup.png' %}" alt="startup" style="position: relative; width: 100%; display: block; margin: auto; ">
-                                            <h2 style="position: absolute; top: 15px; left: 20px; text-transform: uppercase; color: rgb(47, 146, 187);">Startups</h2>
+                                            <h2 class="heading">Startups</h2>
                                             <div class="content overlay">
-                                                <p style="font-size: 20px; " class="text1">
+                                                <p class="text1">
                                                     Register your team requirements with us with necessary details. We will highlight it on our website and get you connected!<br>
                                                     <a href="{% url 'startup-signup' %}" style="font-size: 21px; color: black; text-align: center;">Click Here to Signup.</a>
                                                 </p>

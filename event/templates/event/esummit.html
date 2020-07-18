@@ -58,6 +58,13 @@
     .container {
         max-width: 98vw;
     }
+    @media(max-width: 700px){
+        .hide{
+            display: none;
+        }
+        .event_title{
+            font-size: 15px;
+        }
 
 
     .guest-heading{
@@ -68,6 +75,7 @@
         text-align: center;
         padding-bottom: 2%;
     }
+}
     @media only screen and (max-width: 768px) {
         .guest-heading{
             font-size: 40px;
@@ -101,11 +109,14 @@ class="portfolio-template-default single single-portfolio postid-1432 woocommerc
 wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
 {%endblock bodytag%}
 {%block body%}
-<div class="main-content ">
-    <div class="container">
+<div class="main-content" style="padding: 0;">
+    <!-- <div class="upb_content_iframe"> -->
+        <img src="{%static 'event/images/esummit.gif'%}" style="width: 100%; height: auto;">
+    <!-- </div>
+ -->    <div class="container">
         <div class="row">
-
-            <!-- <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
+            <!-- <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true">
+             <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
                 class="vc_row wpb_row vc_row-fluid vc_custom_1523379057140 vc_row-no-padding vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-middle vc_row-flex">
                 <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class="vc_column-inner">
@@ -138,9 +149,7 @@ wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
                 data-custom-vc-row="" data-vc="6.0.5" data-is_old_vc="" data-theme-support="" data-overlay="true"
                 data-overlay-color="rgba(20,22,38,0.3)" data-overlay-pattern="" data-overlay-pattern-opacity="0.8"
                 data-overlay-pattern-size="" data-overlay-pattern-attachment="scroll" data-video_fixer="true"></div> -->
-            <div class="upb_content_iframe">
-                <img src="{%static 'event/images/esummit.gif'%}" style="width: 100vw; margin-left: -10px; height: auto;">
-            </div>
+            
             
 
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1495052511775 vc_row-o-content-middle vc_row-flex">
@@ -404,14 +413,14 @@ wpb-js-composer js-comp-ver-6.0.5 vc_responsive"
                 <div class="port-links container">
                     <a class="port-previous" href="{% url 'startupweekend' %}">
                         <i class="fas fa-angle-left" aria-hidden="true"></i>
-                        <span class="meta-nav" aria-hidden="true">View Event</span>
-                        <h4 class="post-title"><b>Startup Weekend</b></h4>
+                        <span class="meta-nav hide" aria-hidden="true">View Event</span>
+                        <h4 class="post-title event_title"><b>Startup Weekend</b></h4>
                     </a>
                     <a class="back-to-list" href="{% url 'events' %}"><i class="fas fa-th" aria-hidden="true"></i></a>
                     <a class="port-next" href="{% url 'vl' %}">
                         <i class="fas fa-angle-right" aria-hidden="true"></i>
-                        <span class="meta-nav" aria-hidden="true">View Event</span>
-                        <h4 class="post-title"><b>Venture Lab</b></h4>
+                        <span class="meta-nav hide" aria-hidden="true">View Event</span>
+                        <h4 class="post-title event_title"><b>Venture Lab</b></h4>
                     </a>
                 </div>
             </nav>

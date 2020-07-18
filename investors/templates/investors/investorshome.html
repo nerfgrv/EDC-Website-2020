@@ -52,6 +52,45 @@
         color: black !important;
     }
 </style>
+<style>
+    .flexx {
+        margin-left: 15px;
+        width: 100%;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-content: center !important;
+    }
+    .card {
+        width:39vw; 
+        margin:0 5% 5% 5%;
+    }
+    @media only screen and (max-width: 1024px) {
+        .flexx {
+            margin-left: -15px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .card {
+            width:60vw; 
+            margin:0 20% 5% 20%;
+        }
+    }
+    @media only screen and (max-width: 425px) {
+        .flexx {
+            margin-left: -15px;
+        }
+        .card {
+            width:97vw; 
+            margin:0 1.5% 5% 1.5%;
+
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .vc_column_container>.vc_column-inner {
+            padding: 0px !important;
+        }
+    }
+</style>
 {% endblock head %}
 
 
@@ -127,15 +166,15 @@ vc_responsive"
 <div class="row main_body">
 
     <div class="col-12 col-md-8 main_body_center" style="display:block; margin:auto;">
-        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679">
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1494625858679 flexx">
             {% if investors %}
             {% for vencap in investors %}
-            <div class="wpb_column vc_column_container vc_col-sm-4" style="width:40%; margin:0 5% 5% 5%">
+            <div class="wpb_column vc_column_container vc_col-sm-4 card">
                 <div class="vc_column-inner vc_custom_1494625737076">
                     <div class="wpb_wrapper">
                         <div class="flip-box-wrap" style="margin:0px;padding:0px;">
                             <div class="flip-box ifb-custom-height  horizontal_flip_left flip-box-custom-height flip-ifb-custom-height"
-                                style="min-width: 450px" data-min-height='550px'>
+                                style="" data-min-height='550px'>
                                 <div class="ifb-flip-box" id="flip-box-wrap-9665">
                                     <div class="ifb-face ifb-front " style="color:#333333;background:#e6e6e6;  ">
                                         <div class="ifb-flip-box-section ifb-flip-box-section-vertical-middle">

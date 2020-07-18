@@ -710,7 +710,14 @@
         .footer_bottom {
             background-color: #282d33;
         }
-
+        @media(max-width: 700px){
+        .hide{
+            display: none;
+        }
+        .event_title{
+            font-size: 15px;
+        }
+    }
     </style>
 
     <noscript>
@@ -860,6 +867,17 @@
             transition: all .5s ease;
         }
     </style>
+    <style type="text/css">
+        .event_title{
+            font-size: 19px;
+        }
+        @media only screen and (max-width: 580px){
+            .event_title{
+                font-size: 19px;
+            }
+        }   
+
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -939,7 +957,7 @@
     <div class="main-wrapper">
         {% if messages %}
             <div style="background: black; height:80px; width: 100%"></div>
-            <ul class="messages" style="background: rgb(0, 0, 0); width: 100%; color: rgb(255, 255, 255); text-align: center; margin: 0px; padding: 10px;">
+            <ul class="messages" style="background: #32a852; width: 100%; color: rgb(255, 255, 255); text-align: center; margin: 0px; padding: 10px;">
                 {% for message in messages %}
                     <h1 style="font-weight: 600; font-size: 25px; margin: 0px;">{{ message }}</h1>
                 {% endfor %}
@@ -1509,9 +1527,9 @@
                                                 </li>
                                                 {% endif %}
                                                 {% else %}
-                                                <li id="menu-item-1478"
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
-                                                    <a href="{% url 'login' %}">Login</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
+                                                    <a href="{% url 'login' %}">Login</a>
+                                                </li>
                                                 <li id="menu-item-1478"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
                                                     <a>SignUp</a>
@@ -1641,7 +1659,7 @@
                                 <div class="textwidget">
                                     <h3 style="color: white; font-size: 18px; margin-bottom: 0px;" id="footer_h3">Contact Us</h3>
                                     <hr size="4px" align="left" noshade="noshade" color="#2f92bb" width="50px" id="hr_footer">
-                                    <ul type="none" class="contact-cards" id="footer_list" style="margin-left: -40px; margin-top: 10px;display: flex; flex-direction: column; padding: 0px; align-items: flex-start;">
+                                    <ul type="none" class="contact-cards" id="footer_list" style="margin-left: 0px; margin-top: 10px;display: flex; flex-direction: column; padding: 0px; align-items: flex-start;">
                                         <li>
                                             <div class="contact" id="lower_contact">
                                                 <div class="col1">
