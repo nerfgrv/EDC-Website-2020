@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = models.TextField(max_length=7000)
     email = models.EmailField(default='')
     date_published = models.DateTimeField(default=timezone.now)
     author = models.CharField(default='', max_length=50)
