@@ -101,7 +101,7 @@
             {% if posts %}
                 {% for post in posts %}
                     <div class="column" style="display: flex; justify-content: center;">
-                        <div class="blog_item_wrapper effect-5  col-12 " style="display: flex; justify-content: center;">
+                        <div class="blog_item_wrapper effect-5 col-12 " style="display: flex; justify-content: center;">
                             <div class="grid-sizer"></div>
                             <div id="post-142"
                                 class=" blogs-style1 blogs-featured blogs-style2 spcard post-142 post type-post status-publish format-standard has-post-thumbnail hentry category-classics category-natu category-retro tag-machine-motion tag-photog tag-prints-3d"
@@ -109,15 +109,15 @@
 
                                 <div class="spwrapper cat_color__background_color">
                                     <div class="spbgimg blog-roll-i post142"
-                                        style="background: url({{ post.blog_image.url }}); background-size: 100% 100%; width: 40%;">
+                                        style="background: url({{ post.blog_image.url }}); background-size: 100% 100%;">
                                     </div>
 
-                                    <div class="spdata" style="width: 60%;">
+                                    <div class="spdata">
                                         <div class="spcontent">
                                             <span class="spauthor">
-                                                <a href="">
-                                                    <img src="{% static 'home/images/logo-big-vector-100x100.jpg' %}" width="20"
-                                                        height="20" alt="Skywarrior"
+                                                <a>
+                                                    <img src="{{ post.author_image.url }}" width="20"
+                                                        height="20" alt="{{ post.author }}"
                                                         class="avatar avatar-20 wp-user-avatar wp-user-avatar-20 alignnone photo" />
                                                     {{ post.author }}
                                                 </a>
@@ -129,7 +129,7 @@
 
                                             <h1 class="sptitle">
                                                 <a rel="bookmark" href="{% url 'post-detail' post.id %}"
-                                                    style="font-weight: bold; text-align: justify;">{{ post.title }}</a>
+                                                    style="font-weight: bold; font-size: 25px; text-align: justify;">{{ post.title }}</a>
                                             </h1>
                                             <p class="sptext">{{ post.content|slice:":190" }}...</p>
                 
