@@ -114,10 +114,10 @@ vc_responsive"
             </div>
             <div style="min-width: 50%; text-align: center;">
                <h2 style="font-weight: bold; margin-bottom: 1%; color: #000">Year Of Study</h2>
-                <p style="font-size: large; font-weight: 120;">{% if object.year_of_study == 1 %} 1st Year{% endif %}
-                {% if object.year_of_study == 2 %} 2nd Year {% endif %}
-                {% if object.year_of_study == 3 %} 3rd Year {% endif %}
-                {% if object.year_of_study == 4 %} 4th Year {% endif %}</p>
+                <p style="font-size: large; font-weight: 120;">{% if object.year_of_study == 1 %} 1st Year
+                {% elif object.year_of_study == 2 %} 2nd Year 
+                {% elif object.year_of_study == 3 %} 3rd Year 
+                {% else %} {{object.year_of_study}}th Year {% endif %}</p>
                 <hr style="border: 1px solid rgba(0, 0, 0, 0.05); max-width: 100%; margin: 2% 2% 4% 1%;">
             </div>
         </div>
