@@ -6,3 +6,6 @@ def home(request):
 
 def team(request):
 	return render(request,'home/aboutUs.html')
+
+def techteam(request):
+	return render(request,'home/techteam.html')
