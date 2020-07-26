@@ -6,6 +6,9 @@
 <head>
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.13.1/css/all.css'
+        integrity='sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q' crossorigin='anonymous'>
+
     <title>EDC,TIET-Internships</title>
     <style type="text/css">
         img.wp-smiley,
@@ -296,6 +299,18 @@
                 align-content: center;
             }
         }
+
+        .download-btn {
+            float: right !important;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .download-btn {
+                margin-top: 2%;
+                float: left !important;
+            }
+        }
     </style>
 </head>
 {% endblock head %}
@@ -395,6 +410,7 @@ vc_responsive"
                         <hr>
                     </div>
                 </div>
+                <p style="text-align: right; font-size: 16px;"> No. of students applied for this Internship : 10</p>
                 <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible;">
 
                     <div class="location">
@@ -421,20 +437,29 @@ vc_responsive"
                 </div>
                 <hr>
                 <div class="card-footer " style="background-color:white;">
-                    <div class="col-6"></div>
-                    <div class="col-6 mdet" style="font-size: 20px !important;">
-                        <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-primary btn-rounded">
-                            View Details
-                        </a>
-                        {% if user.startup_profile == internship.startup %}
-                        <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded"
-                            style="margin-left: 10px;">
-                            Delete Internship
-                        </a>
-                        {% endif %}
+                    <div class="row" style="font-size: 20px !important;">
+                        <div class="col-12 col-md-12">
+                            <a href="{% url 'internship-detail' internship.id %}" class=" btn btn-primary btn-rounded">
+                                View Details
+                            </a>
+                            {% if user.startup_profile == internship.startup %}
+                            <a href="{% url 'internship-delete' internship.id %}" class=" btn btn-primary btn-rounded"
+                                style="margin-left: 10px;">
+                                Delete Internship
+                            </a>
+                            {% endif %}
+                            {% if user.is_startup %}
+                            <a href="{% url 'excel-download' internship.pk %}"
+                                class=" btn btn-primary btn-rounded download-btn" style=""><i
+                                    class="fas fa-download"></i>
+                                Download Applications
+                            </a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
+
             {% endfor %}
 
             {% else %}
@@ -443,6 +468,7 @@ vc_responsive"
                 <h1 style="font-weight: bold; ">You have no posted internship. Post Now!</h1>
             </div>
             {% endif %}
+
         </div>
     </div>
 </div>
