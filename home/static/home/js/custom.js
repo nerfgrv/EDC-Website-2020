@@ -1,4 +1,4 @@
- type='text/javascript'>
+ 
     $('.owl-carousel').owlCarousel({
         loop: true,
             margin: 10,
