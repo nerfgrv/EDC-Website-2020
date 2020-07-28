@@ -240,6 +240,12 @@
             .main{
                 width: 90%;
             }
+            .login-form .form1{
+                padding-left: -100px;
+            }
+            .sign{
+                line-height: 1.6;
+            }
         }
     </style>
 {% endblock head %}
@@ -251,8 +257,8 @@
 <div class="body-bg">
   <div class="main">
     <p class="sign" style="padding-top: 70px;" align="center">Sign Up As a Student</p>
-    <div class="" style="margin-left: 80px; margin-right: 80px; font-family: 'Montserrat';" >
-      <form class="form1" id="login-form" method="post" action="">
+    <div class="" style="margin-left: 10%; margin-right: 10%; font-family: 'Montserrat';" >
+      <form class="form1" id="login-form" method="post" action="" ">
         {% csrf_token %} 
         <fieldset class="form-group">
           <legend class="border-bottom mb-6 " style="font-size: 25px;color:rgb(47, 146, 187); padding-bottom: 20px;"></legend>
