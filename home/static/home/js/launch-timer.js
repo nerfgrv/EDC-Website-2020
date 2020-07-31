@@ -25,6 +25,8 @@ function startTimer(id, deadline) {
             clearInterval(timerInterval);
             var b = document.querySelector(".main-wrapper")
             b.setAttribute("style", "display:block")
+            var c = document.querySelector("footer")
+            c.setAttribute("style", "display:block")
             var a = document.querySelector("#main")
             a.setAttribute("style", "display:none")
        }
