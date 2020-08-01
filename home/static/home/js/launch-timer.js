@@ -17,16 +17,23 @@ function animateClock(span) {
 }
 
 function startTimer(id, deadline) {
+    var timer = updateTimer(deadline);
+    if (timer.total > 0) {
+        var a = document.querySelector("#main")
+        a.setAttribute("style", "display:block")
+    }
     var timerInterval = setInterval(function () {
         var clock = document.getElementById(id);
         var timer = updateTimer(deadline);
 
         if (timer.total < 0) {
             clearInterval(timerInterval);
-            var b = document.querySelector(".main-wrapper")
-            b.setAttribute("style", "display:block")
             var a = document.querySelector("#main")
             a.setAttribute("style", "display:none")
+            var b = document.querySelector(".main-wrapper")
+            b.setAttribute("style", "display:block")
+            var c = document.querySelector("footer")
+            c.setAttribute("style", "display:block")
        }
         
         clock.innerHTML =
