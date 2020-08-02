@@ -71,3 +71,6 @@ class PostDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('blog-home')
+
+def magazine(request):
+    return render(request,'blog/bizfanatics.html')
