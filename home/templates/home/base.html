@@ -1176,8 +1176,24 @@
                             <li id="menu-item-1471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1471">
                                 <a href="{% url 'blog-home' %}">Bizfinatics</a>
                             </li>
-                            <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
+                            <li id="menu-item-1478"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
                                 <a href="{% url 'internships' %}">Internships</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-1482"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                        <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a></li>
+                                    {% if request.user.is_authenticated %}
+                                        {% if request.user.is_startup == True %}
+                                            <li id="menu-item-1483"
+                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internhsip</a></li>
+                                        {% endif %}
+                                    {% endif %}
+                                </ul>
                             </li>
                             <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
                                 <a href="{% url 'our-team' %}">Our Team</a>
@@ -1209,7 +1225,7 @@
                                         <li id="menu-item-1482"
                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                             <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
-                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'internship-create' %}" data-hover="Header generic style">Create Internships </a></li>
+                                        <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
                                         <li id="menu-item-1483"
                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a href="{% url 'my-internships' %}"
                                                 data-hover="Header generic style">Internships offered</a></li>
@@ -1317,9 +1333,28 @@
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                             <a href="{% url 'blog-home' %}">BizFinatics</a>
                                         </li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                            <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+
+                                        <li
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                            <a href="{% url 'internships' %}">Internships</a>
+                                            <ul class="sub-menu">
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a>
+                                                </li>
+                                                {% if user.is_authenticated and user.is_startup %}
+                                                    <li
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                        <a href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
                                         </li>
+
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
                                             <a href="{% url 'our-team' %}">Our Team</a>
                                         </li>
@@ -1349,7 +1384,7 @@
                                                     class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                                     <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
                                                 <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
-                                                        href="{% url 'internship-create' %}" data-hover="Header generic style">Create Internships </a></li>
+                                                        href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internships </a></li>
                                                 <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
                                                         href="{% url 'my-internships' %}" data-hover="Header generic style">Internships offered</a></li>
                                                 <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
@@ -1472,12 +1507,29 @@
                                             </li>
                                         </ul>
                                     </li>
+
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                         <a href="{% url 'blog-home' %}">Bizfinatics</a>
                                     </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
-                                        <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+                                    <li
+                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478">
+                                        <a href="{% url 'internships' %}">Internships</a>
+                                        <ul class="sub-menu">
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                <a href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a>
+                                            </li>
+                                            {% if user.is_authenticated and user.is_startup %}
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                    <a href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
                                     </li>
+                                    
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                         <a href="" data-hover="Articles">Our Team</a>
                                     </li>
@@ -1508,7 +1560,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                                 <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
                                             <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
-                                                    href="{% url 'internship-create' %}" data-hover="Header generic style">Create Internships </a></li>
+                                                    href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
                                             <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
                                                     href="{% url 'my-internships' %}" data-hover="Header generic style">Internships offered</a></li>
                                             <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
@@ -1622,9 +1674,31 @@
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
                                                     <a href="{% url 'blog-home' %}" style="color: white">BizFinatics</a>
                                                 </li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
+ 
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1478" >
                                                     <a href="{% url 'internships' %}" style="color: white">Internships</a>
+                                                    <ul class="sub-menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                            
+                                                            <a href="{% url 'ecosystem-home' %}" 'startup'aria-current="page">Terms & Conditions</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                            <a href="{% url 'internships' %}"
+                                                                data-hover="Header generic style">Browse Internships</a>
+                                                        </li>
+                                                        {% if user.is_authenticated and user.is_startup %}
+                                                            <li
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483">
+                                                                <a href="{% url 'internship-create' %}"
+                                                                    data-hover="Header generic style">Post Internship</a>
+                                                            </li>
+                                                        {% endif %}
+                                                    </ul>
                                                 </li>
+
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                                     <a href="{% url 'our-team' %}" data-hover="Articles" style="color: white">Our
                                                         Team</a>
@@ -1656,7 +1730,7 @@
                                                             class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
                                                             <a href="{% url 'profile' %}" aria-current="page">Profile</a></li>
                                                         <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
-                                                                href="{% url 'internship-create' %}" data-hover="Header generic style">Create Internships </a></li>
+                                                                href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
                                                         <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
                                                                 href="{% url 'my-internships' %}" data-hover="Header generic style">Internships offered</a></li>
                                                         <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
