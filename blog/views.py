@@ -73,4 +73,4 @@ class PostDeleteView(DeleteView):
         return reverse('blog-home')
 
 def magazine(request):
-    return render(request,'blog/bizfanatics.html')
+    return render(request,'blog/bizfinatics.html')
