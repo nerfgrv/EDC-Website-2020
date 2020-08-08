@@ -51,7 +51,7 @@ class StartupProfile(models.Model):
     location = models.CharField(max_length=100, default='')
     field_of_work = models.CharField(max_length=50)
     website = models.URLField(default='', null=True, blank=True)
-    startup_logo = models.ImageField(default='download.png', upload_to='startup/')
+    startup_logo = models.ImageField(default='startup/download.png', upload_to='startup/')
     to_publish = models.BooleanField(default=True)
 
     def __str__(self):
