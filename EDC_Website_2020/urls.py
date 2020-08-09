@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('', include('internshipPortal.urls')),
     path('', include('investors.urls')),
     path('terms-and-conditions/',include('startupEcosystem.urls')),
+    path('sitemap.xml/', TemplateView.as_view(template_name='sitemap.xml'))
 ]
 
 if settings.DEBUG:
