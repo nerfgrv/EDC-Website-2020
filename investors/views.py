@@ -17,7 +17,7 @@ def Investors(request):
 
 def Startup(request):
     context = {
-        'startup': StartupProfile.objects.all()
+        'startup': StartupProfile.objects.filter(to_publish=True)
     }
     return render(request,'investors/startup_home.html', context)
 
