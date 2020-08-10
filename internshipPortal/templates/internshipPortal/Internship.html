@@ -292,7 +292,9 @@
 
             .supcard_top,
             .supcard_mid {
-                flex-direction: column;
+                flex-direction: row;
+                display: flex;
+                flex-wrap: wrap;
                 align-content: center;
             }
         }
@@ -388,31 +390,31 @@ vc_responsive"
 
                     <div class="card-body" style="margin-top: 15px;">
                         <!-- <img src="" style="width: 10%;" class="card-img-top" alt="startup logo"> -->
-                        <h4 class="card-title" style="text-align: center; font-size: 28px;">{{internship.startup.startup_name}}</h4>
-                        <h5 class="card-title" style="text-align: center; color:#2f92bb; font-size: 20px; ">
+                        <h4 class="card-title" style="font-size: 28px;">{{internship.startup.startup_name}}</h4>
+                        <h5 class="card-title" style="color:#2f92bb; font-size: 20px; ">
                             {{ internship.field_of_internship }}
                         </h5>
                         <hr>
                     </div>
                 </div>
-                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible;">
+                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible; display: flex; flex-wrap: wrap; flex-direction: row;">
 
-                    <div class="location">
+                    <div class="location" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
                         <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
 
                     </div>
-                    <div class="duration">
+                    <div class="duration" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Duration:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.duration }}</p>
                     </div>
-                    <div class="Start">
+                    <div class="Start" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Stipend:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
                     </div>
-                    <div class="applyBy">
+                    <div class="applyBy" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">No of Internships:
                         </h5>
 

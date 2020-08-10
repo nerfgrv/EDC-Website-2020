@@ -1195,9 +1195,7 @@ vc_responsive" {% endblock bodytag %}
         <div class="card"
             style="border:none; box-shadow: 3px 5px 6px #ccc; margin-top: 40px; margin-bottom:30px; padding: 1% 2% 1% 2%;">
             <div class="card-body">
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Apply By:</h5>
-                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.apply_by}}</p>
-                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship:</h5>
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">About the Internship/Project:</h5>
                 <div class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.about_markdown}}</div>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px; ">Skills Required:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.skills_required}}</p>
@@ -1205,7 +1203,8 @@ vc_responsive" {% endblock bodytag %}
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.who_should_apply}}</p>
                 <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Perks:</h5>
                 <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.perks}}</p>
-
+                <h5 class="card-title" style="margin-bottom: 10px; font-size: 18px;">Apply By:</h5>
+                <p class="card-text" style="margin-bottom: 35px; font-size: 15px;">{{object.apply_by}}</p>
                 {% now "Y-m-d" as current_date %}
                 {% if applied %}
                 <a href="#" class="btn btn-rounded btn-lg btn-primary"
