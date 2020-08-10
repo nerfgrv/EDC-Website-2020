@@ -1102,6 +1102,19 @@
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                             <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+                                            <ul class="sub-menu">
+                                                    <li id="menu-item-1482"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                        <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a></li>
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                            href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a></li>
+                                                {% if request.user.is_startup == True %}
+                                                    <li id="menu-item-1483"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                            href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
+                                                {% endif %}
+                                            </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
                                             <a href="{% url 'our-team' %}">Our Team</a>
@@ -1260,6 +1273,19 @@
                                     </li>
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                         <a href="{% url 'internships' %}" data-hover="Articles">Internships</a>
+                                        <ul class="sub-menu">
+                                                <li id="menu-item-1482"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                    <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a></li>
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a></li>
+                                            {% if request.user.is_startup == True %}
+                                                <li id="menu-item-1483"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                        href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
+                                            {% endif %}
+                                        </ul>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                         <a href="" data-hover="Articles">Our Team</a>
@@ -1407,6 +1433,19 @@
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1481">
                                                     <a href="{% url 'internships' %}" style="color: white">Internships</a>
+                                                    <ul class="sub-menu">
+                                                            <li id="menu-item-1482"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                                                <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a></li>
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                                    href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a></li>
+                                                        {% if request.user.is_startup == True %}
+                                                            <li id="menu-item-1483"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                                                    href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
+                                                        {% endif %}
+                                                    </ul>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1479">
                                                     <a href="{% url 'our-team' %}" data-hover="Articles" style="color: white">Our
