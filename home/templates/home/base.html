@@ -948,6 +948,19 @@
                             </li>
                             <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
                                 <a href="{% url 'internships' %}">Internships</a>
+                            <ul class="sub-menu">
+                                    <li id="menu-item-1482"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio current-menu-item menu-item-1482">
+                                        <a href="{% url 'ecosystem-home' %}"  aria-current="page">Terms & Conditions</a></li>
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'internships' %}" data-hover="Header generic style">Browse Internships</a></li>
+                                {% if request.user.is_startup == True %}
+                                    <li id="menu-item-1483"
+                                        class="menu-item menu-item-type-post_type menu-item-object-portfolio menu-item-1483"><a
+                                            href="{% url 'internship-create' %}" data-hover="Header generic style">Post Internship</a></li>
+                                {% endif %}
+                            </ul>
                             </li>
                             <li id="menu-item-1480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1480">
                                 <a href="{% url 'our-team' %}">Our Team</a>
