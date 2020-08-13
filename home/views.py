@@ -9,3 +9,6 @@ def team(request):
 
 def techteam(request):
 	return render(request,'home/techteam.html')
+
+def sponsor(request):
+	return render(request,'home/sponsor.html')
