@@ -292,10 +292,11 @@
         }
 
         @media only screen and (max-width: 768px) {
-
             .supcard_top,
             .supcard_mid {
-                flex-direction: column;
+                flex-direction: row;
+                display: flex;
+                flex-wrap: wrap;
                 align-content: center;
             }
         }
@@ -356,7 +357,7 @@ vc_responsive"
                                             style="width: 100%; height: 100%;padding-top: 35%; text-align:center;font-weight:800;font-style:normal;text-decoration:none;font-family:Lato;font-size:100px;line-height:120px;color:#ffffff; text-align: center;"
                                             data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;"
                                             data-ls="showinfo:1;parallax:true;parallaxlevel:-18;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
-                                            MY <br> INTERNSHIPS
+                                            My <br> Internships
                                         </h1>
                                         <a style="" class="ls-l" href="#startup" target="_self"
                                             data-ls="showinfo:1;offsetyin:-50px;delayin:1000;parallax:true;parallaxlevel:-10;parallaxtype:3d;parallaxevent:scroll;parallaxaxis:y;">
@@ -395,7 +396,7 @@ vc_responsive"
 
             <div id="startup" class="card supcard"
                 style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
-                <div class="supcard_top" style="max-width:80% !important;">
+                <div class="supcard_top" style="max-width:100% !important;">
                     <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
                         <img style="border-radius: 50%; width: 100px; height:100px;"
                             src="{{internship.startup.startup_logo.url}}" alt="{{internship.startup.startup_name}}">
@@ -410,29 +411,29 @@ vc_responsive"
                         <hr>
                     </div>
                 </div>
-                <p style="text-align: right; font-size: 16px;"> No. of students applied for this Internship : 10</p>
-                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible;">
+                <!-- <p style="text-align: right; font-size: 16px;"> No. of students applied for this Internship : 10</p> -->
+                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible; display: flex; flex-wrap: wrap; flex-direction: row;">
 
-                    <div class="location">
+                    <div class="location" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
                         <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
 
                     </div>
-                    <div class="duration">
+                    <div class="duration" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Duration:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.duration }}</p>
                     </div>
-                    <div class="Start">
+                    <div class="Start" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Stipend:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
                     </div>
-                    <div class="applyBy">
-                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:
+                    <div class="applyBy" style="flex: 1">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">No of Internships:
                         </h5>
 
-                        <p class="card-text" style=" font-size: 16px;">{{ internship.skills_required }}</p>
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.no_of_internships }}</p>
                     </div>
                 </div>
                 <hr>
@@ -452,7 +453,7 @@ vc_responsive"
                             <a href="{% url 'excel-download' internship.pk %}"
                                 class=" btn btn-primary btn-rounded download-btn" style=""><i
                                     class="fas fa-download"></i>
-                                Download Applications
+                                Download Applications({{internship.internship.count}})
                             </a>
                             {% endif %}
                         </div>

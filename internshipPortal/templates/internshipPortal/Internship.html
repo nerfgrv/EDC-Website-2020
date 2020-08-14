@@ -4,6 +4,8 @@
 {% block head %}
 
 <head>
+    <meta name="description" content="Apply for a wide range of internships for various startups and ongoing projects in TIET.">
+    <meta name="keywords" content="internships edctiet, edctiet,internships edc thapar, internships, ecell, edc, entrepreneurship development cell, edc thapar, thapar, thapar university">
     <link rel="stylesheet" href="{% static 'internshipPortal/bootstrap-iso.css' %}" />
     <link rel="stylesheet" href="{% static 'internshipPortal/css/bootstrap.min.css' %}" />
     <title>EDC,TIET-Internships</title>
@@ -292,7 +294,9 @@
 
             .supcard_top,
             .supcard_mid {
-                flex-direction: column;
+                flex-direction: row;
+                display: flex;
+                flex-wrap: wrap;
                 align-content: center;
             }
         }
@@ -380,7 +384,7 @@ vc_responsive"
 
             <div id="startup" class="card supcard"
                 style=" margin-top: 30px; border:none; box-shadow: 3px 5px 6px #ccc; padding-bottom: 2%; padding-left: 2%; padding-right: 2%; margin-bottom:30px;">
-                <div class="supcard_top" style="max-width:80% !important;">
+                <div class="supcard_top" style="max-width:100% !important;">
                     <div class="startup_logo" style="margin-right: 3%; margin-top:2%;">
                         <img style="border-radius: 50%; width: 100px; height:100px;"
                             src="{{internship.startup.startup_logo.url}}" alt="{{internship.startup.startup_name}}">
@@ -395,28 +399,28 @@ vc_responsive"
                         <hr>
                     </div>
                 </div>
-                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible;">
+                <div class="supcard_mid" style=" margin-bottom: 20px; margin-left: 20px; overflow: visible; display: flex; flex-wrap: wrap; flex-direction: row;">
 
-                    <div class="location">
+                    <div class="location" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Location:</h5>
                         <p class="card-text" style=" font-size: 16px;">{{ internship.location }}</p>
 
                     </div>
-                    <div class="duration">
+                    <div class="duration" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Duration:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.duration }}</p>
                     </div>
-                    <div class="Start">
+                    <div class="Start" style="flex: 1">
                         <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Stipend:</h5>
 
                         <p class="card-text" style=" font-size: 16px;">{{ internship.stipend }}</p>
                     </div>
-                    <div class="applyBy">
-                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">Skills Required:
+                    <div class="applyBy" style="flex: 1">
+                        <h5 class="card-title" style="margin-bottom: 10px; font-size: 20px;">No of Internships:
                         </h5>
 
-                        <p class="card-text" style=" font-size: 16px;">{{ internship.skills_required }}</p>
+                        <p class="card-text" style=" font-size: 16px;">{{ internship.no_of_internships }}</p>
                     </div>
                 </div>
                 <hr>

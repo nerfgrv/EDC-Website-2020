@@ -13,21 +13,19 @@ import datetime, xlwt
 
 def Internships(request):
     context = {
-        'internships': Internship.objects.all()
+        'internships': Internship.objects.all().order_by('-apply_by')
     }
     return render(request, 'internshipPortal/Internship.html', context)
 
 def MyInternships(request):
     if(request.user.is_authenticated and request.user.is_startup):
-        internships = Internship.objects.filter(startup=request.user.startup_profile)
+        internships = Internship.objects.filter(startup=request.user.startup_profile).order_by('-apply_by')
         context = {
             'internships': internships,
         }
         return render(request, 'internshipPortal/MyInternshipStartup.html', context)
     elif(request.user.is_authenticated and request.user.is_student):
         internships = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
-        for internship in internships:
-            print(internship)
         context = {
             'internships': internships,
         }
