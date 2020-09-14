@@ -4,10 +4,10 @@ from .models import Post
 from . import views
 
 urlpatterns = [
-    path('blogs/', 					views.home, 				name='blog-home'),
-    path('blogs/<int:pk>/', 		PostDetailView.as_view(), 	name='post-detail'),
-    path('blogs/write/' , 			PostCreateView, 			name='post-create'),
-    path('blogs/<int:pk>/update/', 	PostUpdateView, 			name='post-update'),
-    path('blogs/<int:pk>/delete/', 	PostDeleteView.as_view(), 	name='post-delete'),
-    path('blogs/bizfanatics/',views.magazine,	name='magazine'),
+    path('blogs/<int:pg>/', 		            views.home, 				name='blog-home'),
+    path('blogs/<int:pg>/<int:pk>/',            PostDetailView, 	        name='post-detail'),
+    path('blogs/write/' , 			            PostCreateView, 			name='post-create'),
+    path('blogs/<int:pg>/<int:pk>/update/', 	PostUpdateView, 			name='post-update'),
+    path('blogs/<int:pg>/<int:pk>/delete/', 	PostDeleteView.as_view(), 	name='post-delete'),
+    path('blogs/bizfanatics/',                  views.magazine,	            name='magazine'),
 ]

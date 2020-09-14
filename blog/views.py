@@ -8,24 +8,38 @@ from django.utils.decorators import method_decorator
 from .models import Post
 from .forms import PostCreateForm, PostUpdateForm
 from user.models import User
+from django.core.paginator import Paginator
 
 
-def home(request):
+def home(request, pg=1):
     if request.user.is_authenticated and request.user.is_team:
         posts = Post.objects.order_by('-date_published')
     else:
         posts = Post.objects.filter(
             is_published=True).order_by('-date_published')
+    
+    paginator = Paginator(posts, 5);
 
     context = {
-        'posts': posts
+        'posts': paginator.page(pg),
+        'page': pg,
+        'paginator': paginator
     }
     return render(request, 'blog/home.html', context)
 
 
-class PostDetailView(DetailView):
-    model = Post
+# class PostDetailView(DetailView):
+#     model = Post
 
+def PostDetailView(request, pk, pg=1):
+
+    post = Post.objects.filter(id=pk)
+    
+    context = {
+        'post' : post,
+    }
+
+    return render(request, 'blog/post_detail.html', context)
 
 def PostCreateView(request):
     if request.method == 'POST':
@@ -47,7 +61,7 @@ def PostCreateView(request):
     return render(request, 'blog/post_form.html', context)
 
 
-def PostUpdateView(request, pk):
+def PostUpdateView(request, pk, pg=1):
     if request.method == 'POST':
         form = PostUpdateForm(request.POST, request.FILES,
                               instance=Post.objects.filter(id=pk).first())
