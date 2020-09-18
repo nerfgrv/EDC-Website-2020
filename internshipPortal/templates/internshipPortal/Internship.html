@@ -282,6 +282,11 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
+        .searchbutton{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
 
         @media only screen and (max-width: 768px) {
 
@@ -368,6 +373,16 @@ vc_responsive"
 
         </div>
     </div>
+    <div class="searchbutton">
+                <form  class ="searchbutton" method='GET' action='' style="padding-top: 3%; padding-bottom: 3%;">
+                    <div style="padding-right: 10px;">
+                        <input style="/*margin-left: 10%; margin-right: 10%;*/margin:auto; padding-left: 30%; padding-right:30%; "type='text' name ='query' placeholder='Search Internships' value='{{ request.GET.query }}' />
+                    </div>
+                    <div>
+                        <input style="margin: auto; display: inline-block; "type='submit' value='search' />
+                    </div>
+                </form>
+            </div>
 
 
     <div class="row main_body" style="max-width:100% !important; margin:0 auto; display:flex; justify-content: center;">
