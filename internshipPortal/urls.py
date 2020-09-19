@@ -10,7 +10,7 @@ urlpatterns = [
          name='my-internships'),
     path('internships/create/',
          views.InternshipCreateView,             name='internship-create'),
-    path('internships/<int:pk>/detial',
+    path('internships/<int:pk>/details',
          views.InternshipDetailView,             name='internship-detail'),
     path('internships/<int:pk>/application/',
          views.InternshipApplicationView,        name='internship-application'),
