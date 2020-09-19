@@ -9,12 +9,28 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import InternshipForm, ApplicationForm, VenCapForm
 from .models import Internship, InternshipApplication, VentureCapitalist
 import datetime, xlwt
+from django.db.models import Q
 from django.core.paginator import Paginator
 
 
 def Internships(request, pg=1):
     internship = Internship.objects.all().order_by('-apply_by')
+
+    query = request.GET.get("query")
+    if query:
+        internship = internship.filter(
+            # Q(startup__icontains=query) |
+            Q(field_of_internship__icontains=query) |
+            Q(duration__icontains=query) |
+            Q(about=query) |
+            Q(location=query) |
+            Q(stipend=query) |
+            Q(skills_required=query) |
+            Q(perks=query) 
+            ).distinct()
+
     paginator = Paginator(internship, 8)
+
     context = {
         'Intern': paginator.page(pg),
         'page': pg,
