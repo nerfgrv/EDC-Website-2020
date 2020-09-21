@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<title>EDC,TIET-Blog</title>
+<title>Search Results</title>
 <style>
     .page-title-wrap {
         background-image:url({%static 'home/images/patrick-tomasso-71909.jpg' %}) !important;
@@ -71,14 +71,6 @@
             width: 50%;
         }
     }
-    .search-button{
-        color: #000;
-        font-size: 20px;
-        text-align: center;
-        border-radius: 10px;
-        padding: 10px;
-        background: rgba(47, 146, 187,0.1);
-    }
 </style>
 
 {% endblock head %}
@@ -93,7 +85,7 @@
         <div class="page-title-bg rest-enable-parallax"></div>
         <div class="page-title-tint"></div>
         <div class="container header-flex header-enable-parallax">
-            <h1>Blogs</h1>
+            <h1>SEARCH RESULTS</h1>
         </div>
     </div>
 
@@ -101,22 +93,23 @@
         <a href="{% url 'post-create' %}">Write a Blog</a>
     </div>
 
-    <div class="vc_row" style="display: flex; justify-content: center;">
-        <div class="vc_col-md-6 vc_col-sm-12">
-            <form class="search" method="GET" autocomplete="off" action="{% url 'search' 1 %}">
-                <div class="vc_form-group">
-                    <div class="vc_input-group">
-                        <input type="search" name="search" id="search" class="vc_form-control" placeholder="Search...">									
-                        <!-- <span><button class="search-button" type="submit">Search</button></span> -->
-                    </div>
-                </div>
-            </form>								
-        </div>
-    </div>
-
 
 <div class="main-content">
     <div class="blog  blog-standardfull">
+        <!-- <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <form class="search" method="GET" autocomplete="off" action="{% url 'search' 1 %}">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="search" name="search" class="form-control" placeholder="Type something here">									
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit"><i class="ion-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>								
+            </div>
+        </div> -->
         <div class="row">
             {% if posts %}
                 {% for post in posts %}
@@ -174,7 +167,7 @@
                     </div>
 
                 {% endfor %}
-                <div class="pagination">
+                <!-- <div class="pagination">
                     <ul style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
                         {% if posts.has_previous %}
                             <li><a class='page-selector' href= "{% url 'blog-home'  page|add:'-1' %}">&laquo;</a></li>
@@ -190,11 +183,11 @@
                             <li><a class='page-selector' href= "{% url 'blog-home'  page|add:'+1' %}">&raquo;</a></li>
                         {% endif %}
                     </ul>
-                </div>
+                </div> -->
 
             {% else %}
                 <div class="wrapper">
-                        <h1 style="font-weight: bold;">New Blogs Will Posted Soon. Stay Tuned!</h1>
+                        <h1 style="font-weight: bold;">No Results</h1>
                 </div>
             {% endif %}
         </div><!-- /row -->
