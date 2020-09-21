@@ -31,9 +31,9 @@ def home(request, pg=1):
 # class PostDetailView(DetailView):
 #     model = Post
 
-def PostDetailView(request, pk, pg=1):
+def PostDetailView(request, pk):
 
-    post = Post.objects.filter(id=pk)
+    post = Post.objects.get(id=pk)
     
     context = {
         'post' : post,

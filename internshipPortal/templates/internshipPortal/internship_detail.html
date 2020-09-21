@@ -1230,6 +1230,15 @@ vc_responsive" {% endblock bodytag %}
                 {% endif %}
             </div>
         </div>
+
+        {% if object.get_prev_post %}
+            <a href="{% url 'internship-detail' object.get_prev_post.id %}" class="btn btn-rounded btn-lg btn-primary" style="margin: 10px ; text-align:center;">Previous</a>
+        {% endif %}
+
+        {% if object.get_next_post %}
+            <a href="{% url 'internship-detail' object.get_next_post.id %}" class="btn btn-rounded btn-lg btn-primary" style="margin: 10px ; text-align:center;">Next</a>
+        {% endif %}
+
     </div>
 
 
