@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
@@ -28,12 +28,27 @@ def home(request, pg=1):
     return render(request, 'blog/home.html', context)
 
 
+
+def search(request, pg=1):
+    query = request.GET['search']
+    posts = Post.objects.filter(title__icontains = query)
+    paginator = Paginator(posts, 20);
+
+    context = {
+        'posts': paginator.page(pg),
+        'page': pg,
+        'paginator': paginator
+    }
+    return render(request, 'blog/search.html', context)
+
+
+
 # class PostDetailView(DetailView):
 #     model = Post
 
-def PostDetailView(request, pk):
+def PostDetailView(request, pk, pg=1):
 
-    post = Post.objects.get(id=pk)
+    post = Post.objects.filter(id=pk).first()
     
     context = {
         'post' : post,
@@ -41,7 +56,7 @@ def PostDetailView(request, pk):
 
     return render(request, 'blog/post_detail.html', context)
 
-def PostCreateView(request):
+def PostCreateView(request, pg=1):
     if request.method == 'POST':
         form = PostCreateForm(request.POST, request.FILES)
         if form.is_valid():
@@ -49,7 +64,7 @@ def PostCreateView(request):
             messages.success(
                 request, 'Your submission has been sent to our team for review. You will be notified via e-mail if it is published.')
 
-            return HttpResponseRedirect(reverse('blog-home'))
+            return HttpResponseRedirect(reverse('blog-home', args=[1]))
 
     else:
         form = PostCreateForm()
@@ -61,7 +76,7 @@ def PostCreateView(request):
     return render(request, 'blog/post_form.html', context)
 
 
-def PostUpdateView(request, pk, pg=1):
+def PostUpdateView(request, pk):
     if request.method == 'POST':
         form = PostUpdateForm(request.POST, request.FILES,
                               instance=Post.objects.filter(id=pk).first())
@@ -69,7 +84,7 @@ def PostUpdateView(request, pk, pg=1):
             if request.user.is_team:
                 form.save()
                 messages.success(request, 'Your blog has been published.')
-                return HttpResponseRedirect(reverse('blog-home'))
+                return HttpResponseRedirect(reverse('blog-home', args=[1]))
             else:
                 messages.warning(
                     request, 'You do not have the perimission to update this blog.')
@@ -89,7 +104,7 @@ class PostDeleteView(DeleteView):
     model = Post
 
     def get_success_url(self):
-        return reverse('blog-home')
+        return reverse('blog-home', args=[1])
 
 
 def magazine(request):
