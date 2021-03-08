@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'markdown_deux',
     'phonenumber_field',
+    'storages',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

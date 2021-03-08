@@ -241,7 +241,6 @@ def VenCapDeleteView(request, pk):
 
 #################################################################
 
-
 def exceldownload(request, pk = None):
     internship = Internship.objects.filter(id=pk).first()
     if request.user.is_authenticated and request.user.is_startup and internship.startup == request.user.startup_profile: 
@@ -267,7 +266,7 @@ def exceldownload(request, pk = None):
             'border: left thick, right thick;',
        ]
 
-        rows = InternshipApplication.objects.filter(id=pk).values_list('message', 'resume', 'applied_by__name', 'applied_by__college', 'applied_by__area_of_specialization', 'applied_by__cgpa','applied_by__year_of_study', 'applied_by__city_of_residence', 'applied_by__contact')
+        rows = InternshipApplication.objects.filter(internship=internship).values_list('message', 'resume', 'applied_by__name', 'applied_by__college', 'applied_by__area_of_specialization', 'applied_by__cgpa','applied_by__year_of_study', 'applied_by__city_of_residence', 'applied_by__contact')
         for row in rows:
             row_num += 1
             for col_num in range(len(row)):
@@ -284,7 +283,7 @@ def exceldownload(request, pk = None):
                     ws.write(row_num, col_num, xlwt.Formula('HYPERLINK("%s")'%row[col_num]), font_style)
                 else:
                     ws.write(row_num, col_num, row[col_num], font_style)
-
+                
         font_style = xlwt.easyxf('border: top thick;')
         row_num += 1
         for col_num in range(len(columns)):  
@@ -307,3 +306,4 @@ def exceldownload(request, pk = None):
     else:
         messages.success(request, f'You are not authorised to access this data.')
         return redirect('home')
+
